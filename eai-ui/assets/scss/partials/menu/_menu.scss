@@ -1,0 +1,316 @@
+$header-theme: #3b4650;
+$header-right-theme: #647688;
+
+.header-navbar {
+  background: linear-gradient(to right, $header-theme, $header-right-theme);
+  position: fixed;
+  display: block;
+  min-height: 56px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1028;
+  width: 100%;
+
+  a {
+    color: #fff !important;
+  }
+
+  .nav-left {
+    li {
+      float: left;
+      line-height: 3.5;
+      padding: 0 10px;
+      position: relative;
+
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .nav-right {
+    float: right;
+    li {
+      float: left;
+      line-height: 3.5;
+      padding: 0 10px;
+      position: relative;
+
+      a {
+        font-size: 16px;
+      }
+    }
+    a {
+      padding: 0 0.6rem;
+    }
+    .user-profile {
+      i {
+        font-size: 10px;
+        margin-left: 10px;
+      }
+      img {
+        margin-right: 10px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+.nav-container {
+  .header-notification {
+    perspective: 1000px;
+    z-index: 99;
+  }
+  .badge {
+    border-radius: 100px;
+    right: 15px;
+    position: absolute;
+    top: 14px;
+    padding: 4px;
+  }
+}
+
+.navbar-logo {
+  position: relative;
+  align-items: center;
+  display: flex;
+  float: left;
+  height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 235px;
+  padding: 10px;
+}
+
+.navbar-logo-sm {
+  justify-content: center;
+  width: 100% !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto
+}
+
+.mobile-menu {
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 8px);
+  font-size: 16px;
+}
+
+.mobile-menu-sm {
+  display: block;
+  left: 20px;
+  top: 15px !important;
+  right: auto !important;
+}
+
+.mobile-options {
+  display: none;
+}
+
+.mobile-options-sm {
+  display: block;
+  position: absolute;
+  right: 30px;
+}
+
+.nav-left {
+  float: left;
+  margin-bottom: 0;
+}
+
+.nav-right-animate {
+  overflow: hidden;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.side-bar {
+  width: 255px;
+  float: left;
+  position: fixed;
+  background-size: cover;
+  z-index: 1027;
+  height: 100%;
+  display: block;
+  box-shadow: 2px 0 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  background-image: url('../../../../assets/img/navbar-img-1.jpg');
+
+  .main-menu {
+    background-color: rgba(34, 34, 34, 0.8);
+    height: calc(100% - 56px)
+  }
+  .nav-label {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 1;
+    padding: 10px 15px;
+    visibility: visible;
+    width: 100%;
+    transition: opacity 0.3s linear;
+    border-top: 1px solid rgba(214, 214, 214, 0.5);
+  }
+  .left-item {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    > li {
+      color: #fff;
+      display: block;
+      list-style: outside none none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      :hover {
+        color: $success-color;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      a {
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out;
+        text-align: left;
+        padding: 5px 20px;
+        position: relative;
+
+        :hover {
+          background: transparent;
+        }
+      }
+
+    }
+
+    .selected {
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 600 !important;
+    }
+    .active {
+      color: $success-color !important;
+    }
+    .active::after {
+      border-left-color: $success-color;
+      border-left-style: solid;
+      border-left-width: 5px;
+      content: " ";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+    .mcaret::after {
+      content: '\e61a';
+      float: right;
+      font-style: normal;
+      margin-left: 3px;
+      font-size: 10px;
+      position: absolute;
+      right: 15px;
+      top: 3px;
+      font-family: 'themify';
+      padding-top: 12px;
+      transition: opacity 0.3s linear;
+      -webkit-transition: opacity 0.3s linear;
+      -ms-transition: opacity 0.3s linear;
+      -moz-transition: opacity 0.3s linear;
+      -o-transition: opacity 0.3s linear;
+    }
+
+    .mcaret-plus::after {
+      content: '\e61a';
+
+    }
+    .mcaret-minus::after {
+      content: '\e622';
+    }
+
+    .micron {
+      font-size: 14px;
+      padding: 4px;
+      margin-right: 10px;
+      border-radius: 4px;
+      width: 30px;
+      display: inline-block;
+      height: 30px;
+      text-align: center;
+    }
+    .mtext {
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      top: 9px;
+    }
+
+    .sub-menu {
+      background: transparent !important;
+      background-color: transparent !important;
+      border-left: 1px solid #d6d6d6;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transform-origin: 15% 10%;
+      transition: transform 0.5s, opacity 0.5s;
+      width: 80%;
+      list-style: outside none none;
+      margin: 15px auto;
+    }
+
+    .sub-menu-visible {
+      position: relative !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform-origin: 10% 10%;
+    }
+  }
+}
+
+.side-bar-sm {
+  margin-left: 260px;
+  opacity: 0;
+}
+
+.overlay-box {
+  background: #000 none repeat scroll 0 0;
+  bottom: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  overflow: hidden;
+}
+
+.overlay-box-show {
+  visibility: visible;
+  z-index: 1026;
+  opacity: 0.3;
+  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  overflow: hidden;
+}

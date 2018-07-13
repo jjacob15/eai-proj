@@ -1,0 +1,59 @@
+/**  =====================
+      Custom css start
+==========================  **/
+// @font-face {
+//     font-family: segoe UI;
+//     src: url("../fonts/SEGOEUI.TTF");
+// }
+
+body {
+  background-color: $theme-bg-color;
+  font-size: $theme-font-size;
+  overflow-x: hidden;
+  color: $theme-font-color;
+  font-family: $theme-font-family;
+  background-attachment: fixed;
+  // background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 20%, transparent 20%, transparent 40%, rgba(255, 255, 255, .15) 40%, rgba(255, 255, 255, .15) 60%, transparent 60%, transparent 80%, rgba(255, 255, 255, .15) 80%, transparent);
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  font-size: 13px;
+  @media only screen and(min-width: 1400px) {
+    font-size: 14px;
+  }
+  color: $inverse-color;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+.img-radius {
+  border-radius: 50%;
+}
+
+.bg-c-green {
+  background:linear-gradient(45deg, $success-color, lighten($success-color,10%)) ;
+}
+
+.main-container{
+  margin: 0 auto;
+  margin-top:56px;
+  position: relative;
+
+}
