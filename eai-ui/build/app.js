@@ -18883,7 +18883,7 @@ var initialState = {
             label: 'Enterprise Analytics Intelligence',
             content: [{
                 id: 1,
-                label: 'Sync Real',
+                label: 'Sync Real 12',
                 icon: 'home'
             }, {
                 id: 2,
@@ -19051,7 +19051,7 @@ var store = exports.store = (0, _redux.createStore)(_reducer2.default, (0, _redu
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! babel-polyfill */"./node_modules/babel-polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! E:\susmita\project\eai-ui\src/Root.js */"./src/Root.js");
+module.exports = __webpack_require__(/*! E:\external\myclone\eai-proj\eai-ui\src/Root.js */"./src/Root.js");
 
 
 /***/ })
