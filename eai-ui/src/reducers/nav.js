@@ -12,7 +12,7 @@ const initialState = {
             label: 'Enterprise Analytics Intelligence',
             content: [{
                 id: 1,
-                label: 'Sync Real 15',
+                label: 'Sync Real 12',
                 icon: 'home'
             }, {
                 id: 2,
