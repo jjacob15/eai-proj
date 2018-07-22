@@ -120,7 +120,7 @@ class NavRight extends React.Component {
                 </li>
                 <li className="user-profile header-notification">
                     <a href="#!">
-                        <img src={require("../../../assets/img/avatar-4.jpg")} className="img-radius"
+                        <img src={require("../../../assets/images/avatar-4.jpg")} className="img-radius"
                              alt="User-Profile-Image"/>
                         <span>{this.props.auth.user}</span>
                         <i className="ti-angle-down"></i>

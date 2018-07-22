@@ -12,16 +12,16 @@ const initialState = {
             label: 'Enterprise Analytics Intelligence',
             content: [{
                 id: 1,
-                label: 'Sync Real',
+                label: 'SyncReal',
                 icon: 'home'
             }, {
                 id: 2,
-                label: 'About EAi',
-                icon: 'layout'
+                label: 'About EAI',
+                icon: 'shine'
             }, {
                 id: 3,
                 label: 'Videos',
-                icon: 'layout-cta-right',
+                icon: 'video-clapper',
                 expand: false,
                 content: [{
                     id: 12,
@@ -33,7 +33,7 @@ const initialState = {
             }, {
                 id: 4,
                 label: 'Tutorials',
-                icon: 'view-grid',
+                icon: 'book',
                 expand: false,
                 content: [{
                     id: 15,
@@ -48,34 +48,34 @@ const initialState = {
             content: [{
                 id: 5,
                 label: 'iExtract',
-                icon: 'home'
+                icon: 'server'
             }, {
                 id: 6,
                 label: 'iModel',
-                icon: 'layout'
+                icon: 'settings'
             }, {
                 id: 7,
                 label: 'iApply',
-                icon: 'layout-cta-right'
+                icon: 'bar-chart-alt'
             }, {
                 id: 8,
                 label: 'iPlan',
-                icon: 'view-grid'
+                icon: 'panel'
             }]
         }, {
             label: 'Support',
             content: [{
                 id: 9,
                 label: 'FAQs',
-                icon: 'home'
+                icon: 'support'
             }, {
                 id: 10,
                 label: 'Help',
-                icon: 'layout'
+                icon: 'help'
             }, {
                 id: 11,
                 label: 'Contact Us',
-                icon: 'view-grid'
+                icon: 'email'
             }]
         }]
     }
