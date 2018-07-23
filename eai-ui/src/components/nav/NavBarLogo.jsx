@@ -34,7 +34,7 @@ class NavBarLogo extends React.Component {
                     <i className="ti-menu"></i>
                 </a>
                 <a>
-                    <img className="img-fluid" src={require('../../../assets/img/logo.png')}/>
+                    <img className="img-fluid" src={require('../../../assets/images/logo.png')}/>
                 </a>
                 <a className={o} onClick={this.props.showMore}>
                     <i className="ti-more"></i>
