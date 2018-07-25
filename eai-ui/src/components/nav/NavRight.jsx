@@ -4,6 +4,7 @@
 import React from 'react';
 import cx from 'classnames';
 import TWEEN from '@tweenjs/tween.js';
+import ProfileMenu from './ProfileMenu';
 
 
 class NavRight extends React.Component {
@@ -13,11 +14,13 @@ class NavRight extends React.Component {
             display: 'display',
             animating: false,
             height: '0px',
+            showMenu: false,
         };
 
         this.height = { x: 0 };
         this.show = this.show.bind(this);
         this.animate = this.animate.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
 
     componentDidMount() {
@@ -100,22 +103,34 @@ class NavRight extends React.Component {
             .start();
     }
 
+    toggleMenu() {
+        this.setState(prev => ({
+            showMenu: !prev.showMenu,
+        }));
+    }
+
     render() {
-        const { display, height, animating } = this.state;
+        const {
+            display, height, animating, showMenu,
+        } = this.state;
         const { auth } = this.props;
         const c = cx({
             'nav-right': true,
             'nav-right-animate': animating,
         });
+        const upStyle = cx({
+            'user-profile header-notification': true,
+            active: showMenu,
+        });
         return (<ul className={ c } style={ { display, height } }>
             <li className="">
-                <a href="#!" className="displayChatbox">
+                <a className="displayChatbox">
                     <i className="ti-comments" />
                     <span className="badge bg-c-green" />
                 </a>
             </li>
-            <li className="user-profile header-notification">
-                <a href="#!">
+            <li className={ upStyle } onClick={ this.toggleMenu } onKeyPress={ this.toggleMenu }>
+                <a>
                     <img
                       alt="avatar"
                         src={ require('../../../assets/images/avatar-4.jpg') }
@@ -126,38 +141,7 @@ class NavRight extends React.Component {
                     </span>
                     <i className="ti-angle-down" />
                 </a>
-                <ul className="show-notification profile-notification" style={ { display: 'none' } }>
-                    <li>
-                        <a href="#!">
-                            <i className="ti-settings" />
-                            Settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="user-profile.html">
-                            <i className="ti-user" />
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="email-inbox.html">
-                            <i className="ti-email" />
-                            My Messages
-                        </a>
-                    </li>
-                    <li>
-                        <a href="auth-lock-screen.html">
-                            <i className="ti-lock" />
-                            Lock Screen
-                        </a>
-                    </li>
-                    <li>
-                        <a href="auth-normal-sign-in.html">
-                            <i className="ti-layout-sidebar-left" />
-                            Logout
-                        </a>
-                    </li>
-                </ul>
+                <ProfileMenu show={ showMenu } />
             </li>
         </ul>
         );

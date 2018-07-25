@@ -38,14 +38,14 @@ const SideBar = (props) => {
     return (
         <nav className={ c }>
             <div className="main-menu">
-                {sideBarMenu.menu.map(s => (
-                    <div>
+                {sideBarMenu.menu.map((s, h) => (
+                    <div key={ h }>
                         <div className="nav-label">
                             {s.label}
                         </div>
                         <ul className="left-item">
                             {s.content.map((item, i) => (
-                                <li>
+                                <li key={ i }>
                                     <a
                                       className={ aStyle(item) }
                                       onClick={ () => onMenuSelected(item) }
@@ -65,7 +65,7 @@ const SideBar = (props) => {
                                     {item.content && (
                                         <ul className={ subMenuStyle(item) }>
                                             {item.content.map((sub, j) => (
-                                                <li>
+                                                <li key={ j }>
                                                     <a
                                                       tabIndex={ j }
                                                       onClick={ () => onMenuSelected(sub) }

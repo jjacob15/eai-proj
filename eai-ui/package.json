@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp dev",
-    "lint": "eslint src",
+    "lint": "eslint src --ext .js,.jsx",
     "lint-fix": "eslint src --ext .js,.jsx --fix"
   },
   "devDependencies": {
