@@ -10,7 +10,7 @@ const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
     entry: {
-        app: ['babel-polyfill' ,APP_DIR + "/Root.js"] ,
+        app: ['babel-polyfill' ,APP_DIR + "/Root.jsx"] ,
     },
     output: {
         path: BUILD_DIR,
@@ -28,29 +28,6 @@ const config = {
                         presets: ["env", "react", "stage-2"]
                     }
                 }]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    {loader: "style-loader/useable"},
-                    {loader: "css-loader"},
-                ],
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [
-                    {loader: "style-loader/useable"},
-                    {loader: "css-loader"},
-                    {loader: 'postcss-loader'},
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            includePaths: glob.sync('node_modules').map((d) => path.join(__dirname, d))
-                        }
-                    }
-
-                ]
             },
             {
                 test: /\.(png|jp(e*)g|svg)$/,

@@ -6462,7 +6462,7 @@ a {
       cursor: pointer;
       transition: all 0.3s ease-in-out; }
       .side-bar .left-item > li :hover {
-        color: #2ed8b6;
+        color: #4099ff;
         background: rgba(255, 255, 255, 0.1); }
       .side-bar .left-item > li a {
         color: #fff;
