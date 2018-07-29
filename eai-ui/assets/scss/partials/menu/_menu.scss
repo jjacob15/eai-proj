@@ -120,6 +120,7 @@ $header-right-theme: #647688;
       top: 14px;
       padding: 4px;
       display: inline-block !important;
+      cursor: pointer;
       &:after,
       &:before {
           content: "";
@@ -144,6 +145,18 @@ $header-right-theme: #647688;
   }
 }
 
+
+@keyframes not-blink {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: scale(4);
+      opacity: 0;
+  }
+}
 
 
 .navbar-logo {
@@ -173,6 +186,7 @@ $header-right-theme: #647688;
   right: 0px;
   top: calc(50% - 8px);
   font-size: 16px;
+  cursor: pointer;
 }
 
 .mobile-menu-sm {
@@ -180,6 +194,7 @@ $header-right-theme: #647688;
   left: 20px;
   top: 15px !important;
   right: auto !important;
+  cursor: pointer;
 }
 
 .mobile-options {
@@ -276,10 +291,10 @@ $header-right-theme: #647688;
       font-weight: 600 !important;
     }
     .active {
-      color: $success-color !important;
+     // color: $primary-color !important;
     }
     .active::after {
-      border-left-color: $success-color;
+      border-left-color: $primary-color;
       border-left-style: solid;
       border-left-width: 5px;
       content: " ";
@@ -343,6 +358,21 @@ $header-right-theme: #647688;
       width: 80%;
       list-style: outside none none;
       margin: 15px auto;
+
+      li {
+        &:hover{
+          .mtext::after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            left: -4px;
+            top: calc(50% - 4px);
+            background-color: transparent;
+        }
+       }
+      }
     }
 
     .sub-menu-visible {

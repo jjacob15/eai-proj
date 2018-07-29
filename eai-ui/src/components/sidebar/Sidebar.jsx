@@ -71,7 +71,7 @@ const SideBar = (props) => {
                                                       onClick={ () => onMenuSelected(sub) }
                                                       onKeyPress={ () => onMenuSelected(sub) }
                                                     >
-                                                        <span>
+                                                        <span className="mtext">
                                                             {sub.label}
                                                         </span>
                                                     </a>

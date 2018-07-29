@@ -5,7 +5,7 @@ import React from 'react';
 import cx from 'classnames';
 import TWEEN from '@tweenjs/tween.js';
 import ProfileMenu from './ProfileMenu';
-
+import FullScreen from './FullScreen';
 
 class NavRight extends React.Component {
     constructor(props) {
@@ -113,7 +113,7 @@ class NavRight extends React.Component {
         const {
             display, height, animating, showMenu,
         } = this.state;
-        const { auth } = this.props;
+        const { auth, nav } = this.props;
         const c = cx({
             'nav-right': true,
             'nav-right-animate': animating,
@@ -122,18 +122,25 @@ class NavRight extends React.Component {
             'user-profile header-notification': true,
             active: showMenu,
         });
-        return (<ul className={ c } style={ { display, height } }>
-            <li className="">
+        return (<ul className={c} style={{ display, height }}>
+            {(nav.isSmallDevice) ? null : <FullScreen />}
+            <li className="" title="Notification">
+                <a>
+                    <i className="ti-bell"></i>
+                    <span className="badge bg-c-pink" ></span>
+                </a>
+            </li>
+            <li className="" title="Chat">
                 <a className="displayChatbox">
                     <i className="ti-comments" />
                     <span className="badge bg-c-green" />
                 </a>
             </li>
-            <li className={ upStyle } onClick={ this.toggleMenu } onKeyPress={ this.toggleMenu }>
+            <li className={upStyle} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
                 <a>
                     <img
-                      alt="avatar"
-                        src={ require('../../../assets/images/avatar-4.jpg') }
+                        alt="avatar"
+                        src={require('../../../assets/images/avatar-4.jpg')}
                         className="img-radius"
                     />
                     <span>
@@ -141,7 +148,7 @@ class NavRight extends React.Component {
                     </span>
                     <i className="ti-angle-down" />
                 </a>
-                <ProfileMenu show={ showMenu } />
+                <ProfileMenu show={showMenu} />
             </li>
         </ul>
         );

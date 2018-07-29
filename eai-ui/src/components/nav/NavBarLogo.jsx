@@ -31,7 +31,7 @@ const NavBarLogo = (props) => {
     });
     return (
         <div className={ c }>
-            <a className={ m } onClick={ toggleSideBar } onKeyDown={ toggleSideBar }>
+            <a className={ m } onClick={ toggleSideBar } onKeyDown={ toggleSideBar } title="Collapse the Navigation Panel">
                 <i className="ti-menu" />
             </a>
             <a>
