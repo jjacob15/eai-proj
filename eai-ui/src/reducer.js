@@ -6,6 +6,6 @@ import auth from './reducers/auth';
 import nav from './reducers/nav';
 
 export default combineReducers({
-    auth,
-    nav,
+  auth,
+  nav,
 });

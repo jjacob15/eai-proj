@@ -14,7 +14,18 @@ body {
   font-family: $theme-font-family;
   background-attachment: fixed;
   // background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 20%, transparent 20%, transparent 40%, rgba(255, 255, 255, .15) 40%, rgba(255, 255, 255, .15) 60%, transparent 60%, transparent 80%, rgba(255, 255, 255, .15) 80%, transparent);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 20%,
+    transparent 20%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 40%,
+    rgba(255, 255, 255, 0.15) 60%,
+    transparent 60%,
+    transparent 80%,
+    rgba(255, 255, 255, 0.15) 80%,
+    transparent
+  );
 }
 
 ul {
@@ -48,15 +59,14 @@ a {
 }
 
 .bg-c-green {
-  background:linear-gradient(45deg, $success-color, lighten($success-color,10%)) ;
+  background: linear-gradient(45deg, $success-color, lighten($success-color, 10%));
 }
-.bg-c-pink{
-  background:linear-gradient(45deg, $danger-color, lighten($danger-color,10%)) ;
+.bg-c-pink {
+  background: linear-gradient(45deg, $danger-color, lighten($danger-color, 10%));
 }
 
-.main-container{
+.main-container {
   margin: 0 auto;
-  margin-top:56px;
+  margin-top: 56px;
   position: relative;
-
 }

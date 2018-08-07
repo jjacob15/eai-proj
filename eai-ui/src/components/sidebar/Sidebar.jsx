@@ -8,42 +8,38 @@ import { SET_SELECTED_MENU } from '../../constants/types';
 import Menu from './Menu';
 
 const mapProps = disptach => ({
-    onMenuSelected: (item) => {
-        disptach({ type: SET_SELECTED_MENU, item });
-    },
+  onMenuSelected: item => {
+    disptach({ type: SET_SELECTED_MENU, item });
+  },
 });
 
-const SideBar = (props) => {
-    const { nav, onMenuSelected } = props;
-    const { displaySideBar, sideBarMenu } = nav;
-    const c = cx({
-        'side-bar': true,
-        'side-bar-sm': !displaySideBar,
-    });
+const SideBar = props => {
+  const { nav, onMenuSelected } = props;
+  const { displaySideBar, sideBarMenu } = nav;
+  const c = cx({
+    'side-bar': true,
+    'side-bar-sm': !displaySideBar,
+  });
 
-    return (
-        <nav className={ c }>
-            <div className="main-menu">
-                {sideBarMenu.menu.map((s, h) => (
-                    <div key={ h }>
-                        <div className="nav-label">
-                            {s.label}
-                        </div>
-                        <ul className="left-item">
-                            {s.content.map((item, i) => (
-                                <Menu
-                                    item={ item }
-                                  key={ i }
-                                  sideBarMenu={ sideBarMenu }
-                                  onMenuSelected={ onMenuSelected }
-                                />
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-        </nav>
-    );
+  return (
+    <nav className={c}>
+      <div className="main-menu">
+        {sideBarMenu.menu.map((s, h) => (
+          <div key={h}>
+            <div className="nav-label">{s.label}</div>
+            <ul className="left-item">
+              {s.content.map((item, i) => (
+                <Menu item={item} key={i} sideBarMenu={sideBarMenu} onMenuSelected={onMenuSelected} />
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </nav>
+  );
 };
 
-export default connect(() => ({}), mapProps)(SideBar);
+export default connect(
+  () => ({}),
+  mapProps
+)(SideBar);

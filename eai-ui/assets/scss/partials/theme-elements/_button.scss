@@ -10,8 +10,8 @@
   text-transform: capitalize;
   font-size: 15px;
   padding: 10px 19px;
-  @media only screen and (max-width: 480px){
-    padding:10px 15px;
+  @media only screen and (max-width: 480px) {
+    padding: 10px 15px;
   }
   cursor: pointer;
   // box-shadow: 0px 6px 5px -4px rgba(0, 0, 0, 0.62);
@@ -21,12 +21,20 @@
     // box-shadow: 0px 4px 5px -4px rgba(0, 0, 0, 0.62);
   }
 }
-.close{
+.close {
   cursor: pointer;
 }
-.button-page{
-  @media only screen and (max-width: 480px){
-    .dropdown-danger, .dropdown-default, .dropdown-disabled, .dropdown-info, .dropdown-inverse, .dropdown-primary, .dropdown-success, .dropdown-warning, .dropdown-warning{
+.button-page {
+  @media only screen and (max-width: 480px) {
+    .dropdown-danger,
+    .dropdown-default,
+    .dropdown-disabled,
+    .dropdown-info,
+    .dropdown-inverse,
+    .dropdown-primary,
+    .dropdown-success,
+    .dropdown-warning,
+    .dropdown-warning {
       display: block;
     }
   }
@@ -130,8 +138,8 @@
   position: relative;
 }
 
-.btn-group [class*=btn-],
-.dropdown-split [class*=btn-] {
+.btn-group [class*='btn-'],
+.dropdown-split [class*='btn-'] {
   margin-right: 0;
 }
 
@@ -150,7 +158,7 @@
     transform: translateX(0px);
 
     &:hover {
-      background: rgba(0, 0, 0, 0.80);
+      background: rgba(0, 0, 0, 0.8);
     }
   }
 }
@@ -163,7 +171,7 @@
 .Note-delete {
   margin-bottom: 0;
   opacity: 0;
-  background: rgba(0, 0, 0, 0.60);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
   position: absolute;
   right: 20px;
@@ -181,7 +189,7 @@
 
   .display-color {
     width: 75px;
-    height: 2.50rem;
+    height: 2.5rem;
     border-radius: 0.25rem;
     margin-right: 30px;
     @include button-trans(theme-color(primary, trans), theme-color(primary, trans));
@@ -243,7 +251,7 @@
 
   &:hover {
     @include buttons-hover(theme-color(warning, hover), theme-color(warning, hover));
-    color:#fff;
+    color: #fff;
   }
 
   &:active {
@@ -413,131 +421,201 @@
 }
 
 .btn-grd-primary {
-  background-image: linear-gradient(to right, theme-color(primary, hover) 0%, theme-color(primary, active) 51%, theme-color(primary, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(primary, hover) 0%,
+    theme-color(primary, active) 51%,
+    theme-color(primary, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(primary, hover) 0%, theme-color(primary, active) 51%, theme-color(primary, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(primary, hover) 0%,
+      theme-color(primary, active) 51%,
+      theme-color(primary, hover) 100%
+    );
   }
 }
 
 .btn-grd-warning {
-  background-image: linear-gradient(to right, theme-color(warning, hover) 0%, theme-color(warning, active) 51%, theme-color(warning, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(warning, hover) 0%,
+    theme-color(warning, active) 51%,
+    theme-color(warning, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(warning, hover) 0%, theme-color(warning, active) 51%, theme-color(warning, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(warning, hover) 0%,
+      theme-color(warning, active) 51%,
+      theme-color(warning, hover) 100%
+    );
   }
 }
 
 .btn-grd-danger {
-  background-image: linear-gradient(to right, theme-color(danger, hover) 0%, theme-color(danger, active) 51%, theme-color(danger, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(danger, hover) 0%,
+    theme-color(danger, active) 51%,
+    theme-color(danger, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(danger, hover) 0%, theme-color(danger, active) 51%, theme-color(danger, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(danger, hover) 0%,
+      theme-color(danger, active) 51%,
+      theme-color(danger, hover) 100%
+    );
   }
 }
 
 .btn-grd-success {
-  background-image: linear-gradient(to right, theme-color(success, hover) 0%, theme-color(success, active) 51%, theme-color(success, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(success, hover) 0%,
+    theme-color(success, active) 51%,
+    theme-color(success, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(success, hover) 0%, theme-color(success, active) 51%, theme-color(success, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(success, hover) 0%,
+      theme-color(success, active) 51%,
+      theme-color(success, hover) 100%
+    );
   }
 }
 
 .btn-grd-inverse {
-  background-image: linear-gradient(to right, theme-color(inverse, hover) 0%, theme-color(inverse, active) 51%, theme-color(inverse, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(inverse, hover) 0%,
+    theme-color(inverse, active) 51%,
+    theme-color(inverse, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(inverse, hover) 0%, theme-color(inverse, active) 51%, theme-color(inverse, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(inverse, hover) 0%,
+      theme-color(inverse, active) 51%,
+      theme-color(inverse, hover) 100%
+    );
   }
 }
 
 .btn-grd-info {
-  background-image: linear-gradient(to right, theme-color(info, hover) 0%, theme-color(info, active) 51%, theme-color(info, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(info, hover) 0%,
+    theme-color(info, active) 51%,
+    theme-color(info, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(info, hover) 0%, theme-color(info, active) 51%, theme-color(info, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(info, hover) 0%,
+      theme-color(info, active) 51%,
+      theme-color(info, hover) 100%
+    );
   }
 }
 
 .btn-grd-disabled {
-  background-image: linear-gradient(to right, theme-color(disabled, hover) 0%, theme-color(disabled, active) 51%, theme-color(disabled, hover) 100%);
+  background-image: linear-gradient(
+    to right,
+    theme-color(disabled, hover) 0%,
+    theme-color(disabled, active) 51%,
+    theme-color(disabled, hover) 100%
+  );
 
   &.hor-grd {
-    background-image: linear-gradient(to top, theme-color(disabled, hover) 0%, theme-color(disabled, active) 51%, theme-color(disabled, hover) 100%);
+    background-image: linear-gradient(
+      to top,
+      theme-color(disabled, hover) 0%,
+      theme-color(disabled, active) 51%,
+      theme-color(disabled, hover) 100%
+    );
   }
 }
 /**====== gradient-Buttons css end ======**/
 
 /**====== matrialized-Buttons css Start ======**/
-.btn.btn-mat{
+.btn.btn-mat {
   position: relative;
   border-radius: 0;
   border: none;
-  &:before{
-    content: "";
+  &:before {
+    content: '';
     position: absolute;
     bottom: 0;
     // width: 0;
-    left:50%;
+    left: 50%;
     right: 50%;
     height: 3px;
     transition: all 0.3s ease-in-out;
   }
-  &:hover{
+  &:hover {
     border: none;
-    &:before{
+    &:before {
       // width: 100%;
-      left:0;
-      right:0;
+      left: 0;
+      right: 0;
     }
   }
 }
 .btn-primary.btn-mat {
   background-color: theme-color(primary, base);
-  &:before{
+  &:before {
     background-color: theme-color(primary, active);
   }
 }
 
 .btn-warning.btn-mat {
   background-color: theme-color(warning, base);
-  &:before{
+  &:before {
     background-color: theme-color(warning, active);
   }
 }
 
 .btn-danger.btn-mat {
   background-color: theme-color(danger, base);
-  &:before{
+  &:before {
     background-color: theme-color(danger, active);
   }
 }
 
 .btn-success.btn-mat {
   background-color: theme-color(success, base);
-  &:before{
+  &:before {
     background-color: theme-color(success, active);
   }
 }
 
 .btn-inverse.btn-mat {
   background-color: theme-color(inverse, base);
-  &:before{
+  &:before {
     background-color: theme-color(inverse, active);
   }
 }
 
 .btn-info.btn-mat {
   background-color: theme-color(info, base);
-  &:before{
+  &:before {
     background-color: theme-color(info, active);
   }
 }
 
 .btn-outline-disabled {
   background-color: theme-color(disabled, base);
-  &:before{
+  &:before {
     background-color: theme-color(disabled, active);
   }
 }
@@ -624,35 +702,35 @@
 }
 
 .btn-twitter {
-  background-color: #00ACED;
+  background-color: #00aced;
 }
 
 .btn-linkedin {
-  background-color: #007BB6;
+  background-color: #007bb6;
 }
 
 .btn-dribbble {
-  background-color: #EA4C89;
+  background-color: #ea4c89;
 }
 
 .btn-google-plus {
-  background-color: #DD4B39;
+  background-color: #dd4b39;
 }
 
 .btn-instagram {
-  background-color: #517FA4;
+  background-color: #517fa4;
 }
 
 .btn-pinterest {
-  background-color: #CB2027;
+  background-color: #cb2027;
 }
 
 .btn-dropbox {
-  background-color: #32506D;
+  background-color: #32506d;
 }
 
 .btn-tumblr {
-  background-color: #00ACED;
+  background-color: #00aced;
 }
 /**====== Social-Buttons css end ======**/
 /**====== Drop-down-Buttons css start ======**/

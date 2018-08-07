@@ -63,11 +63,10 @@ $header-right-theme: #647688;
       perspective: 1000px;
       z-index: 99;
 
-    
-      .profile-notification{
+      .profile-notification {
         width: 17em;
         background: #fff;
-        box-shadow: 0 0 35px 0 rgba(0,0,0,0.25);
+        box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         opacity: 1;
         position: absolute;
@@ -77,22 +76,22 @@ $header-right-theme: #647688;
         transform: translateY(20px);
 
         li {
-            padding: 0.7em 20px;
-            line-height: initial;
-            width: 100%;
-            transition: all 0.3s ease-in-out;
+          padding: 0.7em 20px;
+          line-height: initial;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
 
-            :hover{
-              background-color: #f1f1f1;
-            }
+          :hover {
+            background-color: #f1f1f1;
+          }
         }
-        a{
+        a {
           font-size: 15px;
           padding-left: 0;
           color: #222 !important;
         }
 
-        i{
+        i {
           font-size: 15px;
           margin-left: 0;
           margin-right: 5px;
@@ -100,8 +99,8 @@ $header-right-theme: #647688;
       }
     }
 
-    .active::before{
-      content: "";
+    .active::before {
+      content: '';
       border: 10px solid transparent;
       border-left-color: #fff;
       border-top-color: #fff;
@@ -109,7 +108,7 @@ $header-right-theme: #647688;
       border-radius: 5px;
       bottom: -32px;
       right: 20px;
-      box-shadow: -11px -11px 35px 0 rgba(0,0,0,0.25);
+      box-shadow: -11px -11px 35px 0 rgba(0, 0, 0, 0.25);
       transform: rotate(45deg);
       z-index: 9;
     }
@@ -123,41 +122,39 @@ $header-right-theme: #647688;
       cursor: pointer;
       &:after,
       &:before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.4);
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.4);
       }
 
       &:after {
-          animation: not-blink 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+        animation: not-blink 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
       }
 
       &:before {
-          animation: not-blink 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-          animation-delay: 1.15s;
+        animation: not-blink 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+        animation-delay: 1.15s;
       }
     }
   }
 }
 
-
 @keyframes not-blink {
   0% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
 
   100% {
-      transform: scale(4);
-      opacity: 0;
+    transform: scale(4);
+    opacity: 0;
   }
 }
-
 
 .navbar-logo {
   position: relative;
@@ -178,7 +175,7 @@ $header-right-theme: #647688;
 
 .img-fluid {
   max-width: 100%;
-  height: auto
+  height: auto;
 }
 
 .mobile-menu {
@@ -233,7 +230,7 @@ $header-right-theme: #647688;
 
   .main-menu {
     background-color: rgba(34, 34, 34, 0.8);
-    height: calc(100% - 56px)
+    height: calc(100% - 56px);
   }
   .nav-label {
     color: #fff;
@@ -265,19 +262,21 @@ $header-right-theme: #647688;
       transition: all 0.3s ease-in-out;
 
       &:hover > a {
-          color: $primary-color;
-          background: rgba(255, 255, 255, 0.1);
+        color: $primary-color;
+        background: rgba(255, 255, 255, 0.1);
       }
 
-      .active::before {
-        border-left-color: $primary-color;
-        border-left-style: solid;
-        border-left-width: 5px;
-        content: " ";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
+      &.active {
+        > a::before {
+          border-left-color: $primary-color;
+          border-left-style: solid;
+          border-left-width: 5px;
+          content: ' ';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
       }
 
       a {
@@ -291,16 +290,12 @@ $header-right-theme: #647688;
         position: relative;
       }
 
+      &.selected > a {
+        background: rgba(255, 255, 255, 0.1);
+        font-weight: 600 !important;
+      }
     }
 
-    .selected {
-      background: rgba(255, 255, 255, 0.1);
-      font-weight: 600 !important;
-    }
-    .active {
-     // color: $primary-color !important;
-    }
-    
     .mcaret::after {
       content: '\e61a';
       float: right;
@@ -321,7 +316,6 @@ $header-right-theme: #647688;
 
     .mcaret-plus::after {
       content: '\e61a';
-
     }
     .mcaret-minus::after {
       content: '\e622';
@@ -337,12 +331,6 @@ $header-right-theme: #647688;
       height: 30px;
       text-align: center;
     }
-    // .mtext {
-    //   opacity: 1;
-    //   visibility: visible;
-    //   position: absolute;
-    //   top: 9px;
-    // }
 
     .sub-menu {
       background: transparent !important;
@@ -379,26 +367,26 @@ $header-right-theme: #647688;
         }
 
         &.active,
-        &:hover  {
-          > a{
-            color:$primary-color !important;
-              > .mtext::after {
-                content: "";
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                position: absolute;
-                left: -4px;
-                top: calc(50% - 4px);
-                background-color: $primary-color;
-              }
+        &:hover {
+          > a {
+            color: $primary-color !important;
+            > .mtext::after {
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              position: absolute;
+              left: -4px;
+              top: calc(50% - 4px);
+              background-color: $primary-color;
+            }
           }
         }
 
         &.active > a {
-          font-weight: 600
+          font-weight: 600;
         }
-      } 
+      }
     }
 
     .sub-menu-visible {
