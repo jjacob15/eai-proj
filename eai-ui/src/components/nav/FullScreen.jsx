@@ -28,11 +28,11 @@ function toggleFullScreen() {
 }
 
 const NavLeft = () => (
-        <li>
-            <a href="#!" onClick={ toggleFullScreen }>
-                <i className="ti-fullscreen" />
-            </a>
-        </li>
+    <li>
+        <a href="#!" onClick={ toggleFullScreen }>
+            <i className="ti-fullscreen" />
+        </a>
+    </li>
 );
 
 export default NavLeft;

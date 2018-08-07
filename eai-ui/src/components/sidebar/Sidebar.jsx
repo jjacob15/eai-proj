@@ -5,6 +5,7 @@ import React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import { SET_SELECTED_MENU } from '../../constants/types';
+import Menu from './Menu';
 
 const mapProps = disptach => ({
     onMenuSelected: (item) => {
@@ -20,21 +21,6 @@ const SideBar = (props) => {
         'side-bar-sm': !displaySideBar,
     });
 
-    const aStyle = curr => cx({
-        'selected active': (sideBarMenu.selected
-            && (sideBarMenu.selected.id === curr.id
-                || (curr.content && curr.content.filter(x => x.id === sideBarMenu.selected.id).length > 0))),
-    });
-    const caretStyle = curr => cx({
-        mcaret: curr.content,
-        'mcaret-plus': (curr.content && !curr.expand),
-        'mcaret-minus': (curr.content && curr.expand),
-    });
-    const subMenuStyle = curr => cx({
-        'sub-menu': true,
-        'sub-menu-visible': curr.expand,
-    });
-
     return (
         <nav className={ c }>
             <div className="main-menu">
@@ -45,41 +31,13 @@ const SideBar = (props) => {
                         </div>
                         <ul className="left-item">
                             {s.content.map((item, i) => (
-                                <li key={ i }>
-                                    <a
-                                      className={ aStyle(item) }
-                                      onClick={ () => onMenuSelected(item) }
-                                      tabIndex={ i }
-                                      onKeyDown={ () => onMenuSelected(item) }
-                                    >
-
-                                        <span className="micron">
-                                            <i className={ `ti-${item.icon}` } />
-                                        </span>
-                                        <span className="mtext">
-                                            {' '}
-                                            {item.label}
-                                        </span>
-                                        <span className={ caretStyle(item) } />
-                                    </a>
-                                    {item.content && (
-                                        <ul className={ subMenuStyle(item) }>
-                                            {item.content.map((sub, j) => (
-                                                <li key={ j }>
-                                                    <a
-                                                      tabIndex={ j }
-                                                      onClick={ () => onMenuSelected(sub) }
-                                                      onKeyPress={ () => onMenuSelected(sub) }
-                                                    >
-                                                        <span className="mtext">
-                                                            {sub.label}
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>))}
+                                <Menu
+                                    item={ item }
+                                  key={ i }
+                                  sideBarMenu={ sideBarMenu }
+                                  onMenuSelected={ onMenuSelected }
+                                />
+                            ))}
                         </ul>
                     </div>
                 ))}

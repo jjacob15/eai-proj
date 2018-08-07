@@ -122,12 +122,12 @@ class NavRight extends React.Component {
             'user-profile header-notification': true,
             active: showMenu,
         });
-        return (<ul className={c} style={{ display, height }}>
+        return (<ul className={ c } style={ { display, height } }>
             {(nav.isSmallDevice) ? null : <FullScreen />}
             <li className="" title="Notification">
                 <a>
-                    <i className="ti-bell"></i>
-                    <span className="badge bg-c-pink" ></span>
+                    <i className="ti-bell" />
+                    <span className="badge bg-c-pink" />
                 </a>
             </li>
             <li className="" title="Chat">
@@ -136,11 +136,11 @@ class NavRight extends React.Component {
                     <span className="badge bg-c-green" />
                 </a>
             </li>
-            <li className={upStyle} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
+            <li className={ upStyle } onClick={ this.toggleMenu } onKeyPress={ this.toggleMenu }>
                 <a>
                     <img
                         alt="avatar"
-                        src={require('../../../assets/images/avatar-4.jpg')}
+                        src={ require('../../../assets/images/avatar-4.jpg') }
                         className="img-radius"
                     />
                     <span>
@@ -148,7 +148,7 @@ class NavRight extends React.Component {
                     </span>
                     <i className="ti-angle-down" />
                 </a>
-                <ProfileMenu show={showMenu} />
+                <ProfileMenu show={ showMenu } />
             </li>
         </ul>
         );

@@ -127,7 +127,16 @@ export default (state = initialState, action) => {
         return {
             ...state,
             sideBarMenu: {
-                ...state.sideBarMenu,
+                menu: state.sideBarMenu.menu.map(x => ({
+                    ...x,
+                    content: (x.content.map(c => ((c.id === action.item.id)
+                        ? {
+                            ...c
+                        } : {
+                            ...c,
+                            expand: false,
+                        }))),
+                })),
                 selected: action.item,
             },
         };

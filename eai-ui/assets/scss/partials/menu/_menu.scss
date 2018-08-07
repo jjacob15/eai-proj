@@ -264,9 +264,20 @@ $header-right-theme: #647688;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
-      :hover {
-        color: $primary-color;
-        background: rgba(255, 255, 255, 0.1);
+      &:hover > a {
+          color: $primary-color;
+          background: rgba(255, 255, 255, 0.1);
+      }
+
+      .active::before {
+        border-left-color: $primary-color;
+        border-left-style: solid;
+        border-left-width: 5px;
+        content: " ";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
       }
 
       a {
@@ -278,10 +289,6 @@ $header-right-theme: #647688;
         text-align: left;
         padding: 5px 20px;
         position: relative;
-
-        :hover {
-          background: transparent;
-        }
       }
 
     }
@@ -293,16 +300,7 @@ $header-right-theme: #647688;
     .active {
      // color: $primary-color !important;
     }
-    .active::after {
-      border-left-color: $primary-color;
-      border-left-style: solid;
-      border-left-width: 5px;
-      content: " ";
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-    }
+    
     .mcaret::after {
       content: '\e61a';
       float: right;
@@ -339,12 +337,12 @@ $header-right-theme: #647688;
       height: 30px;
       text-align: center;
     }
-    .mtext {
-      opacity: 1;
-      visibility: visible;
-      position: absolute;
-      top: 9px;
-    }
+    // .mtext {
+    //   opacity: 1;
+    //   visibility: visible;
+    //   position: absolute;
+    //   top: 9px;
+    // }
 
     .sub-menu {
       background: transparent !important;
@@ -359,20 +357,48 @@ $header-right-theme: #647688;
       list-style: outside none none;
       margin: 15px auto;
 
-      li {
-        &:hover{
-          .mtext::after{
-            content: "";
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            position: absolute;
-            left: -4px;
-            top: calc(50% - 4px);
-            background-color: transparent;
+      > li {
+        display: block;
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        a {
+          padding-left: 15px;
+          border-bottom-color: #51606d;
+          color: #fff;
+          text-align: left;
+          padding: 8.7px 10px;
+          display: block;
+          font-size: 14px;
+          font-weight: 100;
+          text-decoration: none;
+          position: relative;
+          padding-left: 15px;
         }
-       }
-      }
+
+        &.active,
+        &:hover  {
+          > a{
+            color:$primary-color !important;
+              > .mtext::after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                position: absolute;
+                left: -4px;
+                top: calc(50% - 4px);
+                background-color: $primary-color;
+              }
+          }
+        }
+
+        &.active > a {
+          font-weight: 600
+        }
+      } 
     }
 
     .sub-menu-visible {
