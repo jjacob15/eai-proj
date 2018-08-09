@@ -70,3 +70,33 @@ a {
   margin-top: 56px;
   position: relative;
 }
+
+.card{
+  border-radius: 5px;
+  box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+  border: none;
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    box-shadow: 0 0 25px -5px #9e9c9e;
+  }
+
+  .card-block{
+    padding: 25px;
+  }
+}
+
+.landing-content{
+  float: unset;
+  right: 0;
+  position: relative;
+    display: block;
+}
+.landing-inner-content{
+  padding: 10px;
+}
+
+.main-body{
+  .page-wrapper{
+    transition: all ease-in 0.3s;
+  }
+}
