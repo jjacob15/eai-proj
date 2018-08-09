@@ -2,111 +2,19 @@
  * Created by Jaison.Jacob on 7/11/2018.
  */
 import { TOGGLE_SIDEBAR, TOGGLE_HEADER_NAVBAR, SET_BROWSER_SIZE, SET_SELECTED_MENU } from '../constants/types';
+import menu from './menuContent';
 
 const initialState = {
   isSmallDevice: false,
   headerMinimized: true,
   displaySideBar: true,
-  sideBarMenu: {
-    selected: null,
-    menu: [
-      {
-        label: 'Enterprise Analytics Intelligence',
-        content: [
-          {
-            id: 1,
-            label: 'SyncReal',
-            icon: 'home',
-          },
-          {
-            id: 2,
-            label: 'About EAI',
-            icon: 'shine',
-          },
-          {
-            id: 3,
-            label: 'Videos',
-            icon: 'video-clapper',
-            expand: false,
-            content: [
-              {
-                id: 12,
-                label: 'Video 1',
-                parentId: 3,
-              },
-              {
-                id: 13,
-                label: 'Video 2',
-                parentId: 3,
-              },
-            ],
-          },
-          {
-            id: 4,
-            label: 'Tutorials',
-            icon: 'book',
-            expand: false,
-            content: [
-              {
-                id: 15,
-                label: 'Tutorials 1',
-                parentId: 4,
-              },
-              {
-                id: 16,
-                label: 'Tutorials 2',
-                parentId: 4,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        label: 'Quick Links',
-        content: [
-          {
-            id: 5,
-            label: 'iExtract',
-            icon: 'server',
-          },
-          {
-            id: 6,
-            label: 'iModel',
-            icon: 'settings',
-          },
-          {
-            id: 7,
-            label: 'iApply',
-            icon: 'bar-chart-alt',
-          },
-          {
-            id: 8,
-            label: 'iPlan',
-            icon: 'panel',
-          },
-        ],
-      },
-      {
-        label: 'Support',
-        content: [
-          {
-            id: 9,
-            label: 'FAQs',
-            icon: 'support',
-          },
-          {
-            id: 10,
-            label: 'Help',
-            icon: 'help',
-          },
-          {
-            id: 11,
-            label: 'Contact Us',
-            icon: 'email',
-          },
-        ],
-      },
-    ],
+  menu: {
+    selected: {
+      id: 5,
+      label: 'iExtract',
+      icon: 'server',
+    },
+    content: menu,
   },
 };
 export default (state = initialState, action) => {
@@ -133,9 +41,9 @@ export default (state = initialState, action) => {
       if (action.item.content) {
         return {
           ...state,
-          sideBarMenu: {
-            selected: null,
-            menu: state.sideBarMenu.menu.map(x => ({
+          menu: {
+            ...state.menu,
+            content: state.menu.content.map(x => ({
               ...x,
               content: x.content.map(
                 c =>
@@ -155,9 +63,9 @@ export default (state = initialState, action) => {
       }
       return {
         ...state,
-        sideBarMenu: {
+        menu: {
           selected: action.item,
-          menu: state.sideBarMenu.menu.map(x => ({
+          content: state.menu.content.map(x => ({
             ...x,
             content: x.content.map(
               c =>

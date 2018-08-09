@@ -12,22 +12,22 @@ const mapProps = dispatch => ({
   },
   toggleSideBar: () => {
     dispatch({ type: TOGGLE_SIDEBAR });
-  }
+  },
 });
 
 const NavBarLogo = props => {
   const { isSmallDevice, toggleSideBar, showMore } = props;
   const c = cx({
     'navbar-logo': true,
-    'navbar-logo-sm': isSmallDevice
+    'navbar-logo-sm': isSmallDevice,
   });
   const m = cx({
     'mobile-menu': true,
-    'mobile-menu-sm': isSmallDevice
+    'mobile-menu-sm': isSmallDevice,
   });
   const o = cx({
     'mobile-options': true,
-    'mobile-options-sm': isSmallDevice
+    'mobile-options-sm': isSmallDevice,
   });
   return (
     <div className={c}>

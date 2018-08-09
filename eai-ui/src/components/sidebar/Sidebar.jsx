@@ -15,7 +15,7 @@ const mapProps = disptach => ({
 
 const SideBar = props => {
   const { nav, onMenuSelected } = props;
-  const { displaySideBar, sideBarMenu } = nav;
+  const { displaySideBar, menu } = nav;
   const c = cx({
     'side-bar': true,
     'side-bar-sm': !displaySideBar,
@@ -24,12 +24,12 @@ const SideBar = props => {
   return (
     <nav className={c}>
       <div className="main-menu">
-        {sideBarMenu.menu.map((s, h) => (
+        {menu.content.map((s, h) => (
           <div key={h}>
             <div className="nav-label">{s.label}</div>
             <ul className="left-item">
               {s.content.map((item, i) => (
-                <Menu item={item} key={i} sideBarMenu={sideBarMenu} onMenuSelected={onMenuSelected} />
+                <Menu item={item} key={i} menu={menu} onMenuSelected={onMenuSelected} />
               ))}
             </ul>
           </div>

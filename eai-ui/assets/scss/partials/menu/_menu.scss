@@ -80,11 +80,11 @@ $header-right-theme: #647688;
           line-height: initial;
           width: 100%;
           transition: all 0.3s ease-in-out;
-
-          :hover {
+          &:hover {
             background-color: #f1f1f1;
           }
         }
+
         a {
           font-size: 15px;
           padding-left: 0;
@@ -225,7 +225,7 @@ $header-right-theme: #647688;
   z-index: 1027;
   height: 100%;
   display: block;
-  top:56px;
+  top: 56px;
   box-shadow: 2px 0 2.94px 0.06px rgba(4, 26, 55, 0.16);
   background-image: url('../../../../assets/images/navbar-img-1.jpg');
 

@@ -3,13 +3,13 @@ import cx from 'classnames';
 import SubMenu from './SubMenu';
 
 const Menu = props => {
-  const { item, onMenuSelected, sideBarMenu } = props;
+  const { item, onMenuSelected, menu } = props;
   const aStyle = curr =>
     cx({
       'selected active':
-        sideBarMenu.selected &&
-        (sideBarMenu.selected.id === curr.id ||
-          (curr.content && curr.content.filter(x => x.id === sideBarMenu.selected.id).length > 0)),
+        menu.selected &&
+        (menu.selected.id === curr.id ||
+          (curr.content && curr.content.filter(x => x.id === menu.selected.id).length > 0)),
     });
   const caretStyle = curr =>
     cx({
@@ -35,7 +35,7 @@ const Menu = props => {
       {item.content && (
         <ul className={subMenuStyle(item)}>
           {item.content.map((sub, j) => (
-            <SubMenu item={sub} key={j} onMenuSelected={onMenuSelected} sideBarMenu={sideBarMenu} />
+            <SubMenu item={sub} key={j} onMenuSelected={onMenuSelected} menu={menu} />
           ))}
         </ul>
       )}

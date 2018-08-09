@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp dev",
-    "lint": "eslint src --ext .js,.jsx",
-    "lint-fix": "eslint src --ext .js,.jsx --fix",
+    "lint": "eslint src --ext .js,.jsx --fix",
     "format": "prettier --write src/**/*.jsx src/**/*.js assets/scss/**/*.scss"
   },
   "devDependencies": {

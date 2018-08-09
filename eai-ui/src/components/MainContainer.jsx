@@ -4,10 +4,11 @@
 import React from 'react';
 import SideBar from './sidebar/Sidebar';
 import Landing from './landing/Landing';
+
 const MainContainer = props => (
   <div className="main-container">
     <SideBar {...props} />
-    <Landing  {...props}/>
+    <Landing {...props} />
   </div>
 );
 
