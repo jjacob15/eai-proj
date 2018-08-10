@@ -109,7 +109,9 @@ class NavRight extends React.Component {
   }
 
   render() {
-    const { display, height, animating, showMenu } = this.state;
+    const {
+ display, height, animating, showMenu
+} = this.state;
     const { auth, nav } = this.props;
     const c = cx({
       'nav-right': true,
@@ -137,7 +139,9 @@ class NavRight extends React.Component {
         <li className={upStyle} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
           <a>
             <img alt="avatar" src={require('../../../assets/images/avatar-4.jpg')} className="img-radius" />
-            <span>{auth.user}</span>
+            <span>
+{auth.user}
+</span>
             <i className="ti-angle-down" />
           </a>
           <ProfileMenu show={showMenu} />

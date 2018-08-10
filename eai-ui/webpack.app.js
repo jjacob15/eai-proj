@@ -10,7 +10,7 @@ const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
     entry: {
-        app: ['babel-polyfill' ,APP_DIR + "/Root.jsx"] ,
+        app: [APP_DIR + "/Root.jsx"] ,
     },
     output: {
         path: BUILD_DIR,
@@ -48,6 +48,16 @@ const config = {
         // you can now require('file') instead of require('file.coffee')
         extensions: ['.js', '.json', '.jsx'],
     },
+    plugins:[
+        new webpack.DllReferencePlugin({
+            context: process.cwd(),
+            manifest: require(BUILD_DIR + '/react-manifest.json')
+          }),
+          new webpack.DllReferencePlugin({
+            context: process.cwd(),
+            manifest: require(BUILD_DIR + '/utility-manifest.json')
+          }),
+    ]
 
 };
 

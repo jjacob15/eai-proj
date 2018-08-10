@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumb from './Breadcrumb';
-import Tabs from './nav/Tabs';
+import TabContainer from './nav/TabContainer';
 import Container from '../content/Container';
 
 class Landing extends React.Component {
@@ -34,7 +34,10 @@ class Landing extends React.Component {
     const { nav } = this.props;
     const { height } = this.state;
     return (
-      <div className="landing-content" style={{ marginLeft: nav.displaySideBar ? '255px' : '0px' }}>
+      <div
+        className="landing-content"
+        style={{ marginLeft: nav.displaySideBar && !nav.isSmallDevice ? '255px' : '0px' }}
+      >
         <div className="landing-inner-content">
           <div className="main-body">
             <div className="page-wrapper">
@@ -44,11 +47,7 @@ class Landing extends React.Component {
                     <Breadcrumb {...this.props} />
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-md-12 col-xl-6">
-                    <Tabs {...this.props} />
-                  </div>
-                </div>
+                <TabContainer {...this.props} />
                 <div className="row">
                   <div className="col-xl-12">
                     <Container {...this.props} />

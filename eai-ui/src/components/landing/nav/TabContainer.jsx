@@ -1,26 +1,54 @@
 import React from 'react';
-import { Tab } from './Tab';
+import { connect } from 'react-redux';
+import Tabs from './Tabs';
+import { SET_SELECTED_MENU, TOGGLE_OPT_ICONS } from '../../../constants/types';
+import CollapseIcon from './CollapseIcon';
+import OptionButtons from './OptionButtons';
+
+const mapProps = dispatch => ({
+  onMenuSelected: item => {
+    dispatch({ type: SET_SELECTED_MENU, item });
+  },
+  onToggleOptionIcons: () => {
+    dispatch({ type: TOGGLE_OPT_ICONS });
+  },
+});
 
 class TabContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.onSelect = this.onSelect.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  onSelect(i) {
-    this.props.onSelect(i);
+  handleClick(item) {
+    const { onMenuSelected } = this.props;
+    onMenuSelected(item);
   }
 
   render() {
-    const { nav } = this.props;
+    const { nav, onToggleOptionIcons } = this.props;
+    const { displayOptionIcons } = nav;
     return (
-      <ul className="nav nav-tabs md-tabs">
-        {nav.menu.content[1].content.map((m, i) => (
-          <Tab item={m} active={nav.menu.selected.id === m.id} key={i} onSelect={this.onSelect} />
-        ))}
-      </ul>
+      <div>
+        <div className="row" style={{ position: 'relative', marginBottom: '15px' }}>
+          <div className="col-md-12 col-xl-6">
+            <div>
+              <Tabs handleClick={this.handleClick} {...this.props} />
+            </div>
+          </div>
+          <CollapseIcon state={displayOptionIcons} toggleClick={onToggleOptionIcons} />
+        </div>
+        <div className="row">
+          <div className="col-md-12 col-xl-12">
+            <OptionButtons state={displayOptionIcons} />
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-export default TabContainer;
+export default connect(
+  () => ({}),
+  mapProps
+)(TabContainer);

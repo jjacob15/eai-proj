@@ -1,6 +1,6 @@
 import React from 'react';
 import IExtract from './IExtract';
-import IApply from './IApply';
+import IApply from './iapply/IApply';
 import IModel from './IModel';
 import IPlan from './IPlan';
 

@@ -5,10 +5,10 @@ import React from 'react';
 
 function toggleFullScreen() {
   if (
-    !document.fullscreenElement && // alternative standard method
-    !document.mozFullScreenElement &&
-    !document.webkitFullscreenElement &&
-    !document.msFullscreenElement
+    !document.fullscreenElement // alternative standard method
+    && !document.mozFullScreenElement
+    && !document.webkitFullscreenElement
+    && !document.msFullscreenElement
   ) {
     // current working methods
     if (document.documentElement.requestFullscreen) {

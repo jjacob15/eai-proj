@@ -1,34 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import TabContainer from './TabContainer';
-import { SET_SELECTED_MENU } from '../../../constants/types';
+import Tab from './Tab';
 
-const mapProps = disptach => ({
-  onMenuSelected: item => {
-    disptach({ type: SET_SELECTED_MENU, item });
-  },
-});
-
-class Tabs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onSelect = this.onSelect.bind(this);
+export default class Tabs extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  onSelect(item) {
-    this.props.onMenuSelected(item);
+  handleClick(i) {
+    const { handleClick } = this.props;
+    handleClick(i);
   }
 
   render() {
+    const { nav } = this.props;
     return (
-      <div style={{ marginBottom: '15px' }}>
-        <TabContainer {...this.props} onSelect={i => this.onSelect(i)} />
-      </div>
+      <ul className="nav nav-tabs md-tabs">
+        {nav.menu.content[1].content.map((m, i) => (
+          <Tab item={m} active={nav.menu.selected.id === m.id} key={i} handleClick={this.handleClick} />
+        ))}
+      </ul>
     );
   }
 }
-
-export default connect(
-  () => ({}),
-  mapProps
-)(Tabs);

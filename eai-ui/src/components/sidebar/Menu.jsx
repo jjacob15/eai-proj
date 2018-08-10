@@ -4,21 +4,18 @@ import SubMenu from './SubMenu';
 
 const Menu = props => {
   const { item, onMenuSelected, menu } = props;
-  const aStyle = curr =>
-    cx({
+  const aStyle = curr => cx({
       'selected active':
-        menu.selected &&
-        (menu.selected.id === curr.id ||
-          (curr.content && curr.content.filter(x => x.id === menu.selected.id).length > 0)),
+        menu.selected
+        && (menu.selected.id === curr.id
+          || (curr.content && curr.content.filter(x => x.id === menu.selected.id).length > 0)),
     });
-  const caretStyle = curr =>
-    cx({
+  const caretStyle = curr => cx({
       mcaret: curr.content,
       'mcaret-plus': curr.content && !curr.expand,
       'mcaret-minus': curr.content && curr.expand,
     });
-  const subMenuStyle = curr =>
-    cx({
+  const subMenuStyle = curr => cx({
       'sub-menu': true,
       'sub-menu-visible': curr.expand,
     });
@@ -29,7 +26,9 @@ const Menu = props => {
         <span className="micron">
           <i className={`ti-${item.icon}`} />
         </span>
-        <span className="mtext">{item.label}</span>
+        <span className="mtext">
+{item.label}
+</span>
         <span className={caretStyle(item)} />
       </a>
       {item.content && (

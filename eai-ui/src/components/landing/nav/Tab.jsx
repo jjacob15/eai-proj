@@ -1,16 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
 
-export class Tab extends React.Component {
+export default class Tab extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onSelect = this.onSelect.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  onSelect() {
-    const { onSelect, item } = this.propsl;
-    onSelect(item);
+  handleClick() {
+    const { handleClick, item } = this.props;
+    handleClick(item);
   }
 
   render() {
@@ -20,8 +20,10 @@ export class Tab extends React.Component {
       active,
     });
     return (
-      <li className="nav-item" onClick={() => this.onSelect()} onKeyPress={() => this.onSelect()}>
-        <a className={c}>{item.label}</a>
+      <li className="nav-item">
+        <a className={c} onClick={this.handleClick} onKeyDown={this.handleClick}>
+          {item.label}
+        </a>
         <div className="slide" />
       </li>
     );

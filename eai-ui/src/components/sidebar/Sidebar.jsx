@@ -26,7 +26,9 @@ const SideBar = props => {
       <div className="main-menu">
         {menu.content.map((s, h) => (
           <div key={h}>
-            <div className="nav-label">{s.label}</div>
+            <div className="nav-label">
+{s.label}
+</div>
             <ul className="left-item">
               {s.content.map((item, i) => (
                 <Menu item={item} key={i} menu={menu} onMenuSelected={onMenuSelected} />
