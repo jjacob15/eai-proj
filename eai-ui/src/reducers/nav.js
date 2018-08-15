@@ -59,7 +59,8 @@ export default (state = initialState, action) => {
             content: state.menu.content.map(x => ({
               ...x,
               content: x.content.map(
-                c => (c.id === action.item.id
+                c =>
+                  c.id === action.item.id
                     ? {
                         ...c,
                         expand: !c.expand,
@@ -67,7 +68,7 @@ export default (state = initialState, action) => {
                     : {
                         ...c,
                         expand: false,
-                      })
+                      }
               ),
             })),
           },
@@ -80,14 +81,15 @@ export default (state = initialState, action) => {
           content: state.menu.content.map(x => ({
             ...x,
             content: x.content.map(
-              c => (c.id === action.item.id || (action.item.parentId && action.item.parentId === c.id)
+              c =>
+                c.id === action.item.id || (action.item.parentId && action.item.parentId === c.id)
                   ? {
                       ...c,
                     }
                   : {
                       ...c,
                       expand: false,
-                    })
+                    }
             ),
           })),
         },

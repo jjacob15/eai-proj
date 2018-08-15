@@ -9,9 +9,7 @@ const Breadcrumb = props => {
           <i className="icofont icofont-home" />
         </li>
         <li className="breadcrumb-item">
-          <a>
-{nav.menu.selected.label || ''}
-</a>
+          <a>{nav.menu.selected.label || ''}</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,33 @@
+.widget-statstic-card {
+  position: relative;
+  overflow: hidden;
+  .card-header {
+    border-bottom: 0px solid transparent;
+  }
+  .st-icon {
+    color: #fff;
+    font-size: 23px;
+    padding: 40px 40px 20px 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  h2 {
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  span {
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-weight: 600;
+  }
+  &:hover {
+    .st-icon {
+      font-size: 50px;
+    }
+  }
+}

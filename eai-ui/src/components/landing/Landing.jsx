@@ -36,8 +36,7 @@ class Landing extends React.Component {
     return (
       <div
         className="landing-content"
-        style={{ marginLeft: nav.displaySideBar && !nav.isSmallDevice ? '255px' : '0px' }}
-      >
+        style={{ marginLeft: nav.displaySideBar && !nav.isSmallDevice ? '255px' : '0px' }}>
         <div className="landing-inner-content">
           <div className="main-body">
             <div className="page-wrapper">
