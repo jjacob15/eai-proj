@@ -3,103 +3,36 @@
  */
 import React from 'react';
 import cx from 'classnames';
-import TWEEN from '@tweenjs/tween.js';
+import velocity from 'velocity-animate';
+import { Transition } from 'react-transition-group';
 import ProfileMenu from './ProfileMenu';
 import FullScreen from './FullScreen';
+import Notification from './NotificationIcons';
 
 class NavRight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: 'display',
-      animating: false,
-      height: '0px',
       showMenu: false,
     };
 
-    this.height = { x: 0 };
-    this.show = this.show.bind(this);
-    this.animate = this.animate.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
-  componentDidMount() {
-    this.localReq = requestAnimationFrame(this.animate);
+    this.el = React.createRef();
+    this.animateMe = this.animateMe.bind(this);
   }
 
   componentWillReceiveProps(next) {
-    const { animating } = this.state;
-    const { nav } = this.props;
-    const { headerMinimized } = nav;
-    if (animating) return;
+    const { status, nav } = next;
+    const { isSmallDevice } = nav;
 
-    if (next.nav.headerMinimized !== headerMinimized) {
-      this.toggle();
-    } else {
-      this.setState({
-        display: next.nav.isSmallDevice ? 'none' : 'block',
-      });
-    }
+    this.animateMe(isSmallDevice ? status : 'entering');
   }
 
-  componentWillUnmount() {
-    cancelAnimationFrame(this.localReq);
-  }
+  animateMe(status) {
+    const el = this.el.current;
 
-  animate(time) {
-    this.localReq = requestAnimationFrame(this.animate);
-    TWEEN.update(time);
-  }
-
-  toggle() {
-    if (this.height.x === 0) {
-      this.show();
-      return;
-    }
-
-    this.hide();
-  }
-
-  show() {
-    this.setState({
-      animating: true,
-      display: 'block',
-    });
-
-    new TWEEN.Tween(this.height)
-      .to({ x: 56 }, 500)
-      .easing(TWEEN.Easing.Quadratic.In)
-      .onUpdate(object => {
-        this.setState({ height: `${object.x}px` });
-      })
-      .onComplete(() => {
-        this.setState({
-          animating: false,
-        });
-        this.height = { x: 56 };
-      })
-      .start();
-  }
-
-  hide() {
-    this.setState({
-      animating: true,
-    });
-
-    new TWEEN.Tween(this.height)
-      .to({ x: 0 }, 500)
-      .easing(TWEEN.Easing.Quadratic.Out)
-      .onUpdate(object => {
-        this.setState({ height: `${object.x}px` });
-      })
-      .onComplete(() => {
-        this.setState({
-          animating: false,
-          display: 'none',
-        });
-        this.height = { x: 0 };
-      })
-      .start();
+    if (status === 'entering') velocity(el, 'slideDown', { duration: 250, ease: 'ease-in-out' });
+    if (status === 'exiting' || status === 'exited') velocity(el, 'slideUp', { duration: 250, ease: 'ease-in-out' });
   }
 
   toggleMenu() {
@@ -109,38 +42,26 @@ class NavRight extends React.Component {
   }
 
   render() {
-    const { display, height, animating, showMenu } = this.state;
+    const { showMenu } = this.state;
     const { auth, nav } = this.props;
-    const c = cx({
-      'nav-right': true,
-      'nav-right-animate': animating,
-    });
+
     const upStyle = cx({
       'user-profile header-notification': true,
       active: showMenu,
     });
     return (
-      <ul className={c} style={{ display, height }}>
+      <ul className="nav-right" ref={this.el}>
         {nav.isSmallDevice ? null : <FullScreen />}
-        <li className="" title="Notification">
-          <a>
-            <i className="ti-bell" />
-            <span className="badge bg-c-pink" />
-          </a>
-        </li>
-        <li className="" title="Chat">
-          <a className="displayChatbox">
-            <i className="ti-comments" />
-            <span className="badge bg-c-green" />
-          </a>
-        </li>
+        <Notification />
         <li className={upStyle} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
           <a>
             <img alt="avatar" src={require('../../../assets/images/avatar-4.jpg')} className="img-radius" />
             <span>{auth.user}</span>
             <i className="ti-angle-down" />
           </a>
-          <ProfileMenu show={showMenu} />
+          <Transition in={showMenu} timeout={250}>
+            {status => <ProfileMenu status={status} show={showMenu} />}
+          </Transition>
         </li>
       </ul>
     );

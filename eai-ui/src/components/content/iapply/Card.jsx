@@ -10,16 +10,18 @@ export const Card = () => (
     </div>
     <div className="card-block">
       <i className="fa fa-calendar st-icon bg-primary" />
-      <div className="text-left">
-        <button type="button" className="btn btn-grd-success">
-          Enter
-        </button>
-        <button type="button" className="btn btn-grd-info">
-          Learn More
-        </button>
-        <button type="button" className="btn btn-grd-warning">
-          Update
-        </button>
+      <div className="row">
+        <div className="col-md-12 col-xl-12" style={{ whiteSpace: 'nowrap' }}>
+          <button type="button" className="btn btn-sm btn-grd-success">
+            Enter
+          </button>
+          <button type="button" className="btn btn-sm btn-grd-info">
+            Learn More
+          </button>
+          <button type="button" className="btn btn-sm btn-grd-warning">
+            Update
+          </button>
+        </div>
       </div>
     </div>
   </div>

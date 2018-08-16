@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Transition } from 'react-transition-group';
 import Tabs from './Tabs';
 import { SET_SELECTED_MENU, TOGGLE_OPT_ICONS } from '../../../constants/types';
 import CollapseIcon from './CollapseIcon';
@@ -40,7 +41,9 @@ class TabContainer extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-12 col-xl-12">
-            <OptionButtons state={displayOptionIcons} />
+            <Transition in={displayOptionIcons} timeout={350}>
+              {status => <OptionButtons status={status} />}
+            </Transition>
           </div>
         </div>
       </div>

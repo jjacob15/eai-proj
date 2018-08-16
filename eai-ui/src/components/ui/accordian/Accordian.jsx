@@ -23,7 +23,7 @@ export default class Accordian extends React.Component {
     return (
       <div>
         <div className="accordion-panel">
-          <div className="accordion-heading"  onClick={this.handleClick}>
+          <div className="accordion-heading" onClick={this.handleClick} onKeyDown={this.handleClick}>
             <h3 className="card-title accordion-title">
               <a className="accordion-msg scale_active" href="javascript:void(0)">
                 {title}
