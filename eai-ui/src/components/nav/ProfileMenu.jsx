@@ -7,6 +7,7 @@ export default class ProfileMenu extends Component {
     super();
     this.el = React.createRef();
     this.animateMe = this.animateMe.bind(this);
+    this.currentState;
   }
 
   componentWillReceiveProps(nxt) {
@@ -16,12 +17,15 @@ export default class ProfileMenu extends Component {
   animateMe(status) {
     const el = this.el.current;
 
-    if (status === 'entering') velocity(el, 'slideDown', { duration: 250, ease: 'ease-in-out' });
-    if (status === 'exiting') velocity(el, 'slideUp', { duration: 250, ease: 'ease-in-out' });
+    if (this.currentState !== status) {
+      if (status === 'entering') velocity(el, 'slideDown', { duration: 250, ease: 'ease-in-out' });
+      if (status === 'exiting') velocity(el, 'slideUp', { duration: 250, ease: 'ease-in-out' });
+
+      this.currentState = status;
+    }
   }
 
   render() {
-    const { show } = this.props;
     const c = cx({
       'show-notification': true,
       'profile-notification': true,

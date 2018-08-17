@@ -19,20 +19,29 @@ class NavRight extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.el = React.createRef();
     this.animateMe = this.animateMe.bind(this);
+
+    this.currentState;
   }
 
   componentWillReceiveProps(next) {
     const { status, nav } = next;
-    const { isSmallDevice } = nav;
+    const { isSmallDevice, headerMinimized } = nav;
 
+    if (!isSmallDevice && this.currentState !== 'exited') return;
+
+    console.log(isSmallDevice, headerMinimized, status);
     this.animateMe(isSmallDevice ? status : 'entering');
   }
 
   animateMe(status) {
     const el = this.el.current;
 
-    if (status === 'entering') velocity(el, 'slideDown', { duration: 250, ease: 'ease-in-out' });
-    if (status === 'exiting' || status === 'exited') velocity(el, 'slideUp', { duration: 250, ease: 'ease-in-out' });
+    if (this.currentState !== status) {
+      if (status === 'entering') velocity(el, 'slideDown', { duration: 250, ease: 'ease-in-out' });
+      if (status === 'exiting' || status === 'exited') velocity(el, 'slideUp', { duration: 250, ease: 'ease-in-out' });
+
+      this.currentState = status;
+    }
   }
 
   toggleMenu() {
