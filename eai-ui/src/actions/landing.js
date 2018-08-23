@@ -1,5 +1,4 @@
 import {
-    SET_SELECTED_MENU,
     TOGGLE_OPT_ICONS,
     SET_LANDING_MENU,
     SET_SELECTED_LANDING_MENU,
@@ -7,7 +6,7 @@ import {
     HOME_OPT_BTN_LAYOUT
 } from '../constants/types';
 import menuConstant from '../reducers/menuContent';
-import {manageLandingMenuSelect} from './landingMenu';
+import { manageLandingMenuSelect } from './landingMenu';
 
 function onLandingMenuSelected(item) {
     return manageLandingMenuSelect(item)
@@ -22,8 +21,8 @@ function onToggleOptionIcons() {
 function setLandingMenu(items) {
     return function (dispatch) {
         if (items === undefined) {
-            items = menuConstant[1].content.map(x=>({...x,from:'landing'}));
-            
+            items = menuConstant[1].content.map(x => ({ ...x, from: 'landing' }));
+
             dispatch({ type: SET_LANDING_MENU, content: items })
             dispatch({ type: SET_SELECTED_LANDING_MENU, content: items[0] })
             dispatch({ type: SET_OPT_BTN_LAYOUT, content: HOME_OPT_BTN_LAYOUT });

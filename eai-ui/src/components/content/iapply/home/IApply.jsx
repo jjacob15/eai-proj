@@ -2,15 +2,16 @@ import React from 'react';
 import Accordian from '../../../ui/accordian';
 import { Card } from './Card';
 import { APPLY_APP_TC, APPLY_APP_NPL } from '../../../../constants/iapplyApps';
+import {setApplyApp} from '../../../../actions';
+import {connect} from 'react-redux';
 
-
-export default class Page extends React.Component {
-  constructor() {
-    super();
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
     this.onEnter = this.onEnter.bind(this);
   }
   onEnter(app) {
-    console.log(app)
+    this.props.onEnter(app)
   }
   render() {
     return (
@@ -121,3 +122,14 @@ export default class Page extends React.Component {
     )
   }
 } 
+
+function actions(dispatch){
+  return{
+    onEnter:(app)=>dispatch(setApplyApp(app))
+  }
+}
+
+export default connect(
+  () => ({}),
+  actions
+)(Page);

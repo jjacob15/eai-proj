@@ -5,9 +5,12 @@ import IModel from './IModel';
 import IPlan from './IPlan';
 
 export default class Container extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   render() {
     const { nav } = this.props;
-
     switch (nav.menu.selected.id) {
       case 5:
         return <IExtract />;

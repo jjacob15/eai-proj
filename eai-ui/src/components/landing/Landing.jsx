@@ -4,9 +4,7 @@ import TabContainer from './nav/TabContainer';
 import Container from '../content/Container';
 import { setLandingMenu } from '../../actions';
 import { connect } from 'react-redux';
-import OptionButtons from './OptionButtons';
-import { HOME_OPT_BTN_LAYOUT, TC_OPT_BTN_LAYOUT } from '../../constants/types';
-
+import OptionButtons from '../optionButtons';
 function actions(dispatch) {
   return {
     setLandingMenu: () => dispatch(setLandingMenu())
@@ -41,18 +39,6 @@ class Landing extends React.Component {
     });
   }
 
-  renderOptButtonLayout() {
-    const { nav } = this.props;
-    switch (nav.optBtnLayout) {
-      case HOME_OPT_BTN_LAYOUT:
-        return (<OptionButtons />)
-      case TC_OPT_BTN_LAYOUT:
-        return (<OptionButtons />)
-      default:
-        return (<OptionButtons />)
-    }
-  }
-
   render() {
     const { nav } = this.props;
     const { height } = this.state;
@@ -70,7 +56,7 @@ class Landing extends React.Component {
                   </div>
                 </div>
                 <TabContainer {...this.props} >
-                  {this.renderOptButtonLayout()}
+                    <OptionButtons {...this.props}/>
                 </TabContainer>
                 <div className="row">
                   <div className="col-xl-12">

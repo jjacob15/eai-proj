@@ -6,12 +6,7 @@ import { connect } from 'react-redux';
 import velocity from 'velocity-animate';
 import { SET_SELECTED_MENU } from '../../constants/types';
 import Menu from './Menu';
-
-const mapProps = disptach => ({
-  onMenuSelected: item => {
-    disptach({ type: SET_SELECTED_MENU, item });
-  },
-});
+import { onSideBarMenuSelected } from '../../actions';
 
 class SideBar extends Component {
   constructor() {
@@ -53,7 +48,13 @@ class SideBar extends Component {
   }
 }
 
+function actions(dispatch) {
+  return {
+    onMenuSelected: (item) => dispatch(onSideBarMenuSelected(item))
+  }
+}
+
 export default connect(
   () => ({}),
-  mapProps
+  actions
 )(SideBar);
