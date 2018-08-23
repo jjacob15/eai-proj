@@ -16,8 +16,8 @@ export default class Tabs extends React.Component {
     const { nav } = this.props;
     return (
       <ul className="nav nav-tabs md-tabs">
-        {nav.menu.content[1].content.map((m, i) => (
-          <Tab item={m} active={nav.menu.selected.id === m.id} key={i} handleClick={this.handleClick} />
+        {nav.landingMenu.content.map((m, i) => (
+          <Tab item={m} active={nav.landingMenu.selected.id === m.id} key={i} handleClick={this.handleClick} />
         ))}
       </ul>
     );

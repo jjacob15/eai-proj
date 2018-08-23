@@ -2,6 +2,16 @@ import React from 'react';
 import Breadcrumb from './Breadcrumb';
 import TabContainer from './nav/TabContainer';
 import Container from '../content/Container';
+import { setLandingMenu } from '../../actions';
+import { connect } from 'react-redux';
+import OptionButtons from './OptionButtons';
+import { HOME_OPT_BTN_LAYOUT, TC_OPT_BTN_LAYOUT } from '../../constants/types';
+
+function actions(dispatch) {
+  return {
+    setLandingMenu: () => dispatch(setLandingMenu())
+  }
+}
 
 class Landing extends React.Component {
   constructor(props) {
@@ -13,6 +23,7 @@ class Landing extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.resizeTriggered);
     this.resizeTriggered();
+    this.props.setLandingMenu();
   }
 
   componentWillUnmount() {
@@ -28,6 +39,18 @@ class Landing extends React.Component {
     this.setState({
       height: y - 76,
     });
+  }
+
+  renderOptButtonLayout() {
+    const { nav } = this.props;
+    switch (nav.optBtnLayout) {
+      case HOME_OPT_BTN_LAYOUT:
+        return (<OptionButtons />)
+      case TC_OPT_BTN_LAYOUT:
+        return (<OptionButtons />)
+      default:
+        return (<OptionButtons />)
+    }
   }
 
   render() {
@@ -46,7 +69,9 @@ class Landing extends React.Component {
                     <Breadcrumb {...this.props} />
                   </div>
                 </div>
-                <TabContainer {...this.props} />
+                <TabContainer {...this.props} >
+                  {this.renderOptButtonLayout()}
+                </TabContainer>
                 <div className="row">
                   <div className="col-xl-12">
                     <Container {...this.props} />
@@ -60,5 +85,7 @@ class Landing extends React.Component {
     );
   }
 }
-
-export default Landing;
+export default connect(
+  () => ({}),
+  actions
+)(Landing);

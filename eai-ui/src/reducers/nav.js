@@ -7,14 +7,20 @@ import {
   SET_BROWSER_SIZE,
   SET_SELECTED_MENU,
   TOGGLE_OPT_ICONS,
+  SET_LANDING_MENU,
+  SET_SELECTED_LANDING_MENU,
+  SET_OPT_BTN_LAYOUT,
+  HOME_OPT_BTN_LAYOUT
 } from '../constants/types';
 import menu from './menuContent';
+
 
 const initialState = {
   isSmallDevice: false,
   headerMinimized: true,
   displaySideBar: true,
   displayOptionIcons: true,
+  optBtnLayout: HOME_OPT_BTN_LAYOUT,
   menu: {
     selected: {
       id: 5,
@@ -23,6 +29,10 @@ const initialState = {
     },
     content: menu,
   },
+  landingMenu: {
+    selected: {},
+    content: []
+  }
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -62,13 +72,13 @@ export default (state = initialState, action) => {
                 c =>
                   c.id === action.item.id
                     ? {
-                        ...c,
-                        expand: !c.expand,
-                      }
+                      ...c,
+                      expand: !c.expand,
+                    }
                     : {
-                        ...c,
-                        expand: false,
-                      }
+                      ...c,
+                      expand: false,
+                    }
               ),
             })),
           },
@@ -84,17 +94,37 @@ export default (state = initialState, action) => {
               c =>
                 c.id === action.item.id || (action.item.parentId && action.item.parentId === c.id)
                   ? {
-                      ...c,
-                    }
+                    ...c,
+                  }
                   : {
-                      ...c,
-                      expand: false,
-                    }
+                    ...c,
+                    expand: false,
+                  }
             ),
           })),
         },
       };
-
+    case SET_LANDING_MENU:
+      return {
+        ...state,
+        landingMenu: {
+          ...state.landingMenu,
+          content: action.content
+        }
+      };
+    case SET_SELECTED_LANDING_MENU:
+      return {
+        ...state,
+        landingMenu: {
+          ...state.landingMenu,
+          selected: action.content
+        }
+      }
+    case SET_OPT_BTN_LAYOUT:
+      return {
+        ...state,
+        optBtnLayout: action.content
+      }
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import IExtract from './IExtract';
-import IApply from './iapply/IApply';
+import IApply from './iapply';
 import IModel from './IModel';
 import IPlan from './IPlan';
 
@@ -14,7 +14,7 @@ export default class Container extends React.Component {
       case 6:
         return <IModel />;
       case 7:
-        return <IApply />;
+        return <IApply {...this.props}/>;
       case 8:
         return <IPlan />;
       default:
