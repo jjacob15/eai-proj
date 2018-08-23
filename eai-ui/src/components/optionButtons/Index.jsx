@@ -4,15 +4,15 @@ import Landing from './Landing';
 import TestControl from './TestControl';
 
 export default class OptionButton extends Component {
-    render() {
-        const { nav } = this.props;
-        switch (nav.optBtnLayout) {
-            case HOME_OPT_BTN_LAYOUT:
-                return (<Landing /> )
-            case TC_OPT_BTN_LAYOUT:
-                return (<TestControl />)
-            default:
-                return (<Landing />)
-        }
+  render() {
+    const { nav } = this.props;
+    switch (nav.optBtnLayout) {
+      case HOME_OPT_BTN_LAYOUT:
+        return <Landing />;
+      case TC_OPT_BTN_LAYOUT:
+        return <TestControl />;
+      default:
+        return <Landing />;
     }
+  }
 }

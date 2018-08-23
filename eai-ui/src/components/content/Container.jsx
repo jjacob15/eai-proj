@@ -5,8 +5,8 @@ import IModel from './IModel';
 import IPlan from './IPlan';
 
 export default class Container extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -17,7 +17,7 @@ export default class Container extends React.Component {
       case 6:
         return <IModel />;
       case 7:
-        return <IApply {...this.props}/>;
+        return <IApply {...this.props} />;
       case 8:
         return <IPlan />;
       default:

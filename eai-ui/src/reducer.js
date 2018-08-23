@@ -9,5 +9,5 @@ import iapply from './reducers/iapply';
 export default combineReducers({
   auth,
   nav,
-  iapply
+  iapply,
 });

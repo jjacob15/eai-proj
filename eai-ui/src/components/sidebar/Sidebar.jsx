@@ -50,8 +50,8 @@ class SideBar extends Component {
 
 function actions(dispatch) {
   return {
-    onMenuSelected: (item) => dispatch(onSideBarMenuSelected(item))
-  }
+    onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
+  };
 }
 
 export default connect(

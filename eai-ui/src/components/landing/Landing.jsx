@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 import OptionButtons from '../optionButtons';
 function actions(dispatch) {
   return {
-    setLandingMenu: () => dispatch(setLandingMenu())
-  }
+    setLandingMenu: () => dispatch(setLandingMenu()),
+  };
 }
 
 class Landing extends React.Component {
@@ -55,8 +55,8 @@ class Landing extends React.Component {
                     <Breadcrumb {...this.props} />
                   </div>
                 </div>
-                <TabContainer {...this.props} >
-                    <OptionButtons {...this.props}/>
+                <TabContainer {...this.props}>
+                  <OptionButtons {...this.props} />
                 </TabContainer>
                 <div className="row">
                   <div className="col-xl-12">

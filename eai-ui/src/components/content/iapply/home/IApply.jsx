@@ -2,8 +2,8 @@ import React from 'react';
 import Accordian from '../../../ui/accordian';
 import { Card } from './Card';
 import { APPLY_APP_TC, APPLY_APP_NPL } from '../../../../constants/iapplyApps';
-import {setApplyApp} from '../../../../actions';
-import {connect} from 'react-redux';
+import { setApplyApp } from '../../../../actions';
+import { connect } from 'react-redux';
 
 class Page extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Page extends React.Component {
     this.onEnter = this.onEnter.bind(this);
   }
   onEnter(app) {
-    this.props.onEnter(app)
+    this.props.onEnter(app);
   }
   render() {
     return (
@@ -118,15 +118,14 @@ class Page extends React.Component {
           </div>
         </Accordian>
       </div>
-
-    )
+    );
   }
-} 
+}
 
-function actions(dispatch){
-  return{
-    onEnter:(app)=>dispatch(setApplyApp(app))
-  }
+function actions(dispatch) {
+  return {
+    onEnter: app => dispatch(setApplyApp(app)),
+  };
 }
 
 export default connect(

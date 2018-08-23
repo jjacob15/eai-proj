@@ -4,22 +4,18 @@ import TestControl from './testControl';
 import { APPLY_APP_TC } from '../../../constants/iapplyApps';
 
 export default class Index extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        const { iapply } = this.props;
+  render() {
+    const { iapply } = this.props;
 
-        switch (iapply.app) {
-            case APPLY_APP_TC:
-                return (
-                    <TestControl />
-                );
-            default:
-                return (
-                    <IApply />
-                );
-        }
+    switch (iapply.app) {
+      case APPLY_APP_TC:
+        return <TestControl />;
+      default:
+        return <IApply />;
     }
+  }
 }

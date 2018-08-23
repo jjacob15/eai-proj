@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import velocity from 'velocity-animate';
 
-
-
 export default class Buttons extends Component {
   constructor() {
     super();

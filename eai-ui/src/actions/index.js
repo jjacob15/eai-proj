@@ -6,7 +6,7 @@ import * as sidebarActions from './sidebar';
 import * as iapplyActions from './iapply';
 
 module.exports = {
-    ...landingActions,
-    ...iapplyActions,
-    ...sidebarActions
-}
+  ...landingActions,
+  ...iapplyActions,
+  ...sidebarActions,
+};

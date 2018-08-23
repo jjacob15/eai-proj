@@ -2,15 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Transition } from 'react-transition-group';
 import Tabs from './Tabs';
-import {onLandingMenuSelected, onToggleOptionIcons} from '../../../actions';
+import { onLandingMenuSelected, onToggleOptionIcons } from '../../../actions';
 import CollapseIcon from './CollapseIcon';
 import OptionButtonContainer from './OptionButtonContainer';
 
-function actions(dispatch){
+function actions(dispatch) {
   return {
-    onToggleOptionIcons:()=>dispatch(onToggleOptionIcons()),
-    onMenuSelected:(item)=>dispatch(onLandingMenuSelected(item))
-  }
+    onToggleOptionIcons: () => dispatch(onToggleOptionIcons()),
+    onMenuSelected: item => dispatch(onLandingMenuSelected(item)),
+  };
 }
 
 class TabContainer extends React.Component {
@@ -25,7 +25,7 @@ class TabContainer extends React.Component {
   }
 
   render() {
-    const { nav, onToggleOptionIcons,children } = this.props;
+    const { nav, onToggleOptionIcons, children } = this.props;
     const { displayOptionIcons } = nav;
     return (
       <div>
@@ -40,9 +40,7 @@ class TabContainer extends React.Component {
         <div className="row">
           <div className="col-md-12 col-xl-12">
             <Transition in={displayOptionIcons} timeout={350}>
-              {status => <OptionButtonContainer status={status} >
-                {children}
-              </OptionButtonContainer>}
+              {status => <OptionButtonContainer status={status}>{children}</OptionButtonContainer>}
             </Transition>
           </div>
         </div>

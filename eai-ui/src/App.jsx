@@ -12,7 +12,7 @@ import { SET_BROWSER_SIZE, TOGGLE_SIDEBAR } from './constants/types';
 const stateMap = state => ({
   auth: state.auth,
   nav: state.nav,
-  iapply:state.iapply
+  iapply: state.iapply,
 });
 
 const propMap = dispatch => ({
