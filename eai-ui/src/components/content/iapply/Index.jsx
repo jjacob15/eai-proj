@@ -11,9 +11,9 @@ export default class Index extends Component {
   render() {
     const { iapply } = this.props;
 
-    switch (iapply.app) {
+    switch (iapply.common.app) {
       case APPLY_APP_TC:
-        return <TestControl />;
+        return <TestControl {...this.props} />;
       default:
         return <IApply />;
     }

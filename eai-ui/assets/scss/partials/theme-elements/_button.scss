@@ -310,15 +310,15 @@
 .btn-inverse {
   @include buttons(theme-color(inverse, base), theme-color(inverse, base));
 
-  &:hover {
+  &:hover:enabled {
     @include buttons-hover(theme-color(inverse, hover), theme-color(inverse, hover));
   }
 
-  &:active {
+  &:active:enabled {
     @include buttons-active(theme-color(inverse, active), theme-color(inverse, active));
   }
 
-  &:focus {
+  &:focus:enabled {
     @include buttons-focus(theme-color(inverse, hover));
   }
 
@@ -375,7 +375,7 @@
   @include buttons-borders(theme-color(inverse, active));
   background-color: transparent;
 
-  &:hover {
+  &:hover:enabled {
     color: #fff;
   }
 }

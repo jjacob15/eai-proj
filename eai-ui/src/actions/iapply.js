@@ -5,7 +5,9 @@ import {
   SET_OPT_BTN_LAYOUT,
   TC_OPT_BTN_LAYOUT,
   HOME_OPT_BTN_LAYOUT,
+  TC_APP_INITIALIZE,
 } from '../constants/types';
+import { APPLY_APP_TC } from '../constants/iapplyApps';
 import menuConstant from '../reducers/menuContent';
 
 const initialMenu = [
@@ -18,7 +20,7 @@ const initialMenu = [
 function setApplyApp(app) {
   return function(dispatch) {
     //set the app
-    if (app) {
+    if (app && app === APPLY_APP_TC) {
       dispatch({ type: SET_APPLY_APP, app: app });
 
       //setting landing menus
@@ -27,6 +29,9 @@ function setApplyApp(app) {
 
       //setting option buttons
       dispatch({ type: SET_OPT_BTN_LAYOUT, content: TC_OPT_BTN_LAYOUT });
+
+      //setting defaults for TC
+      dispatch({ type: TC_APP_INITIALIZE });
     } else {
       const items = menuConstant[1].content.map(x => ({ ...x, from: 'landing' }));
       dispatch({ type: SET_APPLY_APP, app: null });

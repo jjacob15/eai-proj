@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({ iconClass, text }) => (
-  <button className="btn btn-inverse btn-outline-inverse btn-sm" type="button">
+  <button className="btn btn-inverse btn-outline-inverse btn-sm" type="button" disabled>
     <i className={iconClass} />
     {text}
   </button>

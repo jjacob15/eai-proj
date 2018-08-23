@@ -4,7 +4,7 @@
 import { combineReducers } from 'redux';
 import auth from './reducers/auth';
 import nav from './reducers/nav';
-import iapply from './reducers/iapply';
+import iapply from './reducers/iapplyApps/iapply';
 
 export default combineReducers({
   auth,

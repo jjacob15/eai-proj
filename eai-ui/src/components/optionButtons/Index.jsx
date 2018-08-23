@@ -10,7 +10,7 @@ export default class OptionButton extends Component {
       case HOME_OPT_BTN_LAYOUT:
         return <Landing />;
       case TC_OPT_BTN_LAYOUT:
-        return <TestControl />;
+        return <TestControl {...this.props} />;
       default:
         return <Landing />;
     }

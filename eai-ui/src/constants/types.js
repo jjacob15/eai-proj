@@ -13,7 +13,17 @@ export const SET_OPT_BTN_LAYOUT = 'SET_OPT_BTN_LAYOUT';
 
 export const SET_SELECTED_MENU = 'SET_SELECTED_MENU';
 
-export const HOME_OPT_BTN_LAYOUT = 'HOME_OPT_BTN_LAYOUT';
-export const TC_OPT_BTN_LAYOUT = 'TC_OPT_BTN_LAYOUT';
-
 export const SET_APPLY_APP = 'SET_APPLY_APP';
+
+export const HOME_OPT_BTN_LAYOUT = 'HOME_OPT_BTN_LAYOUT';
+
+/*========================
+      Test control app start
+==========================  **/
+export const TC_OPT_BTN_LAYOUT = 'TC_OPT_BTN_LAYOUT';
+export const TC_APP_INITIALIZE = 'TC_APP_INITIALIZE';
+
+export const TC_SET_VIEW = 'TC_SET_VIEW';
+/*========================
+      Test control app end
+==========================  **/
