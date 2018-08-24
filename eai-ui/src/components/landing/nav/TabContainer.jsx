@@ -30,7 +30,7 @@ class TabContainer extends React.Component {
     return (
       <div>
         <div className="row" style={{ position: 'relative', marginBottom: '15px' }}>
-          <div className="col-md-12 col-xl-6">
+          <div className="col-md-12 col-xl-12">
             <div>
               <Tabs handleClick={this.handleClick} {...this.props} />
             </div>

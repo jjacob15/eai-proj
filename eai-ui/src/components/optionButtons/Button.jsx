@@ -1,8 +1,14 @@
 import React from 'react';
+import classname from 'classnames';
 
-export default ({ iconClass, text }) => (
-  <button className="btn btn-inverse btn-outline-inverse btn-sm" type="button" disabled>
-    <i className={iconClass} />
-    {text}
-  </button>
-);
+export default ({ iconClass, text, disabled }) => {
+  const classes = classname({
+    'btn btn-inverse btn-outline-inverse btn-sm': true,
+  });
+  return (
+    <button className={classes} type="button" disabled={disabled}>
+      <i className={iconClass} />
+      {text}
+    </button>
+  );
+};

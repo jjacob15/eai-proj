@@ -1,5 +1,5 @@
-import { SET_APPLY_APP } from '../../constants/types';
 import { combineReducers } from 'redux';
+import { SET_APPLY_APP } from '../../constants/types';
 import testControl from './testControl';
 
 const initialState = {

@@ -1,18 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Accordian from '../../../ui/accordian';
 import { Card } from './Card';
 import { APPLY_APP_TC, APPLY_APP_NPL } from '../../../../constants/iapplyApps';
 import { setApplyApp } from '../../../../actions';
-import { connect } from 'react-redux';
 
 class Page extends React.Component {
   constructor(props) {
     super(props);
     this.onEnter = this.onEnter.bind(this);
   }
+
   onEnter(app) {
     this.props.onEnter(app);
   }
+
   render() {
     return (
       <div>

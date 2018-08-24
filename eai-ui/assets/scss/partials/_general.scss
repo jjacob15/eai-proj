@@ -307,7 +307,7 @@ a {
   }
 
   .nav-item {
-    width: calc(100% / 4);
+    width: calc(100% / 10);
     text-align: center;
   }
 
@@ -346,7 +346,7 @@ a {
 
 .nav-tabs .slide {
   background: $primary-color;
-  width: calc(100% / 4);
+  width: calc(100% / 10);
   height: 4px;
   position: absolute;
   -webkit-transition: left 0.3s ease-out;
@@ -478,3 +478,21 @@ a.bg-danger:hover {
 .margin-bottom * {
   margin-bottom: 1em;
 }
+
+.fa {
+  cursor: pointer;
+  color: #8c8c8c;
+}
+
+.modal-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/**  =====================
+      Test Control program css start
+==========================  **/
+.test-control {
+}
+/**  =====================
+      Test Control program css end
+==========================  **/

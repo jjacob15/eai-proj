@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Breadcrumb from './Breadcrumb';
 import TabContainer from './nav/TabContainer';
 import Container from '../content/Container';
 import { setLandingMenu } from '../../actions';
-import { connect } from 'react-redux';
 import OptionButtons from '../optionButtons';
+
 function actions(dispatch) {
   return {
     setLandingMenu: () => dispatch(setLandingMenu()),

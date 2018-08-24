@@ -7,8 +7,8 @@ module.exports = {
 		extensions: [".js", ".jsx"]
 	},
 	entry: {
-		react: ["react", "react-dom","react-transition-group", "redux","react-redux","redux-logger","redux-thunk"],
-		utility: ["babel-polyfill","classnames", "@tweenjs/tween.js","velocityjs",]
+		react: ["react", "react-dom","react-transition-group","react-modal", "redux","react-redux","redux-logger","redux-thunk"],
+		utility: ["babel-polyfill","classnames","velocity-animate",]
 	},
 	output: {
 		path: path.join(__dirname, "build"),
