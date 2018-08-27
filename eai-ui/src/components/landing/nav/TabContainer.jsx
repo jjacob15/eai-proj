@@ -37,13 +37,9 @@ class TabContainer extends React.Component {
           </div>
           <CollapseIcon state={displayOptionIcons} toggleClick={onToggleOptionIcons} />
         </div>
-        <div className="row">
-          <div className="col-md-12 col-xl-12">
-            <Transition in={displayOptionIcons} timeout={350}>
-              {status => <OptionButtonContainer status={status}>{children}</OptionButtonContainer>}
-            </Transition>
-          </div>
-        </div>
+        <Transition in={displayOptionIcons} timeout={350}>
+          {status => <OptionButtonContainer status={status}>{children}</OptionButtonContainer>}
+        </Transition>
       </div>
     );
   }

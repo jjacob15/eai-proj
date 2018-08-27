@@ -10,6 +10,7 @@ import {
   SET_APPLY_APP,
   TC_OPT_BTN_LAYOUT,
   TC_HIDE_DELETE_MODAL,
+  TC_SET_PROGRAM_VIEW
 } from '../../constants/types';
 
 import { TC } from '../../constants/iapplyApps';
@@ -38,8 +39,8 @@ function initializeTc(app) {
 
     if (programs.length > 0) {
       // resuscitate from state
-      const programs = programs.map(x => ({ id: x.id, label: x.title, source: TC }));
-      dispatch({ type: SET_LANDING_MENU, content: { content: programs, context: TC } });
+      const p = programs.map(x => ({ id: x.id, label: x.title, source: TC }));
+      dispatch({ type: SET_LANDING_MENU, content: { content: p, context: TC } });
 
       // TODO: get back the last selected item as well.
     } else {
@@ -94,9 +95,23 @@ function deleteTcProgram() {
   };
 }
 
+function setProgramView(view) {
+  return function (dispatch,getState) {
+    const state = getState();
+    const {program} = state.iapply.testControl;
+
+    const active = program.programs.find(x=>x.id === program.activeProgram);
+    
+    if(active && active.view === view) return function(){};
+
+    dispatch({ type: TC_SET_PROGRAM_VIEW, content: view })
+  }
+}
+
 module.exports = {
   setTestControlView,
   saveTcProgram,
   deleteTcProgram,
   initializeTc,
+  setProgramView
 };

@@ -18,10 +18,8 @@ export default class Buttons extends Component {
   }
 
   render() {
-    return (
-      <div className="option-button" ref={this.el}>
-        {this.props.children}
-      </div>
-    );
+    return (<div className="option-button" ref={this.el}>
+            {this.props.children}
+          </div>);
   }
 }

@@ -20,7 +20,7 @@ function manageLandingMenuSelect(item) {
 
       return function(dispatch, getState) {
         const state = getState();
-        const currentItem = state.iapply.testControl.activeProgram.id;
+        const currentItem = state.iapply.testControl.program.activeProgram;
 
         if (currentItem === item.id) return function() {};
 
