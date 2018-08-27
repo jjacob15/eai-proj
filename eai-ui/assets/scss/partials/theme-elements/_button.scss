@@ -244,6 +244,10 @@
   &.disabled {
     @include button-trans(theme-color(primary, trans), theme-color(primary, trans));
   }
+
+  &.isActive {
+    @include buttons-active(theme-color(primary, active), theme-color(primary, active));
+  }
 }
 
 .btn-warning {
@@ -324,6 +328,10 @@
 
   &.disabled {
     @include button-trans(theme-color(inverse, trans), theme-color(inverse, trans));
+  }
+
+  &.active {
+    @include buttons-active(theme-color(inverse, active), theme-color(inverse, active));
   }
 }
 

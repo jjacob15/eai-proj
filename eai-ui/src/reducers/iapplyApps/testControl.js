@@ -5,13 +5,16 @@ import {
   TC_SET_ACTIVE_PROGRAM,
   TC_SHOW_DELETE_MODAL,
   TC_HIDE_DELETE_MODAL,
+  TC_SET_PROGRAM_VIEW,
 } from '../../constants/types';
 
 const initialState = {
   initialInactive: true,
   view: null,
-  programs: [],
-  activeProgram: -1,
+  program: {
+    programs: [],
+    activeProgram: -1,
+  },
   showDeleteProgram: false,
 };
 
@@ -20,9 +23,10 @@ export default (state = initialState, action) => {
     case TC_ADD_PROGRAM:
       return {
         ...state,
-        programs: [].concat(state.programs, action.content),
-        activeProgram: {
-          id: action.content.id,
+        program: {
+          ...state.program,
+          programs: [].concat(state.program.programs, action.content),
+          activeProgram: action.content.id,
         },
         view: 'program',
         initialInactive: false,
@@ -30,30 +34,36 @@ export default (state = initialState, action) => {
     case TC_SET_ACTIVE_PROGRAM:
       return {
         ...state,
-        activeProgram: {
-          id: action.content,
-        },
+        program: {
+          ...state.program,
+          activeProgram: action.content
+        }
       };
     case TC_REMOVE_PROGRAM:
-      if (state.programs.length > 0) {
-        const newProg = [
-          ...state.programs.slice(0, action.idx),
-          ...state.programs.slice(action.idx + 1, state.programs.length),
-        ];
+      if (state.program.programs.length === 1) {
+        // set the dummy one
         return {
           ...state,
-          programs: newProg,
-          activeProgram: {
-            id: newProg.length > 0 ? newProg[newProg.length - 1].id : null,
+          program: {
+            programs: [],
+            activeProgram: -1,
           },
+          view: null,
+          initialInactive: true,
         };
       }
-      // set the dummy one
+
+      const { programs } = state.program;
+      const newProg = [
+        ...programs.slice(0, action.idx),
+        ...programs.slice(action.idx + 1, programs.length),
+      ];
       return {
         ...state,
-        programs: [],
-        activeProgram: -1,
-        initialInactive: true,
+        program: {
+          programs: newProg,
+          activeProgram: newProg.length > 0 ? newProg[newProg.length - 1].id : null
+        }
       };
 
     case TC_SHOW_DELETE_MODAL:
@@ -71,6 +81,24 @@ export default (state = initialState, action) => {
         ...state,
         view: action.content,
       };
+    case TC_SET_PROGRAM_VIEW:
+      const updated = state.program.programs.map(p => {
+        if (p.id === state.program.activeProgram) {
+          return {
+            ...p,
+            view: action.content
+          }
+        }
+        return p
+      });
+
+      return {
+        ...state,
+        program: {
+          ...state.program,
+          programs: updated
+        }
+      }
     default:
       return state;
   }

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NewProgram from './NewProgram';
-import DeleteProgram from './DeleteProgram';
+import DeleteProgramModal from './DeleteProgramModal';
 import { TC_HIDE_DELETE_MODAL } from '../../../../constants/types';
 import { deleteTcProgram } from '../../../../actions';
+import Program from './Program';
 
 const TC = () => <div>TC</div>;
-const Program = () => <div>Program</div>;
+
 
 class Index extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Index extends Component {
     const { testControl } = iapply;
     switch (testControl.view) {
       case 'program':
-        return <Program />;
+        return <Program {...testControl.program}/>;
       case 'newView':
         return <NewProgram {...iapply} />;
       default:
@@ -29,14 +30,14 @@ class Index extends Component {
   renderDeleteModal() {
     const { iapply } = this.props;
     const { testControl } = iapply;
+    const { programs, activeProgram } = testControl.program;
 
-    const selectedProg =
-      testControl.activeProgram && testControl.activeProgram.id === -1
+    const selectedProg = activeProgram === -1
         ? ''
-        : testControl.programs.find(x => x.id === testControl.activeProgram.id);
+        : programs.find(x => x.id === activeProgram);
 
     return (
-      <DeleteProgram
+      <DeleteProgramModal
         isModalOpen={testControl.showDeleteProgram}
         title={selectedProg && selectedProg.title ? selectedProg.title : ''}
         handleCloseModal={this.props.handleCloseDeleteModal}

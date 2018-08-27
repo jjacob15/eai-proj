@@ -23,21 +23,22 @@ const initialTestControlMenu = {
 const getId = () => Math.floor(Math.random() * 1000);
 
 function setTestControlView(view) {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch({ type: TC_SET_VIEW, content: view });
   };
 }
 
 function initializeTc(app) {
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     dispatch({ type: SET_APPLY_APP, app });
 
     const state = getState();
     const { testControl } = state.iapply;
+    const { programs } = testControl.program;
 
-    if (state.iapply.testControl.programs.length > 0) {
+    if (programs.length > 0) {
       // resuscitate from state
-      const programs = testControl.programs.map(x => ({ id: x.id, label: x.title, source: TC }));
+      const programs = programs.map(x => ({ id: x.id, label: x.title, source: TC }));
       dispatch({ type: SET_LANDING_MENU, content: { content: programs, context: TC } });
 
       // TODO: get back the last selected item as well.
@@ -56,11 +57,11 @@ function initializeTc(app) {
 }
 
 function saveTcProgram(name, desc) {
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     const id = getId();
     // call add program
     const state = getState();
-    dispatch({ type: TC_ADD_PROGRAM, content: { id, title: name, desc } });
+    dispatch({ type: TC_ADD_PROGRAM, content: { id, title: name, desc, view: 'test' } });
 
     // call landing menu and set title.
     // if its the first dummy
@@ -73,16 +74,18 @@ function saveTcProgram(name, desc) {
 }
 
 function deleteTcProgram() {
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     const state = getState();
-    const pIdx = state.iapply.testControl.programs.map(x => x.id).indexOf(state.iapply.testControl.activeProgram.id);
-    const lIdx = state.nav.landingMenu.content.map(x => x.id).indexOf(state.iapply.testControl.activeProgram.id);
+    const { programs, activeProgram } = state.iapply.testControl.program;
+
+    const pIdx = programs.map(x => x.id).indexOf(activeProgram);
+    const lIdx = state.nav.landingMenu.content.map(x => x.id).indexOf(activeProgram);
 
     dispatch({ type: TC_REMOVE_PROGRAM, idx: pIdx });
     // remove item from  landing menu as well
     dispatch({ type: REMOVE_LANDING_MENU, idx: lIdx });
 
-    // reset landing menu to default
+    // reset landing menu to default and set to initial disabled state
     if (state.nav.landingMenu.content.length === 1) {
       dispatch({ type: SET_LANDING_MENU, content: { content: [initialTestControlMenu], context: TC } });
     }

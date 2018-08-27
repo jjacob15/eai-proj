@@ -57,8 +57,8 @@ export default class DeleteModal extends React.Component {
         <div className="modal-title">Delete program</div>
         <div>
           <p>
-            Are you sure you would like to delete
-            {title}? It will no longer be available to any user.
+            Are you sure you would like to delete{' '}
+            <b>{title}</b>? It will no longer be available to any user.
           </p>
         </div>
         <div className="btn-group" style={{ float: 'right' }}>

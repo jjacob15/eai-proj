@@ -34,6 +34,8 @@ export const TC_SET_ACTIVE_PROGRAM = 'TC_SET_ACTIVE_PROGRAM';
 
 export const TC_SHOW_DELETE_MODAL = 'TC_SHOW_DELETE_MODAL';
 export const TC_HIDE_DELETE_MODAL = 'TC_HIDE_DELETE_MODAL';
+
+export const TC_SET_PROGRAM_VIEW = 'TC_SET_PROGRAM_VIEW';
 /*= =======================
       Test control app end
 ==========================  * */
