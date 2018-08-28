@@ -9,6 +9,11 @@
 
 // Important Theme elements
 @import 'partials/theme-elements/button';
+@import 'partials/theme-elements/form-elements';
+
+// Tables
+@import 'partials/tables/tables';
+@import 'partials/tables/datatable';
 
 // Widget
 @import 'partials/widget-dashboard/widget';

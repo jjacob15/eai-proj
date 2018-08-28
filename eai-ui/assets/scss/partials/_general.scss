@@ -72,6 +72,12 @@ a {
   position: relative;
 }
 
+.nohover {
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+
 .card {
   border-radius: 5px;
   box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
@@ -172,7 +178,6 @@ a {
       line-height: 1.4;
     }
   }
-
   .card-block {
     padding: 25px;
     @media only screen and (max-width: 480px) {
@@ -359,7 +364,7 @@ a {
   }
 }
 
-.option-button {
+.padded-buttons {
   .btn {
     margin-bottom: 10px;
     margin-right: 10px;
@@ -492,6 +497,9 @@ a.bg-danger:hover {
       Test Control program css start
 ==========================  **/
 .test-control {
+  .spacedRow {
+    margin-bottom: 20px;
+  }
 }
 /**  =====================
       Test Control program css end

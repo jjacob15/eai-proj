@@ -17,14 +17,19 @@ export default class Button extends React.Component {
     const { text, disabled, iconClass, selected } = this.props;
     const classes = classname({
       'btn btn-inverse btn-outline-inverse btn-sm': true,
-      'active': selected
+      active: selected,
     });
     return (
-      <button className={classes} type="button" disabled={disabled} onClick={this.handleClick} onKeyPress={this.handleClick}>
+      <button
+        className={classes}
+        type="button"
+        disabled={disabled}
+        onClick={this.handleClick}
+        onKeyPress={this.handleClick}>
         <i className={iconClass} />
         {text}
       </button>
-    )
+    );
   }
 }
 // export default ({ iconClass, text, disabled }) => {

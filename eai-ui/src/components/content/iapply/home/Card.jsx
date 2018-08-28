@@ -5,12 +5,8 @@ export const Card = props => (
   <div className="card widget-statstic-card borderless-card">
     <div className="card-header">
       <div className="card-header-left">
-        <h5>
-          {props.title || 'Demand Driver'}
-        </h5>
-        <p className="p-t-10 m-b-0 text-muted">
-          {props.desc || 'Description of Demand Driver'}
-        </p>
+        <h5>{props.title || 'Demand Driver'}</h5>
+        <p className="p-t-10 m-b-0 text-muted">{props.desc || 'Description of Demand Driver'}</p>
       </div>
     </div>
     <div className="card-block">

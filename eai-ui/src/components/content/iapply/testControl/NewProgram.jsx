@@ -51,7 +51,7 @@ class NewProgram extends React.Component {
     });
     return (
       <div className="container-fluid">
-        <div className="row margin-bottom" style={{ marginTop: '1em' }}>
+        <div className="row margin-bottom">
           <div className="col-md-4 col-xl-4">
             <h5>New Program</h5>
             <div className="input-group">

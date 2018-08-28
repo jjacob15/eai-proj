@@ -36,8 +36,8 @@ export default (state = initialState, action) => {
         ...state,
         program: {
           ...state.program,
-          activeProgram: action.content
-        }
+          activeProgram: action.content,
+        },
       };
     case TC_REMOVE_PROGRAM:
       if (state.program.programs.length === 1) {
@@ -54,16 +54,13 @@ export default (state = initialState, action) => {
       }
 
       const { programs } = state.program;
-      const newProg = [
-        ...programs.slice(0, action.idx),
-        ...programs.slice(action.idx + 1, programs.length),
-      ];
+      const newProg = [...programs.slice(0, action.idx), ...programs.slice(action.idx + 1, programs.length)];
       return {
         ...state,
         program: {
           programs: newProg,
-          activeProgram: newProg.length > 0 ? newProg[newProg.length - 1].id : null
-        }
+          activeProgram: newProg.length > 0 ? newProg[newProg.length - 1].id : null,
+        },
       };
 
     case TC_SHOW_DELETE_MODAL:
@@ -86,19 +83,19 @@ export default (state = initialState, action) => {
         if (p.id === state.program.activeProgram) {
           return {
             ...p,
-            view: action.content
-          }
+            view: action.content,
+          };
         }
-        return p
+        return p;
       });
 
       return {
         ...state,
         program: {
           ...state.program,
-          programs: updated
-        }
-      }
+          programs: updated,
+        },
+      };
     default:
       return state;
   }

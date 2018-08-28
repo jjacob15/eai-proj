@@ -10,9 +10,10 @@ import {
   SET_APPLY_APP,
   TC_OPT_BTN_LAYOUT,
   TC_HIDE_DELETE_MODAL,
-  TC_SET_PROGRAM_VIEW
+  TC_SET_PROGRAM_VIEW,
 } from '../../constants/types';
 
+import { getObjFromArr } from '../../util';
 import { TC } from '../../constants/iapplyApps';
 
 const initialTestControlMenu = {
@@ -24,13 +25,13 @@ const initialTestControlMenu = {
 const getId = () => Math.floor(Math.random() * 1000);
 
 function setTestControlView(view) {
-  return function (dispatch) {
+  return function(dispatch) {
     dispatch({ type: TC_SET_VIEW, content: view });
   };
 }
 
 function initializeTc(app) {
-  return function (dispatch, getState) {
+  return function(dispatch, getState) {
     dispatch({ type: SET_APPLY_APP, app });
 
     const state = getState();
@@ -58,7 +59,7 @@ function initializeTc(app) {
 }
 
 function saveTcProgram(name, desc) {
-  return function (dispatch, getState) {
+  return function(dispatch, getState) {
     const id = getId();
     // call add program
     const state = getState();
@@ -75,7 +76,7 @@ function saveTcProgram(name, desc) {
 }
 
 function deleteTcProgram() {
-  return function (dispatch, getState) {
+  return function(dispatch, getState) {
     const state = getState();
     const { programs, activeProgram } = state.iapply.testControl.program;
 
@@ -96,16 +97,17 @@ function deleteTcProgram() {
 }
 
 function setProgramView(view) {
-  return function (dispatch,getState) {
+  return function(dispatch, getState) {
     const state = getState();
-    const {program} = state.iapply.testControl;
+    const { program } = state.iapply.testControl;
 
-    const active = program.programs.find(x=>x.id === program.activeProgram);
-    
-    if(active && active.view === view) return function(){};
+    // const active = program.programs.find(x => x.id === program.activeProgram);
+    const active = getObjFromArr(program.programs, program.activeProgram);
 
-    dispatch({ type: TC_SET_PROGRAM_VIEW, content: view })
-  }
+    if (active && active.view === view) return function() {};
+
+    dispatch({ type: TC_SET_PROGRAM_VIEW, content: view });
+  };
 }
 
 module.exports = {
@@ -113,5 +115,5 @@ module.exports = {
   saveTcProgram,
   deleteTcProgram,
   initializeTc,
-  setProgramView
+  setProgramView,
 };

@@ -1,3 +1,4 @@
 import React from 'react';
+import Container from './Container';
 
-export default ()=>(<div>Measures</div>)
+export default props => <Container {...props} />;
