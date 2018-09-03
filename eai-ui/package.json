@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp dev",
     "lint": "eslint src --ext .js,.jsx --fix",
-    "format": "prettier --write src/**/*.jsx src/**/*.js assets/scss/**/*.scss"
+    "format": "prettier --write src/**/*.jsx src/**/*.js assets/scss/**/*.scss",
+    "build-dll": "webpack --config webpack.app.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
