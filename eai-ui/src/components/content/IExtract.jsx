@@ -8,7 +8,7 @@ class Page extends React.Component {
   }
 
   render() {
-    return <div>IExtract</div>;
+    return <h1>IExtract</h1>;
   }
 }
 

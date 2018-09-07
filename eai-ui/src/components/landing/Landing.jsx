@@ -5,11 +5,11 @@ import Container from '../content/Container';
 import { setLandingMenu } from '../../actions';
 // import OptionButtons from '../optionButtons';
 
-function actions(dispatch) {
-  return {
-    setLandingMenu: () => dispatch(setLandingMenu()),
-  };
-}
+// function actions(dispatch) {
+//   return {
+//     setLandingMenu: () => dispatch(setLandingMenu()),
+//   };
+// }
 
 class Landing extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Landing extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.resizeTriggered);
     this.resizeTriggered();
-    this.props.setLandingMenu();
+    // this.props.setLandingMenu();
   }
 
   componentWillUnmount() {
@@ -50,7 +50,6 @@ class Landing extends React.Component {
           <div className="main-body">
             <div className="page-wrapper">
               <div className="container-fluid">
-                <TabContainer {...this.props} />
                 <div className="row">
                   <div className="col-xl-12">
                     <Container {...this.props} />
@@ -64,7 +63,8 @@ class Landing extends React.Component {
     );
   }
 }
-export default connect(
-  () => ({}),
-  actions
-)(Landing);
+module.exports = Landing;
+// export default connect(
+//   () => ({}),
+//   actions
+// )(Landing);

@@ -10,8 +10,8 @@ function onSideBarMenuSelected(item) {
 
     //update menu content state
     if (item) {
-      const state = getState();
-      menuContent[state.nav.menu.id].selected = item;
+      // const state = getState();
+      // menuContent[state.nav.menu.id].selected = item;
     }
 
     //swtich if iapply
@@ -19,7 +19,7 @@ function onSideBarMenuSelected(item) {
       dispatch({ type: SET_MENU, content: menuContent.iapply });
     } else {
       dispatch({ type: SET_SELECTED_MENU, item });
-      dispatch({ type: SET_SELECTED_LANDING_MENU, content: item });
+      // dispatch({ type: SET_SELECTED_LANDING_MENU, content: item });
     }
   };
 }

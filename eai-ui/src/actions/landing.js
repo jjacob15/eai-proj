@@ -3,9 +3,9 @@ import { LANDING } from '../constants/iapplyApps';
 import menuConstant from '../constants/menuContent';
 import { manageLandingMenuSelect } from './landingMenu';
 
-function onLandingMenuSelected(item) {
-  return manageLandingMenuSelect(item);
-}
+// function onLandingMenuSelected(item) {
+//   return manageLandingMenuSelect(item);
+// }
 
 // function onToggleOptionIcons() {
 //   return function (dispatch) {
@@ -13,17 +13,17 @@ function onLandingMenuSelected(item) {
 //   };
 // }
 
-function setLandingMenu(items) {
-  return function(dispatch) {
-    if (items === undefined) {
-      let defaultItems = menuConstant.main.content[1].content.map(x => ({ ...x, source: LANDING }));
+// function setLandingMenu(items) {
+//   return function(dispatch) {
+//     if (items === undefined) {
+//       let defaultItems = menuConstant.main.content[1].content.map(x => ({ ...x, source: LANDING }));
 
-      dispatch({ type: SET_LANDING_MENU, content: { content: defaultItems, context: LANDING } });
-      dispatch({ type: SET_SELECTED_LANDING_MENU, content: defaultItems[0] });
-    } else {
-      dispatch({ type: SET_LANDING_MENU, content: items });
-    }
-  };
-}
+//       dispatch({ type: SET_LANDING_MENU, content: { content: defaultItems, context: LANDING } });
+//       dispatch({ type: SET_SELECTED_LANDING_MENU, content: defaultItems[0] });
+//     } else {
+//       dispatch({ type: SET_LANDING_MENU, content: items });
+//     }
+//   };
+// }
 
-module.exports = { onLandingMenuSelected, setLandingMenu };
+// module.exports = { onLandingMenuSelected, setLandingMenu };

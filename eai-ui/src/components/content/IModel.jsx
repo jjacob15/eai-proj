@@ -1,4 +1,4 @@
 import React from 'react';
 
-const Page = () => <div>IModel</div>;
+const Page = () => <h1>IModel</h1>;
 export default Page;
