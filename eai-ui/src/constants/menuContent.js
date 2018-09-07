@@ -110,8 +110,8 @@ module.exports = {
     back: 'main',
     selected: {
       id: 10,
-      label: 'Help',
-      icon: 'help',
+      label: 'Test',
+      icon: 'search',
     },
     content: [
       {
@@ -119,19 +119,39 @@ module.exports = {
         content: [
           {
             id: 9,
-            label: 'FAQs',
-            icon: 'support',
-          },
-          {
-            id: 10,
             label: 'Help',
             icon: 'help',
           },
           {
-            id: 11,
-            label: 'Contact Us',
-            icon: 'email',
+            id: 10,
+            label: 'Test',
+            icon: 'search',
           },
+          {
+            id: 11,
+            label: 'Measures',
+            icon: 'filter',
+          },
+          {
+            id: 12,
+            label: 'Clusters',
+            icon: 'filter',
+          },
+          {
+            id: 13,
+            label: 'Attributes',
+            icon: 'zoom-in',
+          },
+          {
+            id: 14,
+            label: 'Dates',
+            icon: 'layout-grid3',
+          },
+          {
+            id: 15,
+            label: 'Size',
+            icon: 'printer',
+          }
         ],
       },
     ],
