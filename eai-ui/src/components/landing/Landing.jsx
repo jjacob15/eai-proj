@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Breadcrumb from './Breadcrumb';
 import TabContainer from './nav/TabContainer';
 import Container from '../content/Container';
 import { setLandingMenu } from '../../actions';
-import OptionButtons from '../optionButtons';
+// import OptionButtons from '../optionButtons';
 
 function actions(dispatch) {
   return {
@@ -51,14 +50,7 @@ class Landing extends React.Component {
           <div className="main-body">
             <div className="page-wrapper">
               <div className="container-fluid">
-                <div className="row">
-                  <div className="col-md-12 col-xl-6">
-                    <Breadcrumb {...this.props} />
-                  </div>
-                </div>
-                <TabContainer {...this.props}>
-                  <OptionButtons {...this.props} />
-                </TabContainer>
+                <TabContainer {...this.props} />
                 <div className="row">
                   <div className="col-xl-12">
                     <Container {...this.props} />

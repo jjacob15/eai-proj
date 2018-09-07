@@ -2,11 +2,8 @@
  * Created by Jaison.Jacob on 7/11/2018.
  */
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import velocity from 'velocity-animate';
-import { SET_SELECTED_MENU } from '../../constants/types';
-import Menu from './Menu';
-import { onSideBarMenuSelected } from '../../actions';
+import SideBarContent from './SideBarContent.jsx';
 
 class SideBar extends Component {
   constructor() {
@@ -27,34 +24,14 @@ class SideBar extends Component {
   }
 
   render() {
-    const { nav, onMenuSelected } = this.props;
+    const { nav } = this.props;
     const { menu } = nav;
     return (
       <nav className="side-bar" ref={this.el}>
-        <div className="main-menu">
-          {menu.content.map((s, h) => (
-            <div key={h}>
-              <div className="nav-label">{s.label}</div>
-              <ul className="left-item">
-                {s.content.map((item, i) => (
-                  <Menu item={item} key={i} menu={menu} onMenuSelected={onMenuSelected} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <SideBarContent menu={menu} />
       </nav>
     );
   }
 }
 
-function actions(dispatch) {
-  return {
-    onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
-  };
-}
-
-export default connect(
-  () => ({}),
-  actions
-)(SideBar);
+export default SideBar;

@@ -6,30 +6,20 @@ import {
   TOGGLE_HEADER_NAVBAR,
   SET_BROWSER_SIZE,
   SET_SELECTED_MENU,
-  TOGGLE_OPT_ICONS,
   SET_LANDING_MENU,
   SET_SELECTED_LANDING_MENU,
   ADD_LANDING_MENU,
-  SET_OPT_BTN_LAYOUT,
-  HOME_OPT_BTN_LAYOUT,
   REMOVE_LANDING_MENU,
+  SET_MENU,
 } from '../constants/types';
-import menu from './menuContent';
+import menu from '../constants/menuContent';
 
 const initialState = {
   isSmallDevice: false,
   headerMinimized: true,
   displaySideBar: true,
   displayOptionIcons: true,
-  optBtnLayout: HOME_OPT_BTN_LAYOUT,
-  menu: {
-    selected: {
-      id: 5,
-      label: 'iExtract',
-      icon: 'server',
-    },
-    content: menu,
-  },
+  menu: menu.main,
   landingMenu: {
     selected: {},
     content: [],
@@ -56,10 +46,10 @@ export default (state = initialState, action) => {
         displaySideBar: !state.displaySideBar,
       };
     }
-    case TOGGLE_OPT_ICONS: {
+    case SET_MENU: {
       return {
         ...state,
-        displayOptionIcons: !state.displayOptionIcons,
+        menu: action.content,
       };
     }
     case SET_SELECTED_MENU:
@@ -89,6 +79,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         menu: {
+          ...state.menu,
           selected: action.item,
           content: state.menu.content.map(x => ({
             ...x,
@@ -142,11 +133,6 @@ export default (state = initialState, action) => {
           ...state.landingMenu,
           selected: action.content,
         },
-      };
-    case SET_OPT_BTN_LAYOUT:
-      return {
-        ...state,
-        optBtnLayout: action.content,
       };
     default:
       return state;

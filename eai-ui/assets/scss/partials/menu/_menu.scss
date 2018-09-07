@@ -245,6 +245,21 @@ $header-right-theme: #647688;
     transition: opacity 0.3s linear;
     border-top: 1px solid rgba(214, 214, 214, 0.5);
   }
+
+  .nav-label-back {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 1;
+    padding: 10px 15px 10px 7px;
+    visibility: visible;
+    width: 100%;
+    transition: opacity 0.3s linear;
+    border-top: 1px solid rgba(214, 214, 214, 0.5);
+    cursor: pointer;
+  }
+
   .left-item {
     display: block;
     list-style: none;
