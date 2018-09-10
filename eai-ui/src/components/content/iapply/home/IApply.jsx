@@ -18,107 +18,110 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <Accordian title="Marketing Effectiveness">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
+        <h5>iApply</h5>
+        <div className="m-t-25">
+          <Accordian title="Marketing Effectiveness">
+            <div className="row">
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
+          </Accordian>
+          <Accordian title="Customer Analytics">
+            <div className="row">
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
+          </Accordian>
+          <Accordian title="Pricing Analytics">
+            <div className="row">
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
+          </Accordian>
+          <Accordian title="Market Testing">
+            <div className="row">
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card title="Test & Control" onEnter={this.onEnter} app={APPLY_APP_TC} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card title="New Product Launch" onEnter={this.onEnter} app={APPLY_APP_NPL} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
+          </Accordian>
+          <Accordian title="Operational Analytics">
+            <div className="row">
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
+              <div className="col-xl-4 col-md-6 col-sm-12">
+                <Card onEnter={this.onEnter} />
+              </div>
             </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-          </div>
-        </Accordian>
-        <Accordian title="Customer Analytics">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-          </div>
-        </Accordian>
-        <Accordian title="Pricing Analytics">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-          </div>
-        </Accordian>
-        <Accordian title="Market Testing">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card title="Test & Control" onEnter={this.onEnter} app={APPLY_APP_TC} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card title="New Product Launch" onEnter={this.onEnter} app={APPLY_APP_NPL} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-          </div>
-        </Accordian>
-        <Accordian title="Operational Analytics">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-            <div className="col-xl-4 col-md-6 col-sm-12">
-              <Card onEnter={this.onEnter} />
-            </div>
-          </div>
-        </Accordian>
+          </Accordian>
+        </div>
       </div>
     );
   }

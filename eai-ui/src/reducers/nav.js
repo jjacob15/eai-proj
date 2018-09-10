@@ -12,7 +12,7 @@ import {
   REMOVE_LANDING_MENU,
   SET_MENU,
 } from '../constants/types';
-import menu from '../constants/menuContent';
+import menu from '../constants/menu';
 
 const initialState = {
   isSmallDevice: false,
@@ -20,11 +20,11 @@ const initialState = {
   displaySideBar: true,
   displayOptionIcons: true,
   menu: menu.main,
-  landingMenu: {
-    selected: {},
-    content: [],
-    context: null,
-  },
+  // landingMenu: {
+  //   selected: {},
+  //   content: [],
+  //   context: null,
+  // },
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -97,43 +97,43 @@ export default (state = initialState, action) => {
           })),
         },
       };
-    case SET_LANDING_MENU:
-      return {
-        ...state,
-        landingMenu: {
-          content: action.content.content,
-          selected: action.content.content[0],
-          context: action.content.context,
-        },
-      };
-    case ADD_LANDING_MENU:
-      return {
-        ...state,
-        landingMenu: {
-          content: [].concat(state.landingMenu.content, action.content),
-          selected: action.content,
-        },
-      };
-    case REMOVE_LANDING_MENU:
-      var newMenu = [
-        ...state.landingMenu.content.slice(0, action.idx),
-        ...state.landingMenu.content.slice(action.idx + 1, state.landingMenu.content.length),
-      ];
-      return {
-        ...state,
-        landingMenu: {
-          content: newMenu,
-          selected: newMenu[newMenu.length - 1],
-        },
-      };
-    case SET_SELECTED_LANDING_MENU:
-      return {
-        ...state,
-        landingMenu: {
-          ...state.landingMenu,
-          selected: action.content,
-        },
-      };
+    // case SET_LANDING_MENU:
+    //   return {
+    //     ...state,
+    //     landingMenu: {
+    //       content: action.content.content,
+    //       selected: action.content.content[0],
+    //       context: action.content.context,
+    //     },
+    //   };
+    // case ADD_LANDING_MENU:
+    //   return {
+    //     ...state,
+    //     landingMenu: {
+    //       content: [].concat(state.landingMenu.content, action.content),
+    //       selected: action.content,
+    //     },
+    //   };
+    // case REMOVE_LANDING_MENU:
+    //   var newMenu = [
+    //     ...state.landingMenu.content.slice(0, action.idx),
+    //     ...state.landingMenu.content.slice(action.idx + 1, state.landingMenu.content.length),
+    //   ];
+    //   return {
+    //     ...state,
+    //     landingMenu: {
+    //       content: newMenu,
+    //       selected: newMenu[newMenu.length - 1],
+    //     },
+    //   };
+    // case SET_SELECTED_LANDING_MENU:
+    //   return {
+    //     ...state,
+    //     landingMenu: {
+    //       ...state.landingMenu,
+    //       selected: action.content,
+    //     },
+    //   };
     default:
       return state;
   }

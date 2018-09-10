@@ -1,5 +1,5 @@
-import { SET_SELECTED_LANDING_MENU, SET_SELECTED_MENU, TC_SET_ACTIVE_PROGRAM } from '../constants/types';
-import { TC, LANDING } from '../constants/iapplyApps';
+// import { SET_SELECTED_LANDING_MENU, SET_SELECTED_MENU, TC_SET_ACTIVE_PROGRAM } from '../constants/types';
+// import { TC, LANDING } from '../constants/iapplyApps';
 
 // function manageLandingMenuSelect(item) {
 //   switch (item.source) {

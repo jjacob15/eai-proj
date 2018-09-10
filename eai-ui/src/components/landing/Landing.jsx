@@ -49,11 +49,9 @@ class Landing extends React.Component {
         <div className="landing-inner-content">
           <div className="main-body">
             <div className="page-wrapper">
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="col-xl-12">
-                    <Container {...this.props} />
-                  </div>
+              <div className="row">
+                <div className="col-xl-12">
+                  <Container {...this.props} />
                 </div>
               </div>
             </div>

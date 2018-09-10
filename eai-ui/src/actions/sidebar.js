@@ -1,7 +1,7 @@
 import { SET_SELECTED_MENU, SET_SELECTED_LANDING_MENU, SET_MENU } from '../constants/types';
 
 import { setApplyApp } from './iapply';
-import menuContent from '../constants/menuContent';
+import menu from '../constants/menu';
 
 function onSideBarMenuSelected(item) {
   return function(dispatch, getState) {
@@ -11,12 +11,12 @@ function onSideBarMenuSelected(item) {
     //update menu content state
     if (item) {
       // const state = getState();
-      // menuContent[state.nav.menu.id].selected = item;
+      // menu[state.nav.menu.id].selected = item;
     }
 
     //swtich if iapply
     if (item.id === 7) {
-      dispatch({ type: SET_MENU, content: menuContent.iapply });
+      dispatch({ type: SET_MENU, content: menu.iapply });
     } else {
       dispatch({ type: SET_SELECTED_MENU, item });
       // dispatch({ type: SET_SELECTED_LANDING_MENU, content: item });

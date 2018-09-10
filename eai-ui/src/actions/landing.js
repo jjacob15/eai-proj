@@ -1,7 +1,7 @@
-import { SET_LANDING_MENU, SET_SELECTED_LANDING_MENU, SET_MENU } from '../constants/types';
-import { LANDING } from '../constants/iapplyApps';
-import menuConstant from '../constants/menuContent';
-import { manageLandingMenuSelect } from './landingMenu';
+// import { SET_LANDING_MENU, SET_SELECTED_LANDING_MENU, SET_MENU } from '../constants/types';
+// import { LANDING } from '../constants/iapplyApps';
+// import menuConstant from '../constants/menuContent';
+// import { manageLandingMenuSelect } from './landingMenu';
 
 // function onLandingMenuSelected(item) {
 //   return manageLandingMenuSelect(item);

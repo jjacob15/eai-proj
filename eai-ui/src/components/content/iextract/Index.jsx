@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { setMainMenu } from '../../actions';
 
-class Page extends React.Component {
+
+class IExtract extends React.Component {
   constructor() {
     super();
   }
@@ -20,4 +19,4 @@ class Page extends React.Component {
   }
 }
 
-module.exports = Page;
+module.exports = IExtract;

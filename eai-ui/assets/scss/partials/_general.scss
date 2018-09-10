@@ -55,6 +55,29 @@ a {
   }
 }
 
+h4 {
+  font-size: 1.375rem;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+  // @media only screen and(min-width: 1400px) {
+  //     font-size: 14px;
+  // }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
 .img-radius {
   border-radius: 50%;
 }
@@ -504,3 +527,389 @@ a.bg-danger:hover {
 /**  =====================
       Test Control program css end
 ==========================  **/
+
+
+.main-body {
+  .page-wrapper {
+      padding: 1.8rem;
+      transition: all ease-in 0.3s;
+  }
+}
+
+
+
+
+/*====== Padding css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .p-#{$i} {
+        padding:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Padding css ends ======*/
+
+
+/*====== Padding-top css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .p-t-#{$i} {
+        padding-top:#{$i}px !important;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Padding-top css ends ======*/
+
+
+/*====== Padding-bottom css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .p-b-#{$i} {
+        padding-bottom:#{$i}px !important;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Padding-bottom css ends ======*/
+
+
+/*====== Padding-left css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .p-l-#{$i} {
+        padding-left:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Padding-left css ends ======*/
+
+
+/*====== Padding-right css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .p-r-#{$i} {
+        padding-right:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Padding-right css ends ======*/
+
+
+/*====== Margin css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .m-#{$i} {
+        margin:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Margin css ends ======*/
+
+
+/*====== Margin-top css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .m-t-#{$i} {
+        margin-top:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Margin-top css ends ======*/
+
+
+/*====== Margin-Bottom css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .m-b-#{$i} {
+        margin-bottom:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Margin-Bottom css ends ======*/
+
+
+/*====== Margin-left css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .m-l-#{$i} {
+        margin-left:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Margin-left css ends ======*/
+
+
+/*====== Margin-right css starts ======*/
+
+$i:0;
+@while $i<=50 {
+    .m-r-#{$i} {
+        margin-right:#{$i}px;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Margin-right css ends ======*/
+
+
+/*====== Display css starts ======*/
+
+$i:none,
+inline-block,
+inline-flex;
+@each $val in $i {
+    .d-#{$val} {
+        display: $val;
+    }
+}
+
+
+/*====== display css ends ======*/
+
+
+/*====== Border-radius css starts ======*/
+
+$i:0;
+@while $i<=10 {
+    .b-radius-#{$i} {
+        border-radius:#{$i}px !important;
+    }
+    $i:$i+5;
+}
+
+
+/*====== Border-radius css ends ======*/
+
+
+/*====== Font-size css starts ======*/
+
+$i:10;
+@while $i<=80 {
+    .f-#{$i} {
+        font-size:#{$i}px;
+    }
+    $i:$i+2;
+}
+
+
+/*====== Font-size css ends ======*/
+
+
+/*====== Font-weight css starts ======*/
+
+$i:100,
+300,
+400,
+600,
+700,
+900;
+@each $val in $i {
+    .f-w-#{$val} {
+        @if($val==900){
+            font-weight: 600;
+        }@else{
+            font-weight: $val;
+        }
+    }
+}
+
+
+/*====== Font-weight css ends ======*/
+
+
+/*====== Font-style css starts ======*/
+
+$i:normal,
+italic,
+oblique,
+initial,
+inherit;
+@each $val in $i {
+    .f-s-#{$val} {
+        font-style: $val;
+    }
+}
+
+
+/*====== Font-style css ends ======*/
+
+
+/*====== Text-align css starts ======*/
+
+$i:center,
+left,
+right;
+@each $val in $i {
+    .text-#{$val} {
+        text-align: $val;
+    }
+}
+
+
+/*====== Text-align css ends ======*/
+
+
+/*====== Text-Transform css starts ======*/
+
+$i:capitalize,
+uppercase,
+lowercase;
+@each $val in $i {
+    .text-#{$val} {
+        text-transform: $val;
+    }
+}
+
+
+/*====== Text-Transform css ends ======*/
+
+
+/*====== Text-Decoration css starts ======*/
+
+$i:overline,
+line-through,
+underline;
+@each $val in $i {
+    .text-#{$val} {
+        text-decoration: $val;
+    }
+}
+
+
+/*====== Text-Decoration css ends ======*/
+
+
+/*====== Vertical-Align css starts ======*/
+
+$i:baseline,
+sub,
+super,
+top,
+text-top,
+middle,
+bottom,
+text-bottom,
+initial,
+inherit;
+@each $val in $i {
+    .#{$val} {
+        vertical-align: $val;
+    }
+}
+
+
+/*====== Vertical-Align css ends ======*/
+
+
+/*====== Position css starts ======*/
+
+$i:static,
+absolute,
+fixed,
+relative,
+initial,
+inherit;
+@each $val in $i {
+    .pos-#{$val} {
+        position: $val;
+    }
+}
+
+
+/*====== Position css ends ======*/
+
+
+/*====== Float css starts ======*/
+
+$i:left,
+right,
+none;
+@each $val in $i {
+    .f-#{$val} {
+        float: $val;
+    }
+}
+
+
+/*====== Float css ends ======*/
+
+
+/*====== Overflow css starts ======*/
+
+$i:hidden,
+visible,
+auto;
+@each $val in $i {
+    .o-#{$val} {
+        overflow: $val;
+    }
+}
+
+
+/*====== Overflow css ends ======*/
+
+
+/*====== Image-sizes css starts ======*/
+
+$i:20;
+@while $i<=100 {
+    .img-#{$i} {
+        width:#{$i}px;
+    }
+    $i:$i+10;
+}
+
+
+/*====== Image-sizes css ends ======*/
+
+/*======= All-color css start  ======= */
+@each $value in $social-name {
+  $i: index($social-name, $value);
+
+  .bg-#{$value} {
+      background:linear-gradient(45deg, nth($social-color,$i), lighten(nth($social-color,$i),10%)) ;
+  }
+
+  .text-#{$value} {
+      color: nth($social-color,$i);
+  }
+}
+@each $value in $color-name {
+  $i: index($color-name, $value);
+
+  .bg-#{$value} {
+      background:linear-gradient(45deg, nth($color-color,$i), lighten(nth($color-color,$i),10%)) ;
+  }
+
+  .text-#{$value} {
+      color: nth($color-color,$i);
+  }
+}
+/*======= All-color css ends  ======= */

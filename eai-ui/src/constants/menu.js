@@ -1,10 +1,41 @@
+const quickLinks = [{
+  id: 5,
+  label: 'iExtract',
+  icon: 'server',
+},
+{
+  id: 6,
+  label: 'iModel',
+  icon: 'settings',
+},
+{
+  id: 7,
+  label: 'iApply',
+  icon: 'bar-chart-alt',
+},
+{
+  id: 8,
+  label: 'iPlan',
+  icon: 'panel',
+},
+];
+
+const getLink = function (id) {
+  return quickLinks.find(x => x.id === id);
+}
+const getCompactedQuickLinks = function (ignore) {
+  if (!ignore) return quickLinks.slice();
+
+  return quickLinks.filter(x => x.id !== ignore);
+}
+
 module.exports = {
   main: {
     id: 'main',
     selected: {
-      id: 5,
-      label: 'iExtract',
-      icon: 'server',
+      id: 2,
+      label: 'About EAI',
+      icon: 'shine',
     },
     content: [
       {
@@ -55,31 +86,6 @@ module.exports = {
                 parentId: 4,
               },
             ],
-          },
-        ],
-      },
-      {
-        label: 'Quick Links',
-        content: [
-          {
-            id: 5,
-            label: 'iExtract',
-            icon: 'server',
-          },
-          {
-            id: 6,
-            label: 'iModel',
-            icon: 'settings',
-          },
-          {
-            id: 7,
-            label: 'iApply',
-            icon: 'bar-chart-alt',
-          },
-          {
-            id: 8,
-            label: 'iPlan',
-            icon: 'panel',
           },
         ],
       },
@@ -154,6 +160,11 @@ module.exports = {
           },
         ],
       },
+      {
+        label: 'Quick Links',
+        content: getCompactedQuickLinks(7)
+      },
     ],
   },
+  getLink
 };

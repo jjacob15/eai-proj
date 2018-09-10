@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Menu from './Menu';
 import { onSideBarMenuSelected } from '../../actions';
 import { SET_MENU } from '../../constants/types';
-import menuContent from '../../constants/menuContent';
+import menu from '../../constants/menu';
 
 class SideBarContent extends Component {
   constructor() {
@@ -17,9 +17,9 @@ class SideBarContent extends Component {
     const { handleMenuBack, menu } = this.props;
     handleMenuBack(menu.back);
   }
-  renderNavLabel(label) {
+  renderNavLabel(label, idx) {
     const { menu } = this.props;
-    if (menu.back) {
+    if (menu.back && idx === 0) {
       return (
         <div className="nav-label-back" onClick={this.handleMenuBack}>
           {this.renderBack()}
@@ -44,7 +44,7 @@ class SideBarContent extends Component {
       <div className="main-menu">
         {menu.content.map((s, h) => (
           <div key={h}>
-            {this.renderNavLabel(s.label)}
+            {this.renderNavLabel(s.label, h)}
             <ul className="left-item">
               {s.content.map((item, i) => (
                 <Menu item={item} key={i} menu={menu} onMenuSelected={onMenuSelected} />
@@ -60,7 +60,7 @@ class SideBarContent extends Component {
 function actions(dispatch) {
   return {
     onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
-    handleMenuBack: item => dispatch({ type: SET_MENU, content: menuContent[item] }),
+    handleMenuBack: item => dispatch({ type: SET_MENU, content: menu[item] }),
   };
 }
 
