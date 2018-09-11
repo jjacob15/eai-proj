@@ -12,11 +12,14 @@ class IApply extends React.Component {
     render() {
         return (
             <div className="card">
-                <div className="card-block text-center">
-                    <img alt="avatar" src={require('../../../../assets/images/avatar-4.jpg')} className="img-radius" />
+                <div className="card-block text-center">                    
+                    <div class="m-t-10 m-b-30">
+                        {/* <img alt="Business Applications" src={require('../../../../assets/images/avatar-4.jpg')} className="img-radius" /> */}
+                        <i class="fa fa-globe text-c-green d-block f-50"></i>
+                    </div>
                     <h4 className="m-t-20">iApply</h4>
-                    <p className="m-b-20">Your main list is growing</p>
-                    <button className="btn btn-info btn-sm btn-round" onClick={this.handleClick}>Enter</button>
+                    <p className="m-b-25">View business metrics</p>
+                    <button className="btn btn-primary btn-sm btn-round" onClick={this.handleClick}>Enter</button>
                 </div>
             </div>);
     }

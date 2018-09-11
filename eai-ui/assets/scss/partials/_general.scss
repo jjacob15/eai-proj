@@ -626,7 +626,7 @@ $i:0;
 /*====== Margin-top css starts ======*/
 
 $i:0;
-@while $i<=50 {
+@while $i<=100 {
     .m-t-#{$i} {
         margin-top:#{$i}px;
     }

@@ -33,9 +33,9 @@ module.exports = {
   main: {
     id: 'main',
     selected: {
-      id: 2,
-      label: 'About EAI',
-      icon: 'shine',
+      id: 1,
+      label: 'Home',
+      icon: 'home',
     },
     content: [
       {
@@ -43,12 +43,12 @@ module.exports = {
         content: [
           {
             id: 1,
-            label: 'SyncReal',
+            label: 'Home',
             icon: 'home',
           },
           {
             id: 2,
-            label: 'About EAI',
+            label: 'SyncReal',
             icon: 'shine',
           },
           {
@@ -111,6 +111,7 @@ module.exports = {
       },
     ],
   },
+  
   iapply: {
     id: 'iapply',
     back: 'main',
