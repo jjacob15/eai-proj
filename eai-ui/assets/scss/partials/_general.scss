@@ -135,6 +135,15 @@ h6 {
         display: none;
       }
 
+      .card-header-text {
+        margin-bottom: 0;
+        font-size: 1rem;
+        color: rgba(51, 51, 51, 0.85);
+        font-weight: 600;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
       i {
         margin: 0 11px;
         cursor: pointer;
@@ -640,7 +649,7 @@ $i:0;
 /*====== Margin-Bottom css starts ======*/
 
 $i:0;
-@while $i<=50 {
+@while $i<=100 {
     .m-b-#{$i} {
         margin-bottom:#{$i}px;
     }
@@ -654,7 +663,7 @@ $i:0;
 /*====== Margin-left css starts ======*/
 
 $i:0;
-@while $i<=50 {
+@while $i<=100 {
     .m-l-#{$i} {
         margin-left:#{$i}px;
     }

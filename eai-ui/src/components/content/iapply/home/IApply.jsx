@@ -18,7 +18,10 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <h5>iApply</h5>
+        <div className="row">
+          <i className="fa fa-globe text-c-green d-block f-30"></i>
+          <h4 className="m-l-20">iApply</h4>           
+        </div>       
         <div className="m-t-25">
           <Accordian title="Marketing Effectiveness">
             <div className="row">
