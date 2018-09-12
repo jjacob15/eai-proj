@@ -654,12 +654,12 @@ $i: 0;
 
 /*====== Margin-right css starts ======*/
 
-$i: 0;
-@while $i<=50 {
-  .m-r-#{$i} {
-    margin-right: #{$i}px;
-  }
-  $i: $i + 5;
+$i:0;
+@while $i<=100 {
+    .m-r-#{$i} {
+        margin-right:#{$i}px;
+    }
+    $i:$i+5;
 }
 
 /*====== Margin-right css ends ======*/
