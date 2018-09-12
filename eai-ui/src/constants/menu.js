@@ -1,33 +1,34 @@
-const quickLinks = [{
-  id: 5,
-  label: 'iExtract',
-  icon: 'server',
-},
-{
-  id: 6,
-  label: 'iModel',
-  icon: 'settings',
-},
-{
-  id: 7,
-  label: 'iApply',
-  icon: 'bar-chart-alt',
-},
-{
-  id: 8,
-  label: 'iPlan',
-  icon: 'panel',
-},
+const quickLinks = [
+  {
+    id: 5,
+    label: 'iExtract',
+    icon: 'server',
+  },
+  {
+    id: 6,
+    label: 'iModel',
+    icon: 'settings',
+  },
+  {
+    id: 7,
+    label: 'iApply',
+    icon: 'bar-chart-alt',
+  },
+  {
+    id: 8,
+    label: 'iPlan',
+    icon: 'panel',
+  },
 ];
 
-const getLink = function (id) {
+const getLink = function(id) {
   return quickLinks.find(x => x.id === id);
-}
-const getCompactedQuickLinks = function (ignore) {
+};
+const getCompactedQuickLinks = function(ignore) {
   if (!ignore) return quickLinks.slice();
 
   return quickLinks.filter(x => x.id !== ignore);
-}
+};
 
 module.exports = {
   main: {
@@ -111,7 +112,7 @@ module.exports = {
       },
     ],
   },
-  
+
   iapply: {
     id: 'iapply',
     back: 'main',
@@ -163,9 +164,9 @@ module.exports = {
       },
       {
         label: 'Quick Links',
-        content: getCompactedQuickLinks(7)
+        content: getCompactedQuickLinks(7),
       },
     ],
   },
-  getLink
+  getLink,
 };

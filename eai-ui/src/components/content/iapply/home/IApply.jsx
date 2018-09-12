@@ -19,9 +19,9 @@ class Page extends React.Component {
     return (
       <div>
         <div className="row">
-          <i className="fa fa-globe text-c-green d-block f-30"></i>
-          <h4 className="m-l-20">iApply</h4>           
-        </div>       
+          <i className="fa fa-globe text-c-green d-block f-30" />
+          <h4 className="m-l-20">iApply</h4>
+        </div>
         <div className="m-t-25">
           <Accordian title="Marketing Effectiveness">
             <div className="row">

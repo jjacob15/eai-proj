@@ -1,4 +1,4 @@
 import React from 'react';
 
-const Empty = () => (<div></div>);
-module.exports =  Empty;
+const Empty = () => <div />;
+module.exports = Empty;
