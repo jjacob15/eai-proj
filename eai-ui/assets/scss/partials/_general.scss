@@ -628,7 +628,6 @@ $i:0;
     $i:$i+5;
 }
 
-
 /*====== Margin css ends ======*/
 
 
@@ -641,7 +640,6 @@ $i:0;
     }
     $i:$i+5;
 }
-
 
 /*====== Margin-top css ends ======*/
 
@@ -656,7 +654,6 @@ $i:0;
     $i:$i+5;
 }
 
-
 /*====== Margin-Bottom css ends ======*/
 
 
@@ -670,20 +667,18 @@ $i:0;
     $i:$i+5;
 }
 
-
 /*====== Margin-left css ends ======*/
 
 
 /*====== Margin-right css starts ======*/
 
 $i:0;
-@while $i<=50 {
+@while $i<=100 {
     .m-r-#{$i} {
         margin-right:#{$i}px;
     }
     $i:$i+5;
 }
-
 
 /*====== Margin-right css ends ======*/
 
@@ -781,7 +776,6 @@ right;
     }
 }
 
-
 /*====== Text-align css ends ======*/
 
 
@@ -796,7 +790,6 @@ lowercase;
     }
 }
 
-
 /*====== Text-Transform css ends ======*/
 
 
@@ -810,7 +803,6 @@ underline;
         text-decoration: $val;
     }
 }
-
 
 /*====== Text-Decoration css ends ======*/
 
@@ -832,7 +824,6 @@ inherit;
         vertical-align: $val;
     }
 }
-
 
 /*====== Vertical-Align css ends ======*/
 

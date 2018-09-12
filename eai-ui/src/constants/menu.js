@@ -117,12 +117,16 @@ module.exports = {
     back: 'main',
     selected: {
       id: 10,
-      label: 'Test',
+      label: 'Find',
       icon: 'search',
     },
     content: [
       {
-        label: 'iApply',
+        label: 'Home',
+        content: getCompactedQuickLinks(7)
+      },
+      {
+        label: 'Tools',
         content: [
           {
             id: 9,
@@ -131,40 +135,37 @@ module.exports = {
           },
           {
             id: 10,
-            label: 'Test',
+            label: 'Find',
             icon: 'search',
           },
           {
             id: 11,
-            label: 'Measures',
-            icon: 'filter',
+            label: 'Sort',
+            icon: 'exchange-vertical',
           },
           {
             id: 12,
-            label: 'Clusters',
+            label: 'Filter',
             icon: 'filter',
           },
           {
             id: 13,
-            label: 'Attributes',
-            icon: 'zoom-in',
+            label: 'Print',
+            icon: 'printer',
           },
           {
             id: 14,
-            label: 'Dates',
-            icon: 'layout-grid3',
+            label: 'Export',
+            icon: 'export',
           },
           {
             id: 15,
-            label: 'Size',
-            icon: 'printer',
+            label: 'Save View',
+            icon: 'layout-grid3',
           },
         ],
       },
-      {
-        label: 'Quick Links',
-        content: getCompactedQuickLinks(7)
-      },
+      
     ],
   },
   getLink

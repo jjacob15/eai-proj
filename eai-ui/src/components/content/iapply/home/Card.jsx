@@ -17,9 +17,7 @@ export const Card = props => (
           <button type="button" className="btn btn-sm btn-grd-info">
             Learn More
           </button>
-          <button type="button" className="btn btn-sm btn-grd-warning">
-            Update
-          </button>
+          <button type="button" className="btn btn-sm btn-grd-warning">Update</button>
         </div>
       </div>
     </div>
