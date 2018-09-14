@@ -6,9 +6,7 @@ class IPlan extends React.Component {
   }
 
   render() {
-    return (
-        <h4>iPlan</h4>
-      );
+    return <h4>iPlan</h4>;
   }
 }
 

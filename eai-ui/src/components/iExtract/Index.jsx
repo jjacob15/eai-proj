@@ -6,9 +6,7 @@ class IExtract extends React.Component {
   }
 
   render() {
-    return (
-      <h4>iExtract</h4>
-    );
+    return <h4>iExtract</h4>;
   }
 }
 

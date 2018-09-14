@@ -10,7 +10,8 @@ module.exports = class AboutEai extends Component {
           </div>
           <hr />
           <h6 className="f-w-600 m-b-10">Enterprise Analytics Intelligence</h6>
-          <span className="text-muted m-t-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          <span className="text-muted m-t-15">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s.
           </span>
         </div>

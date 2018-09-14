@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import SubMenu from './SubMenu';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Menu = props => {
   const { item, onMenuSelected, menu } = props;
@@ -27,7 +27,7 @@ const Menu = props => {
 
   return (
     <li className={aStyle(item)}>
-      <Link to={item.link} >
+      <Link to={item.link}>
         <span className="micron">
           <i className={`ti-${item.icon}`} />
         </span>

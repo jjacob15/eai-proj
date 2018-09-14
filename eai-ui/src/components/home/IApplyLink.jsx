@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 class IApply extends React.Component {
   constructor() {
@@ -12,7 +11,7 @@ class IApply extends React.Component {
   // }
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="card">
         <div className="card-block text-center">
@@ -21,15 +20,19 @@ class IApply extends React.Component {
           </div>
           <h4 className="m-t-20">iApply</h4>
           <p className="m-b-25">View business metrics</p>
-          <Link className="btn btn-primary btn-sm btn-round" to="/iapply">Enter</Link>
+          <Link className="btn btn-primary btn-sm btn-round" to="/iapply">
+            Enter
+          </Link>
         </div>
       </div>
     );
   }
 }
 
-{/* <button className="btn btn-primary btn-sm btn-round">
+{
+  /* <button className="btn btn-primary btn-sm btn-round">
 Enter
-</button> */}
+</button> */
+}
 
 module.exports = IApply;

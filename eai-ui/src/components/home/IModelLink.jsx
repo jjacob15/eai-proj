@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class IModel extends React.Component {
   constructor() {
@@ -16,7 +16,9 @@ class IModel extends React.Component {
           </div>
           <h4 className="m-t-20">iModel</h4>
           <p className="m-b-25">Create statistical models</p>
-          <Link className="btn btn-primary btn-sm btn-round" to="/imodel">Enter</Link>
+          <Link className="btn btn-primary btn-sm btn-round" to="/imodel">
+            Enter
+          </Link>
         </div>
       </div>
     );

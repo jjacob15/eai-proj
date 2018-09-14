@@ -13,16 +13,15 @@ class SideBarContent extends Component {
     super();
     this.handleMenuBack = this.handleMenuBack.bind(this);
     this.handleMenuSelected = this.handleMenuSelected.bind(this);
-
   }
-  
+
   handleMenuBack() {
     const { handleMenuBack, menu } = this.props;
     handleMenuBack(menu.back);
   }
-  
-  handleMenuSelected(item){
-    console.log(item)
+
+  handleMenuSelected(item) {
+    console.log(item);
   }
 
   renderNavLabel(label, idx) {
@@ -48,7 +47,7 @@ class SideBarContent extends Component {
   render() {
     // const { onMenuSelected } = this.props;
     const { menu } = this.props;
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="main-menu">
         {menu.content.map((s, h) => (
@@ -66,7 +65,7 @@ class SideBarContent extends Component {
   }
 }
 
-// 
+//
 // function actions(dispatch) {
 //   return {
 //     onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),

@@ -6,13 +6,12 @@ import { Transition } from 'react-transition-group';
 import SideBar from './sidebar/Sidebar';
 import Landing from './landing/Landing';
 
-
 const MainContainer = props => {
   return (
-      <div className="main-container">
-        <SideBarWrapper {...props} />
-        <Landing {...props} />
-      </div>
+    <div className="main-container">
+      <SideBarWrapper {...props} />
+      <Landing {...props} />
+    </div>
   );
 };
 
@@ -23,6 +22,6 @@ const SideBarWrapper = props => {
     <Transition in={displaySideBar} timeout={250}>
       {status => <SideBar status={status} {...props} />}
     </Transition>
-  )
-}
+  );
+};
 export default MainContainer;

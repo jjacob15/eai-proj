@@ -19,9 +19,9 @@ class Page extends React.Component {
     return (
       <div>
         <div className="row">
-          <i className="fa fa-globe text-c-green d-block f-40 m-l-20"></i>
-          <h4 className="m-l-20">iApply</h4>           
-        </div>       
+          <i className="fa fa-globe text-c-green d-block f-40 m-l-20" />
+          <h4 className="m-l-20">iApply</h4>
+        </div>
         <div className="m-t-25">
           <Accordian title="Marketing Effectiveness">
             <div className="row">
@@ -33,95 +33,167 @@ class Page extends React.Component {
               </div>
               <div className="col-xl-4 col-md-6 col-sm-12">
                 <Card onEnter={this.onEnter} />
-              </div>              
+              </div>
             </div>
           </Accordian>
 
           <Accordian title="Digital Media Effectiveness">
             <div className="card">
-            <div className="card-block">
-              <ul class="feed-blog">
-                <li class="active-feed">
-                  <div class="feed-user-img">
-                    <img alt="Digital Media ROI" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
-                  </div>
-                  <h6 className="m-b-0">Digital Media ROI</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
-                  </div>
-                </li>
-                <li class="active-feed">
-                  <div class="feed-user-img">
-                    <img alt="Consumer Pathway" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
-                  </div>
-                  <h6 className="m-b-0">Consumer Pathway</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
-                  </div>
-                </li>
-                <li class="diactive-feed">
-                  <div class="feed-user-img">
-                    <img alt="Digital Media ROI" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
-                  </div>
-                  <h6 className="m-b-0">Digital Media ROI</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
-                  </div>
-                </li>                
-              </ul>                        
-            </div>
+              <div className="card-block">
+                <ul class="feed-blog">
+                  <li class="active-feed">
+                    <div class="feed-user-img">
+                      <img
+                        alt="Digital Media ROI"
+                        src={require('../../../../../assets/images/avatar-4.jpg')}
+                        className="img-radius"
+                      />
+                    </div>
+                    <h6 className="m-b-0">Digital Media ROI</h6>
+                    <p class="text-muted m-b-15 m-t-5 small">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <div className="row">
+                      <div className="col-auto">
+                        <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-info-circle text-c-green d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-upload text-c-yellow d-block f-20" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="active-feed">
+                    <div class="feed-user-img">
+                      <img
+                        alt="Consumer Pathway"
+                        src={require('../../../../../assets/images/avatar-4.jpg')}
+                        className="img-radius"
+                      />
+                    </div>
+                    <h6 className="m-b-0">Consumer Pathway</h6>
+                    <p class="text-muted m-b-15 m-t-5 small">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <div className="row">
+                      <div className="col-auto">
+                        <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-info-circle text-c-green d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-upload text-c-yellow d-block f-20" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="diactive-feed">
+                    <div class="feed-user-img">
+                      <img
+                        alt="Digital Media ROI"
+                        src={require('../../../../../assets/images/avatar-4.jpg')}
+                        className="img-radius"
+                      />
+                    </div>
+                    <h6 className="m-b-0">Digital Media ROI</h6>
+                    <p class="text-muted m-b-15 m-t-5 small">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                    <div className="row">
+                      <div className="col-auto">
+                        <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-info-circle text-c-green d-block f-20" />
+                      </div>
+                      <div className="col-auto">
+                        <i class="fa fa-upload text-c-yellow d-block f-20" />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Accordian>
 
           <Accordian title="Pricing Effectiveness">
-          <div className="row m-t-20">
+            <div className="row m-t-20">
               <ul class="feed-blog">
                 <li class="active-feed">
                   <div class="feed-user-img">
-                    <img alt="Digital Media ROI" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
+                    <img
+                      alt="Digital Media ROI"
+                      src={require('../../../../../assets/images/avatar-4.jpg')}
+                      className="img-radius"
+                    />
                   </div>
                   <h6 className="m-b-0">Digital Media ROI</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
+                  <p class="text-muted m-b-15 m-t-5 small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                  <div className="row">
+                    <div className="col-auto">
+                      <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-info-circle text-c-green d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-upload text-c-yellow d-block f-20" />
+                    </div>
                   </div>
                 </li>
                 <li class="active-feed">
                   <div class="feed-user-img">
-                    <img alt="Consumer Pathway" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
+                    <img
+                      alt="Consumer Pathway"
+                      src={require('../../../../../assets/images/avatar-4.jpg')}
+                      className="img-radius"
+                    />
                   </div>
                   <h6 className="m-b-0">Consumer Pathway</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
+                  <p class="text-muted m-b-15 m-t-5 small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                  <div className="row">
+                    <div className="col-auto">
+                      <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-info-circle text-c-green d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-upload text-c-yellow d-block f-20" />
+                    </div>
                   </div>
                 </li>
                 <li class="diactive-feed">
                   <div class="feed-user-img">
-                    <img alt="Digital Media ROI" src={require('../../../../../assets/images/avatar-4.jpg')} className="img-radius" />                  
+                    <img
+                      alt="Digital Media ROI"
+                      src={require('../../../../../assets/images/avatar-4.jpg')}
+                      className="img-radius"
+                    />
                   </div>
                   <h6 className="m-b-0">Digital Media ROI</h6>
-                  <p class="text-muted m-b-15 m-t-5 small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  <div className="row">  
-                    <div className="col-auto"><i class="fa fa-sign-in text-c-blue d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-info-circle text-c-green d-block f-20"></i></div>
-                    <div className="col-auto"><i class="fa fa-upload text-c-yellow d-block f-20"></i></div>
+                  <p class="text-muted m-b-15 m-t-5 small">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  </p>
+                  <div className="row">
+                    <div className="col-auto">
+                      <i class="fa fa-sign-in text-c-blue d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-info-circle text-c-green d-block f-20" />
+                    </div>
+                    <div className="col-auto">
+                      <i class="fa fa-upload text-c-yellow d-block f-20" />
+                    </div>
                   </div>
-                </li>                
-              </ul>                        
+                </li>
+              </ul>
             </div>
           </Accordian>
 
@@ -135,7 +207,7 @@ class Page extends React.Component {
               </div>
               <div className="col-xl-4 col-md-6 col-sm-12">
                 <Card onEnter={this.onEnter} />
-              </div>              
+              </div>
             </div>
           </Accordian>
 
@@ -146,7 +218,7 @@ class Page extends React.Component {
               </div>
               <div className="col-xl-4 col-md-6 col-sm-12">
                 <Card title="New Product Launch" onEnter={this.onEnter} app={APPLY_APP_NPL} />
-              </div>              
+              </div>
             </div>
           </Accordian>
 

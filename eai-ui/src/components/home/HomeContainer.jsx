@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { onSideBarMenuSelected } from '../../actions';
 import { getLink } from '../../constants/menu';
 
-
 class HomeContainer extends React.Component {
   constructor() {
     super();
@@ -34,7 +33,7 @@ class HomeContainer extends React.Component {
             <Model />
           </div>
           <div className="col-md-3 col-lg-3">
-            <Apply  />
+            <Apply />
           </div>
           <div className="col-md-3 col-lg-3">
             <Plan />

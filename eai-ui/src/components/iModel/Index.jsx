@@ -6,9 +6,7 @@ class IModel extends React.Component {
   }
 
   render() {
-    return (
-        <h4>iModel</h4>
-      );
+    return <h4>iModel</h4>;
   }
 }
 

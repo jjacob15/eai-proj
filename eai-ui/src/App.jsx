@@ -7,7 +7,7 @@ import cx from 'classnames';
 import NavBar from './components/nav/NavBar';
 import MainContainer from './components/MainContainer';
 import { SET_BROWSER_SIZE, TOGGLE_SIDEBAR } from './constants/types';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 // map all necessary literals from state to props here
 const stateMap = state => ({
@@ -72,7 +72,9 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(connect(
-  stateMap,
-  propMap
-)(App));
+export default withRouter(
+  connect(
+    stateMap,
+    propMap
+  )(App)
+);

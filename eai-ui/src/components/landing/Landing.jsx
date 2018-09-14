@@ -1,11 +1,10 @@
 import React from 'react';
 import Home from '../home';
-import IApply from '../iApply'
-import IExtract from '../iExtract'
-import IPlan from '../iPlan'
-import IModel from '../iModel'
-import { BrowserRouter as Router, Route, Link,withRouter } from "react-router-dom";
-
+import IApply from '../iApply';
+import IExtract from '../iExtract';
+import IPlan from '../iPlan';
+import IModel from '../iModel';
+import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -46,11 +45,11 @@ class Landing extends React.Component {
             <div className="page-wrapper">
               <div className="row">
                 <div className="col-xl-12">
-                  <Route exact path="/" render={(rProps) => <Home {...this.props} />} />
-                  <Route path="/iapply" render={(rProps) => <IApply {...this.props} />} />
-                  <Route path="/iextract" render={(rProps) => <IExtract {...this.props} />} />
-                  <Route path="/iplan" render={(rProps) => <IPlan {...this.props} />} />
-                  <Route path="/imodel" render={(rProps) => <IModel {...this.props} />} />
+                  <Route exact path="/" render={rProps => <Home {...this.props} />} />
+                  <Route path="/iapply" render={rProps => <IApply {...this.props} />} />
+                  <Route path="/iextract" render={rProps => <IExtract {...this.props} />} />
+                  <Route path="/iplan" render={rProps => <IPlan {...this.props} />} />
+                  <Route path="/imodel" render={rProps => <IModel {...this.props} />} />
                 </div>
               </div>
             </div>
@@ -61,4 +60,3 @@ class Landing extends React.Component {
   }
 }
 module.exports = withRouter(Landing);
-
