@@ -1,9 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import SubMenu from './SubMenu';
+import {Link} from 'react-router-dom';
 
 const Menu = props => {
   const { item, onMenuSelected, menu } = props;
+
   const aStyle = curr =>
     cx({
       'selected active':
@@ -25,13 +27,13 @@ const Menu = props => {
 
   return (
     <li className={aStyle(item)}>
-      <a onClick={() => onMenuSelected(item)} onKeyDown={() => onMenuSelected(item)}>
+      <Link to={item.link} >
         <span className="micron">
           <i className={`ti-${item.icon}`} />
         </span>
         <span className="mtext">{item.label}</span>
         <span className={caretStyle(item)} />
-      </a>
+      </Link>
       {item.content && (
         <ul className={subMenuStyle(item)}>
           {item.content.map((sub, j) => (

@@ -12,11 +12,19 @@ class SideBarContent extends Component {
   constructor() {
     super();
     this.handleMenuBack = this.handleMenuBack.bind(this);
+    this.handleMenuSelected = this.handleMenuSelected.bind(this);
+
   }
+  
   handleMenuBack() {
     const { handleMenuBack, menu } = this.props;
     handleMenuBack(menu.back);
   }
+  
+  handleMenuSelected(item){
+    console.log(item)
+  }
+
   renderNavLabel(label, idx) {
     const { menu } = this.props;
     if (menu.back && idx === 0) {
@@ -38,8 +46,9 @@ class SideBarContent extends Component {
     );
   }
   render() {
-    const { onMenuSelected } = this.props;
+    // const { onMenuSelected } = this.props;
     const { menu } = this.props;
+    console.log(this.props)
     return (
       <div className="main-menu">
         {menu.content.map((s, h) => (
@@ -47,7 +56,7 @@ class SideBarContent extends Component {
             {this.renderNavLabel(s.label, h)}
             <ul className="left-item">
               {s.content.map((item, i) => (
-                <Menu item={item} key={i} menu={menu} onMenuSelected={onMenuSelected} />
+                <Menu item={item} key={i} menu={menu} onMenuSelected={this.handleMenuSelected} />
               ))}
             </ul>
           </div>
@@ -57,14 +66,16 @@ class SideBarContent extends Component {
   }
 }
 
-function actions(dispatch) {
-  return {
-    onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
-    handleMenuBack: item => dispatch({ type: SET_MENU, content: menu[item] }),
-  };
-}
+// 
+// function actions(dispatch) {
+//   return {
+//     onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
+//     handleMenuBack: item => dispatch({ type: SET_MENU, content: menu[item] }),
+//   };
+// }
 
-export default connect(
-  () => ({}),
-  actions
-)(SideBarContent);
+// export default connect(
+//   () => ({}),
+//   actions
+// )(SideBarContent);
+module.exports = SideBarContent;

@@ -6,7 +6,8 @@ const gulp = require('gulp'),
     watch = require('gulp-watch'),
     webpack = require("webpack"),
     path = require('path'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    historyApiFallback = require('connect-history-api-fallback');
 
 const configApp = require('./webpack.app.js');
 
@@ -62,7 +63,10 @@ gulp.task('sass', function () {
 gulp.task('connect', ()=> {
     connect.server({
         root: '.',
-        livereload: true
+        livereload: true,
+        middleware: function(connect, opt) {
+            return [ historyApiFallback({}) ];
+        }
     })
 });
 

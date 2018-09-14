@@ -4,6 +4,8 @@
 import React, { Component } from 'react';
 import velocity from 'velocity-animate';
 import SideBarContent from './SideBarContent.jsx';
+import {Route} from 'react-router-dom';
+import menu from '../../constants/menu';
 
 class SideBar extends Component {
   constructor() {
@@ -25,10 +27,12 @@ class SideBar extends Component {
 
   render() {
     const { nav } = this.props;
-    const { menu } = nav;
+    // const { menu } = nav;
     return (
       <nav className="side-bar" ref={this.el}>
-        <SideBarContent menu={menu} />
+        <Route exact path='/' render={()=> <SideBarContent menu={menu.main}/>} />
+        <Route path='/iapply' render={()=> <SideBarContent menu={menu.iapply}/>} />
+        <Route render={()=> <SideBarContent menu={menu.main}/>} />
       </nav>
     );
   }

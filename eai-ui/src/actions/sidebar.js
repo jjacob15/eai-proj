@@ -6,6 +6,7 @@ import menu from '../constants/menu';
 function onSideBarMenuSelected(item) {
   return function(dispatch, getState) {
     // remove app when main links are invoked
+    console.log('here')
     dispatch(setApplyApp(null));
 
     //update menu content state
@@ -14,6 +15,7 @@ function onSideBarMenuSelected(item) {
       // menu[state.nav.menu.id].selected = item;
     }
 
+    console.log(item)
     //swtich if iapply
     if (item.id === 7) {
       dispatch({ type: SET_MENU, content: menu.iapply });

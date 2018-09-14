@@ -1,15 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import TabContainer from './nav/TabContainer';
-import Container from '../content/Container';
-import { setLandingMenu } from '../../actions';
-// import OptionButtons from '../optionButtons';
+import Home from '../home';
+import IApply from '../iApply'
+import IExtract from '../iExtract'
+import IPlan from '../iPlan'
+import IModel from '../iModel'
+import { BrowserRouter as Router, Route, Link,withRouter } from "react-router-dom";
 
-// function actions(dispatch) {
-//   return {
-//     setLandingMenu: () => dispatch(setLandingMenu()),
-//   };
-// }
 
 class Landing extends React.Component {
   constructor(props) {
@@ -41,7 +37,6 @@ class Landing extends React.Component {
 
   render() {
     const { nav } = this.props;
-    const { height } = this.state;
     return (
       <div
         className="landing-content"
@@ -51,7 +46,11 @@ class Landing extends React.Component {
             <div className="page-wrapper">
               <div className="row">
                 <div className="col-xl-12">
-                  <Container {...this.props} />
+                  <Route exact path="/" render={(rProps) => <Home {...this.props} />} />
+                  <Route path="/iapply" render={(rProps) => <IApply {...this.props} />} />
+                  <Route path="/iextract" render={(rProps) => <IExtract {...this.props} />} />
+                  <Route path="/iplan" render={(rProps) => <IPlan {...this.props} />} />
+                  <Route path="/imodel" render={(rProps) => <IModel {...this.props} />} />
                 </div>
               </div>
             </div>
@@ -61,8 +60,5 @@ class Landing extends React.Component {
     );
   }
 }
-module.exports = Landing;
-// export default connect(
-//   () => ({}),
-//   actions
-// )(Landing);
+module.exports = withRouter(Landing);
+
