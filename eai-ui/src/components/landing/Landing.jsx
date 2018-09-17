@@ -4,6 +4,7 @@ import IApply from '../iApply';
 import IExtract from '../iExtract';
 import IPlan from '../iPlan';
 import IModel from '../iModel';
+import Empty from '../Empty';
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 
 class Landing extends React.Component {
@@ -50,6 +51,7 @@ class Landing extends React.Component {
                   <Route path="/iextract" render={rProps => <IExtract {...this.props} />} />
                   <Route path="/iplan" render={rProps => <IPlan {...this.props} />} />
                   <Route path="/imodel" render={rProps => <IModel {...this.props} />} />
+                  <Route component={()=><Empty/>} />
                 </div>
               </div>
             </div>

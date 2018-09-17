@@ -1,48 +1,53 @@
 import React from 'react';
 import cx from 'classnames';
-import SubMenu from './SubMenu';
-import { Link } from 'react-router-dom';
+import Link from './Link';
+import LinkWithChildren from './LinkWithChildren';
 
-const Menu = props => {
-  const { item, onMenuSelected, menu } = props;
 
-  const aStyle = curr =>
-    cx({
-      'selected active':
-        menu.selected &&
-        (menu.selected.id === curr.id ||
-          (curr.content && curr.content.filter(x => x.id === menu.selected.id).length > 0)),
-    });
-  const caretStyle = curr =>
-    cx({
-      mcaret: curr.content,
-      'mcaret-plus': curr.content && !curr.expand,
-      'mcaret-minus': curr.content && curr.expand,
-    });
-  const subMenuStyle = curr =>
-    cx({
-      'sub-menu': true,
-      'sub-menu-visible': curr.expand,
-    });
+class Menu extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <li className={aStyle(item)}>
-      <Link to={item.link}>
-        <span className="micron">
-          <i className={`ti-${item.icon}`} />
-        </span>
-        <span className="mtext">{item.label}</span>
-        <span className={caretStyle(item)} />
-      </Link>
-      {item.content && (
-        <ul className={subMenuStyle(item)}>
-          {item.content.map((sub, j) => (
-            <SubMenu item={sub} key={j} onMenuSelected={onMenuSelected} menu={menu} />
-          ))}
-        </ul>
-      )}
-    </li>
-  );
+    this.state = {
+      expanded: 0
+    }
+
+    this.contractMenus = this.contractMenus.bind(this);
+    this.setExpandedId = this.setExpandedId.bind(this);
+  }
+
+  setExpandedId(id){
+    this.setState({
+      expanded:id
+    })
+  }
+  contractMenus() {
+    this.setState({
+      expanded: 0
+    })
+  }
+  render() {
+    const { item, location } = this.props;
+    const { expanded } = this.state;
+
+    const getStyle = curr =>
+      cx({
+        'selected active': curr.link === location
+      });
+
+    let LinkObj;
+
+    if (item.content) {
+      LinkObj = <LinkWithChildren item={item} handleClick={this.setExpandedId} expanded={expanded}/>
+    } else {
+      LinkObj = <Link item={item} handleClick={this.contractMenus}/>
+    }
+    return (
+      <li className={getStyle(item)}>
+        {LinkObj}
+      </li>
+    );
+  }
 };
 
 export default Menu;

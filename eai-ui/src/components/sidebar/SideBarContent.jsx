@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import Menu from './Menu';
 import { onSideBarMenuSelected } from '../../actions';
 import { SET_MENU } from '../../constants/types';
@@ -46,8 +47,7 @@ class SideBarContent extends Component {
   }
   render() {
     // const { onMenuSelected } = this.props;
-    const { menu } = this.props;
-    console.log(this.props);
+    const { menu,location } = this.props;
     return (
       <div className="main-menu">
         {menu.content.map((s, h) => (
@@ -55,7 +55,7 @@ class SideBarContent extends Component {
             {this.renderNavLabel(s.label, h)}
             <ul className="left-item">
               {s.content.map((item, i) => (
-                <Menu item={item} key={i} menu={menu} onMenuSelected={this.handleMenuSelected} />
+                <Menu item={item} key={i} menu={menu} onMenuSelected={this.handleMenuSelected} location={location.pathname}/>
               ))}
             </ul>
           </div>
@@ -77,4 +77,4 @@ class SideBarContent extends Component {
 //   () => ({}),
 //   actions
 // )(SideBarContent);
-module.exports = SideBarContent;
+module.exports = withRouter(SideBarContent);

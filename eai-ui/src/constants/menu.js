@@ -1,23 +1,23 @@
-const vid1 = { id: 16, label: 'Video 1', link: '/', parentId: 3 };
-const vid2 = { id: 17, label: 'Video 2', link: '/', parentId: 3 };
-const tutorial1 = { id: 18, label: 'Tutorials 1', link: '/', parentId: 4 };
-const tutorial2 = { id: 19, label: 'Tutorials 2', link: '/', parentId: 4 };
+const vid1 = { id: 16, label: 'Video 1', link: '/video1', parentId: 3 };
+const vid2 = { id: 17, label: 'Video 2', link: '/video2', parentId: 3 };
+const tutorial1 = { id: 18, label: 'Tutorials 1', link: '/tutorials1', parentId: 4 };
+const tutorial2 = { id: 19, label: 'Tutorials 2', link: '/tutorials2', parentId: 4 };
 
 const home = { id: 1, label: 'Home', icon: 'home', link: '/' };
-const syncReal = { id: 2, label: 'SyncReal', icon: 'shine', link: '/' };
-const videos = { id: 3, label: 'Videos', icon: 'video-clapper', link: '/', content: [vid1, vid2] };
-const tutorials = { id: 4, label: 'Tutorials', icon: 'server', link: '/', content: [tutorial1, tutorial2] };
+const syncReal = { id: 2, label: 'SyncReal', icon: 'shine', link: '/syncreal' };
+const videos = { id: 3, label: 'Videos', icon: 'video-clapper', link: '/videos', content: [vid1, vid2] };
+const tutorials = { id: 4, label: 'Tutorials', icon: 'server', link: '/tutorials', content: [tutorial1, tutorial2] };
 const iextract = { id: 5, label: 'iExtract', icon: 'server', link: '/iextract' };
 const imodel = { id: 6, label: 'iModel', icon: 'settings', link: '/imodel' };
 const iapply = { id: 7, label: 'iApply', icon: 'bar-chart-alt', link: '/iapply' };
 const iplan = { id: 8, label: 'iPlan', icon: 'panel', link: 'iplan' };
-const faq = { id: 9, label: 'FAQs', icon: 'support', link: '/' };
-const help = { id: 10, label: 'Help', icon: 'help', link: '/' };
-const find = { id: 11, label: 'Find', icon: 'search', link: '/' };
-const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: '/' };
-const print = { id: 13, label: 'Print', icon: 'printer', link: '/' };
-const exportLink = { id: 14, label: 'Export', icon: 'export', link: '/' };
-const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: '/' };
+const faq = { id: 9, label: 'FAQs', icon: 'support', link: '/fag' };
+const help = { id: 10, label: 'Help', icon: 'help', link: '/help' };
+const find = { id: 11, label: 'Find', icon: 'search', link: '/find' };
+const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: '/sort' };
+const print = { id: 13, label: 'Print', icon: 'printer', link: '/print' };
+const exportLink = { id: 14, label: 'Export', icon: 'export', link: '/exportlink' };
+const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: '/save' };
 
 const quickLinks = [iextract, imodel, iapply, iplan];
 

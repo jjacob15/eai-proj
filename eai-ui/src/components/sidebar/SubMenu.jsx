@@ -1,24 +1,35 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link, withRouter } from 'react-router-dom';
 
-const SubMenu = props => {
-  const { item, onMenuSelected, menu } = props;
+class SubMenu extends React.Component {
+  constructor(){
+    super();
 
-  const aStyle = curr =>
-    cx({
-      active:
-        menu.selected &&
-        (menu.selected.id === curr.id ||
-          (curr.content && curr.content.filter(x => x.id === menu.selected.id).length > 0)),
-    });
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  return (
-    <li className={aStyle(item)}>
-      <a onClick={() => onMenuSelected(item)} onKeyPress={() => onMenuSelected(item)}>
-        <span className="mtext">{item.label}</span>
-      </a>
-    </li>
-  );
-};
+  handleClick(){
+    this.props.handleClick()
+  }
 
-export default SubMenu;
+  render() {
+    const { item, location } = this.props;
+
+    const aStyle = curr =>
+      cx({
+        active: curr.link === location.pathname
+      });
+
+    return (
+      <li className={aStyle(item)}>
+        <Link to={item.link} onClick={this.handleClick} >
+          <span className="mtext">{item.label}</span>
+        </Link>
+      </li>
+    );
+  }
+
+}
+
+export default withRouter(SubMenu);
