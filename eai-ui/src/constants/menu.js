@@ -10,14 +10,14 @@ const tutorials = { id: 4, label: 'Tutorials', icon: 'server', link: '/tutorials
 const iextract = { id: 5, label: 'iExtract', icon: 'server', link: '/iextract' };
 const imodel = { id: 6, label: 'iModel', icon: 'settings', link: '/imodel' };
 const iapply = { id: 7, label: 'iApply', icon: 'bar-chart-alt', link: '/iapply' };
-const iplan = { id: 8, label: 'iPlan', icon: 'panel', link: 'iplan' };
-const faq = { id: 9, label: 'FAQs', icon: 'support', link: '/fag' };
+const iplan = { id: 8, label: 'iPlan', icon: 'panel', link: '/iplan' };
+const faq = { id: 9, label: 'FAQs', icon: 'support', link: '/faqs' };
 const help = { id: 10, label: 'Help', icon: 'help', link: '/help' };
-const find = { id: 11, label: 'Find', icon: 'search', link: '/find' };
-const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: '/sort' };
-const print = { id: 13, label: 'Print', icon: 'printer', link: '/print' };
-const exportLink = { id: 14, label: 'Export', icon: 'export', link: '/exportlink' };
-const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: '/save' };
+const find = { id: 11, label: 'Find', icon: 'search', link: '/iapply/find' };
+const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: '/iapply/sort' };
+const print = { id: 13, label: 'Print', icon: 'printer', link: '/iapply/print' };
+const exportLink = { id: 14, label: 'Export', icon: 'export', link: '/iapply/exportlink' };
+const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: '/iapply/save' };
 
 const quickLinks = [iextract, imodel, iapply, iplan];
 
@@ -47,7 +47,7 @@ module.exports = {
 
   iapply: {
     id: 'iapply',
-    back: 'main',
+    back: home,
     selected: find,
     content: [
       {
@@ -56,7 +56,7 @@ module.exports = {
       },
       {
         label: 'Tools',
-        content: [help, find, sort, print, exportLink, saveView],
+        content: [find, sort, print, exportLink, saveView],
       },
     ],
   },

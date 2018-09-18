@@ -4,14 +4,8 @@ import { Link } from 'react-router-dom';
 class IApply extends React.Component {
   constructor() {
     super();
-    // this.handleClick = this.handleClick.bind(this);
   }
-  // handleClick() {
-  //   this.props.onClick(7);
-  // }
-
   render() {
-    console.log(this.props);
     return (
       <div className="card">
         <div className="card-block text-center">
@@ -27,12 +21,6 @@ class IApply extends React.Component {
       </div>
     );
   }
-}
-
-{
-  /* <button className="btn btn-primary btn-sm btn-round">
-Enter
-</button> */
 }
 
 module.exports = IApply;

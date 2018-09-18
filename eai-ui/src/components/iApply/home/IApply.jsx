@@ -8,7 +8,7 @@ import { setApplyApp, onSideBarMenuSelected } from '../../../actions';
 function actions(dispatch) {
   return {
     onEnter: app => dispatch(setApplyApp(app)),
-    updateMenu: () => dispatch(onSideBarMenuSelected({ id: 7 })),
+    // updateMenu: () => dispatch(onSideBarMenuSelected({ id: 7 })),
   };
 }
 
@@ -18,7 +18,7 @@ class Page extends React.Component {
     this.onEnter = this.onEnter.bind(this);
   }
   componentDidMount() {
-    this.props.updateMenu();
+    // this.props.updateMenu();
   }
 
   onEnter(app) {

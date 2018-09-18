@@ -3,36 +3,36 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Menu from './Menu';
 import { onSideBarMenuSelected } from '../../actions';
 import { SET_MENU } from '../../constants/types';
 import menu from '../../constants/menu';
+import { Link } from 'react-router-dom';
 
 class SideBarContent extends Component {
   constructor() {
     super();
-    this.handleMenuBack = this.handleMenuBack.bind(this);
-    this.handleMenuSelected = this.handleMenuSelected.bind(this);
+    this.state = {
+      selectedSubMenuId: 0,
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleMenuBack() {
-    const { handleMenuBack, menu } = this.props;
-    handleMenuBack(menu.back);
-  }
-
-  handleMenuSelected(item) {
-    console.log(item);
+  handleClick(item) {
+    this.setState({
+      selectedSubMenuId: item.content ? item.id : 0,
+    });
   }
 
   renderNavLabel(label, idx) {
     const { menu } = this.props;
     if (menu.back && idx === 0) {
       return (
-        <div className="nav-label-back" onClick={this.handleMenuBack}>
+        <Link className="nav-label-back" to={menu.back.link}>
           {this.renderBack()}
           {label}
-        </div>
+        </Link>
       );
     } else {
       return <div className="nav-label">{label}</div>;
@@ -46,8 +46,9 @@ class SideBarContent extends Component {
     );
   }
   render() {
-    // const { onMenuSelected } = this.props;
-    const { menu,location } = this.props;
+    const { menu, location } = this.props;
+    const { selectedSubMenuId } = this.state;
+
     return (
       <div className="main-menu">
         {menu.content.map((s, h) => (
@@ -55,7 +56,13 @@ class SideBarContent extends Component {
             {this.renderNavLabel(s.label, h)}
             <ul className="left-item">
               {s.content.map((item, i) => (
-                <Menu item={item} key={i} menu={menu} onMenuSelected={this.handleMenuSelected} location={location.pathname}/>
+                <Menu
+                  item={item}
+                  key={i}
+                  handleClick={this.handleClick}
+                  selectedSubMenuId={selectedSubMenuId}
+                  location={location.pathname}
+                />
               ))}
             </ul>
           </div>
@@ -65,16 +72,4 @@ class SideBarContent extends Component {
   }
 }
 
-//
-// function actions(dispatch) {
-//   return {
-//     onMenuSelected: item => dispatch(onSideBarMenuSelected(item)),
-//     handleMenuBack: item => dispatch({ type: SET_MENU, content: menu[item] }),
-//   };
-// }
-
-// export default connect(
-//   () => ({}),
-//   actions
-// )(SideBarContent);
 module.exports = withRouter(SideBarContent);

@@ -19,7 +19,7 @@ const initialState = {
   headerMinimized: true,
   displaySideBar: true,
   displayOptionIcons: true,
-  menu: menu.main,
+  // menu: menu.main,
   // landingMenu: {
   //   selected: {},
   //   content: [],
@@ -46,57 +46,57 @@ export default (state = initialState, action) => {
         displaySideBar: !state.displaySideBar,
       };
     }
-    case SET_MENU: {
-      return {
-        ...state,
-        menu: action.content,
-      };
-    }
-    case SET_SELECTED_MENU:
-      if (action.item.content) {
-        return {
-          ...state,
-          menu: {
-            ...state.menu,
-            content: state.menu.content.map(x => ({
-              ...x,
-              content: x.content.map(
-                c =>
-                  c.id === action.item.id
-                    ? {
-                        ...c,
-                        expand: !c.expand,
-                      }
-                    : {
-                        ...c,
-                        expand: false,
-                      }
-              ),
-            })),
-          },
-        };
-      }
-      return {
-        ...state,
-        menu: {
-          ...state.menu,
-          selected: action.item,
-          content: state.menu.content.map(x => ({
-            ...x,
-            content: x.content.map(
-              c =>
-                c.id === action.item.id || (action.item.parentId && action.item.parentId === c.id)
-                  ? {
-                      ...c,
-                    }
-                  : {
-                      ...c,
-                      expand: false,
-                    }
-            ),
-          })),
-        },
-      };
+    // case SET_MENU: {
+    //   return {
+    //     ...state,
+    //     menu: action.content,
+    //   };
+    // }
+    // case SET_SELECTED_MENU:
+    //   if (action.item.content) {
+    //     return {
+    //       ...state,
+    //       menu: {
+    //         ...state.menu,
+    //         content: state.menu.content.map(x => ({
+    //           ...x,
+    //           content: x.content.map(
+    //             c =>
+    //               c.id === action.item.id
+    //                 ? {
+    //                     ...c,
+    //                     expand: !c.expand,
+    //                   }
+    //                 : {
+    //                     ...c,
+    //                     expand: false,
+    //                   }
+    //           ),
+    //         })),
+    //       },
+    //     };
+    //   }
+    //   return {
+    //     ...state,
+    //     menu: {
+    //       ...state.menu,
+    //       selected: action.item,
+    //       content: state.menu.content.map(x => ({
+    //         ...x,
+    //         content: x.content.map(
+    //           c =>
+    //             c.id === action.item.id || (action.item.parentId && action.item.parentId === c.id)
+    //               ? {
+    //                   ...c,
+    //                 }
+    //               : {
+    //                   ...c,
+    //                   expand: false,
+    //                 }
+    //         ),
+    //       })),
+    //     },
+    //   };
     // case SET_LANDING_MENU:
     //   return {
     //     ...state,
@@ -134,6 +134,7 @@ export default (state = initialState, action) => {
     //       selected: action.content,
     //     },
     //   };
+
     default:
       return state;
   }

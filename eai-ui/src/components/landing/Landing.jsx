@@ -5,7 +5,7 @@ import IExtract from '../iExtract';
 import IPlan from '../iPlan';
 import IModel from '../iModel';
 import Empty from '../Empty';
-import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -46,12 +46,14 @@ class Landing extends React.Component {
             <div className="page-wrapper">
               <div className="row">
                 <div className="col-xl-12">
-                  <Route exact path="/" render={rProps => <Home {...this.props} />} />
-                  <Route path="/iapply" render={rProps => <IApply {...this.props} />} />
-                  <Route path="/iextract" render={rProps => <IExtract {...this.props} />} />
-                  <Route path="/iplan" render={rProps => <IPlan {...this.props} />} />
-                  <Route path="/imodel" render={rProps => <IModel {...this.props} />} />
-                  <Route component={()=><Empty/>} />
+                  <Switch>
+                    <Route exact path="/" render={rProps => <Home {...this.props} />} />
+                    <Route path="/iapply" render={rProps => <IApply {...this.props} />} />
+                    <Route path="/iextract" render={rProps => <IExtract {...this.props} />} />
+                    <Route path="/iplan" render={rProps => <IPlan {...this.props} />} />
+                    <Route path="/imodel" render={rProps => <IModel {...this.props} />} />
+                    <Route component={() => <Empty />} />
+                  </Switch>
                 </div>
               </div>
             </div>

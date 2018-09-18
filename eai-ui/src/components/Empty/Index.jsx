@@ -1,7 +1,7 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
-const EmptyComponent = ({location}) => { 
-    return (<h3>{location.pathname.replace("/",'')}</h3>)
-}
+const EmptyComponent = ({ location }) => {
+  return <h3>{location.pathname.replace('/', '')}</h3>;
+};
 module.exports = withRouter(EmptyComponent);
