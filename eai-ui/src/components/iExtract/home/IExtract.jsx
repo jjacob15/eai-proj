@@ -30,9 +30,9 @@ class Page extends React.Component {
     return (
       <div>
         <div className="row">
-          <i className="fa fa-project-diagram text-c-green d-block f-40 m-l-20" />
+          <i className="fa fa-server text-c-green d-block f-40 m-l-20" />
           <h4 className="m-l-20" style={{ lineHeight: '40px' }}>
-            iApply
+            iExtract
           </h4>
         </div>
         <div className="m-t-25">

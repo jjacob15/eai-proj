@@ -1,13 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import IExtract from './home/IExtract';
 
-class IExtract extends React.Component {
-  constructor() {
-    super();
-  }
-
+export default class Index extends Component {
   render() {
-    return <h4>iExtract</h4>;
+    return <IExtract />;
   }
 }
-
-module.exports = IExtract;

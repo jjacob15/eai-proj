@@ -4,7 +4,7 @@ module.exports = class Login extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-body">
+        <div className="card-body" style={{ height: '390px' }}>
           <div className="m-t-10 m-b-20">
             <h4 className="text-left txt-primary">Sign In</h4>
           </div>
@@ -49,8 +49,8 @@ module.exports = class Login extends Component {
             <div className="col-md-10">
               <p className="text-inverse text-left m-b-0">Thank you and enjoy our website.</p>
             </div>
-            <div className="col-md-2">
-              <img src="../../../../../assets/images/logo-small.png" alt="About EAI" style={{ width: '100%' }} />
+            <div style={{ position: 'absolute', height: '50px', right: '20px' }}>
+              <img src="../../../../../assets/images/logo-small.png" alt="About EAI" style={{ width: '50px' }} />
             </div>
           </div>
         </div>

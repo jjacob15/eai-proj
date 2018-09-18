@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import IModel from './home/IModel';
+import { APPLY_APP_TC } from '../../constants/iapplyApps';
 
-class IModel extends React.Component {
-  constructor() {
-    super();
-  }
-
+export default class Index extends Component {
   render() {
-    return <h4>iModel</h4>;
+    return <IModel />;
   }
 }
-
-module.exports = IModel;

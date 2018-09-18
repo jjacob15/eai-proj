@@ -4,9 +4,9 @@ module.exports = class AboutEai extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-body">
-          <div className="EAImage">
-            <img src="../../../../../assets/images/EAi.png" alt="About EAI" style={{ height: '100%', width: '100%' }} />
+        <div className="card-body" style={{ height: '390px' }}>
+          <div className="EAImage" style={{ overflow: 'hidden' }}>
+            <img src="../../../../../assets/images/EAi.png" alt="About EAI" style={{ width: '544px' }} />
           </div>
           <hr />
           <h6 className="f-w-600 m-b-10">Enterprise Analytics Intelligence</h6>

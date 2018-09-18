@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import IPlan from './home/IPlan';
+import { APPLY_APP_TC } from '../../constants/iapplyApps';
 
-class IPlan extends React.Component {
-  constructor() {
-    super();
-  }
-
+export default class Index extends Component {
   render() {
-    return <h4>iPlan</h4>;
+    return <IPlan />;
   }
 }
-
-module.exports = IPlan;

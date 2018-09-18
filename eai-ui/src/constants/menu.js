@@ -24,11 +24,11 @@ const quickLinks = [iextract, imodel, iapply, iplan];
 const getLink = function(id) {
   return quickLinks.find(x => x.id === id);
 };
-const getCompactedQuickLinks = function(ignore) {
-  if (!ignore) return quickLinks.slice();
+// const getCompactedQuickLinks = function(ignore) {
+//   if (!ignore) return quickLinks.slice();
 
-  return quickLinks.filter(x => x.id !== ignore);
-};
+//   return quickLinks.filter(x => x.id !== ignore);
+// };
 
 module.exports = {
   main: {
@@ -45,14 +45,14 @@ module.exports = {
     ],
   },
 
-  iapply: {
-    id: 'iapply',
+  mainApp: {
+    id: 'mainApp',
     back: home,
     selected: find,
     content: [
       {
         label: 'Home',
-        content: getCompactedQuickLinks(7),
+        content: quickLinks,
       },
       {
         label: 'Tools',

@@ -4,11 +4,6 @@ import { APPLY_APP_TC } from '../../constants/iapplyApps';
 
 export default class Index extends Component {
   render() {
-    const { iapply } = this.props;
-
-    switch (iapply.common.app) {
-      default:
-        return <IApply />;
-    }
+    return <IApply />;
   }
 }
