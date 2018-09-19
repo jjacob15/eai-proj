@@ -3,7 +3,7 @@
  */
 import { SET_USER } from '../constants/types';
 
-export default (state = { user: 'Jaison Jacob' }, action) => {
+export default (state = { user: 'User Profile' }, action) => {
   switch (action.type) {
     case SET_USER:
       return {

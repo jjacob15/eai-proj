@@ -6,13 +6,14 @@ const tutorial2 = { id: 19, label: 'Tutorials 2', link: '/tutorials2', parentId:
 const home = { id: 1, label: 'Home', icon: 'home', link: '/' };
 const syncReal = { id: 2, label: 'SyncReal', icon: 'shine', link: '/syncreal' };
 const videos = { id: 3, label: 'Videos', icon: 'video-clapper', link: '/videos', content: [vid1, vid2] };
-const tutorials = { id: 4, label: 'Tutorials', icon: 'server', link: '/tutorials', content: [tutorial1, tutorial2] };
-const iextract = { id: 5, label: 'iExtract', icon: 'server', link: '/iextract' };
-const imodel = { id: 6, label: 'iModel', icon: 'settings', link: '/imodel' };
-const iapply = { id: 7, label: 'iApply', icon: 'bar-chart-alt', link: '/iapply' };
-const iplan = { id: 8, label: 'iPlan', icon: 'panel', link: '/iplan' };
+const tutorials = { id: 4, label: 'Tutorials', icon: 'book', link: '/tutorials', content: [tutorial1, tutorial2] };
+const iextract = { id: 5, label: 'FACT', icon: 'server', link: '/iextract' };
+const imodel = { id: 6, label: 'BUILD', icon: 'settings', link: '/imodel' };
+const iapply = { id: 7, label: 'REVIEW', icon: 'bar-chart-alt', link: '/iapply' };
+const iplan = { id: 8, label: 'PLAN', icon: 'panel', link: '/iplan' };
 const faq = { id: 9, label: 'FAQs', icon: 'support', link: '/faqs' };
 const help = { id: 10, label: 'Help', icon: 'help', link: '/help' };
+const contact = { id: 20, label: 'Contact Us', icon: 'ticket', link: '/contact' };
 const find = { id: 11, label: 'Find', icon: 'search', link: '/iapply/find' };
 const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: '/iapply/sort' };
 const print = { id: 13, label: 'Print', icon: 'printer', link: '/iapply/print' };
@@ -40,7 +41,7 @@ module.exports = {
       },
       {
         label: 'Support',
-        content: [faq, help],
+        content: [faq, help, contact],
       },
     ],
   },

@@ -12,7 +12,7 @@ class IPlan extends React.Component {
         <div className="card-block text-center">
           <div className="m-t-10 m-b-30">
             {/* <img alt="Business Planning" src={require('../../../../assets/images/avatar-4.jpg')} className="img-radius" /> */}
-            <i className="fa fa-calendar text-c-green d-block f-50" />
+            <i className="fa fa-calendar-alt text-c-green d-block f-50" />
           </div>
           <h4 className="m-t-20">iPlan</h4>
           <p className="m-b-25">Simulate business scenarios</p>

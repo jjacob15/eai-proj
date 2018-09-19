@@ -64,7 +64,7 @@ class NavRight extends React.Component {
         <Notification />
         <li className={upStyle} onClick={this.toggleMenu} onKeyPress={this.toggleMenu}>
           <a>
-            <img alt="avatar" src={require('../../../assets/images/avatar-4.jpg')} className="img-radius" />
+            <img alt="avatar" src={require('../../../assets/images/avatars/avatar-user.png')} className="img-radius" />
             <span>{auth.user}</span>
             <i className="ti-angle-down" />
           </a>
