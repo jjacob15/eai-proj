@@ -12,7 +12,7 @@ class IApply extends React.Component {
           <div className="m-t-10 m-b-30">
             <i className="fa fa-project-diagram text-c-green d-block f-50" />
           </div>
-          <h4 className="m-t-20">iApply</h4>
+          <h4 className="m-t-20">Review</h4>
           <p className="m-b-25">View business metrics</p>
           <Link className="btn btn-primary btn-sm btn-round" to="/iapply">
             Enter

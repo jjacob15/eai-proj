@@ -14,7 +14,7 @@ class IModel extends React.Component {
             {/* <img alt="Statistical Modeling" src={require('../../../../assets/images/avatar-4.jpg')} className="img-radius" /> */}
             <i className="fa fa-dharmachakra text-c-green d-block f-50" />
           </div>
-          <h4 className="m-t-20">iModel</h4>
+          <h4 className="m-t-20">Build</h4>
           <p className="m-b-25">Create statistical models</p>
           <Link className="btn btn-primary btn-sm btn-round" to="/imodel">
             Enter

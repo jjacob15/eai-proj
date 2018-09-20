@@ -26,13 +26,13 @@ class Page extends React.Component {
   }
 
   render() {
-    const img = require('../../../../assets/images/avatar-4.jpg');
+    const img = require('../../../../assets/images/segimg.jpg');
     return (
       <div>
         <div className="row">
           <i className="fa fa-project-diagram text-c-green d-block f-40 m-l-20" />
           <h4 className="m-l-20" style={{ lineHeight: '40px' }}>
-            iApply
+            Review
           </h4>
         </div>
         <div className="m-t-25">

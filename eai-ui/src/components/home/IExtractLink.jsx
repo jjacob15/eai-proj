@@ -14,7 +14,7 @@ class IExtract extends React.Component {
             {/* <img alt="Data Processing" src={require('../../../../assets/images/avatar-4.jpg')} className="img-radius" /> */}
             <i className="fa fa-server text-c-green d-block f-50" />
           </div>
-          <h4 className="m-t-20">iExtract</h4>
+          <h4 className="m-t-20">Fact</h4>
           <p className="m-b-25">Extract and process data</p>
           <Link className="btn btn-primary btn-sm btn-round" to="/iextract">
             Enter
