@@ -31,7 +31,7 @@ class SideBar extends Component {
     return (
       <nav className="side-bar" ref={this.el}>
         <Route exact path="/" render={() => <SideBarContent menu={menu.main} />} />
-        <Route path="/iapply" render={() => <SideBarContent menu={menu.mainApp} />} />
+        <Route path="/review" render={() => <SideBarContent menu={menu.mainApp} />} />
         <Route path="/imodel" render={() => <SideBarContent menu={menu.mainApp} />} />
         <Route path="/iextract" render={() => <SideBarContent menu={menu.mainApp} />} />
         <Route path="/iplan" render={() => <SideBarContent menu={menu.mainApp} />} />

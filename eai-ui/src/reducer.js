@@ -4,10 +4,10 @@
 import { combineReducers } from 'redux';
 import auth from './reducers/auth';
 import nav from './reducers/nav';
-import iapply from './reducers/iapplyApps/iapply';
+import review from './reducers/review';
 
 export default combineReducers({
   auth,
   nav,
-  iapply,
+  review,
 });

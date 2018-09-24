@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Test from './subContainers/tests';
 import Measures from './subContainers/measures';
-import { getObjFromArr } from '../../../../util';
+import { getObjFromArr } from '../../../util';
 
 class Program extends Component {
   renderSubview(selectedProgram) {

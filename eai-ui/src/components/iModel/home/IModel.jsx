@@ -79,7 +79,7 @@ class Page extends React.Component {
                         <i className="fa fa-upload text-c-yellow d-block f-20" />
                       </div>
                     </div>
-                  </li>                  
+                  </li>
                 </ul>
               </div>
             </div>
@@ -197,7 +197,7 @@ class Page extends React.Component {
                         <i className="fa fa-upload text-c-yellow d-block f-20" />
                       </div>
                     </div>
-                  </li>                  
+                  </li>
                 </ul>
               </div>
             </div>

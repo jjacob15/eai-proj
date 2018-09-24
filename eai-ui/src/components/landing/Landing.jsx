@@ -1,11 +1,12 @@
 import React from 'react';
 import Home from '../home';
-import IApply from '../iApply';
+import Review from '../Review';
 import IExtract from '../iExtract';
 import IPlan from '../iPlan';
 import IModel from '../iModel';
 import Empty from '../Empty';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import { reviewPath, iextractPath, imodelPath, iplanPath } from '../../constants/links';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -48,10 +49,10 @@ class Landing extends React.Component {
                 <div className="col-xl-12">
                   <Switch>
                     <Route exact path="/" render={rProps => <Home {...this.props} />} />
-                    <Route path="/iapply" render={rProps => <IApply {...this.props} />} />
-                    <Route path="/iextract" render={rProps => <IExtract {...this.props} />} />
-                    <Route path="/iplan" render={rProps => <IPlan {...this.props} />} />
-                    <Route path="/imodel" render={rProps => <IModel {...this.props} />} />
+                    <Route path={reviewPath} render={rProps => <Review {...this.props} />} />
+                    <Route path={iextractPath} render={rProps => <IExtract {...this.props} />} />
+                    <Route path={iplanPath} render={rProps => <IPlan {...this.props} />} />
+                    <Route path={imodelPath} render={rProps => <IModel {...this.props} />} />
                     <Route component={() => <Empty />} />
                   </Switch>
                 </div>

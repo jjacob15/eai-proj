@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { reviewPath } from '../../constants/links';
 
-class IApply extends React.Component {
+class ReviewLink extends React.Component {
   constructor() {
     super();
   }
   render() {
+    console.log(reviewPath);
     return (
       <div className="card">
         <div className="card-block text-center">
@@ -14,7 +16,7 @@ class IApply extends React.Component {
           </div>
           <h4 className="m-t-20">Review</h4>
           <p className="m-b-25">View business metrics</p>
-          <Link className="btn btn-primary btn-sm btn-round" to="/iapply">
+          <Link className="btn btn-primary btn-sm btn-round" to={reviewPath}>
             Enter
           </Link>
         </div>
@@ -23,4 +25,4 @@ class IApply extends React.Component {
   }
 }
 
-module.exports = IApply;
+module.exports = ReviewLink;

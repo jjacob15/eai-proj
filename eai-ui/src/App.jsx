@@ -13,7 +13,7 @@ import { withRouter } from 'react-router-dom';
 const stateMap = state => ({
   auth: state.auth,
   nav: state.nav,
-  iapply: state.iapply,
+  review: state.review,
 });
 
 const propMap = dispatch => ({

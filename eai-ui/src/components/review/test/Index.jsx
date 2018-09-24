@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NewProgram from './NewProgram';
 import DeleteProgramModal from './DeleteProgramModal';
-import { TC_HIDE_DELETE_MODAL } from '../../../../constants/types';
-import { deleteTcProgram } from '../../../../actions';
 import Program from './Program';
-import { getObjFromArr } from '../../../../util';
+import { getObjFromArr } from '../../../util';
+import Tabs from '../../ui/tabs';
 
 const TC = () => <div />;
 
@@ -17,6 +16,7 @@ class Index extends Component {
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.handleSelectedTab = this.handleSelectedTab.bind(this);
     this.card = React.createRef();
   }
 
@@ -35,22 +35,22 @@ class Index extends Component {
   }
 
   renderInnerContent() {
-    const { iapply } = this.props;
-    const { testControl } = iapply;
-    switch (testControl.view) {
+    const { review } = this.props;
+    const { test } = review;
+    switch (test.view) {
       case 'program':
-        return <Program {...testControl.program} />;
+        return <Program {...test.program} />;
       case 'newView':
-        return <NewProgram {...iapply} />;
+        return <NewProgram {...review} />;
       default:
         return null;
     }
   }
 
   renderDeleteModal() {
-    const { iapply } = this.props;
-    const { testControl } = iapply;
-    const { programs, activeProgram } = testControl.program;
+    const { review } = this.props;
+    const { test } = review;
+    const { programs, activeProgram } = test.program;
 
     const selectedProg = getObjFromArr(programs, activeProgram);
 
@@ -61,7 +61,7 @@ class Index extends Component {
 
     return (
       <DeleteProgramModal
-        isModalOpen={testControl.showDeleteProgram}
+        isModalOpen={test.showDeleteProgram}
         title={selectedProg && selectedProg.title ? selectedProg.title : ''}
         handleCloseModal={this.props.handleCloseDeleteModal}
         handleDelete={this.props.handleTcDelProgram}
@@ -69,9 +69,19 @@ class Index extends Component {
     );
   }
 
+  handleSelectedTab(item) {
+    console.log(item);
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div>
+        <Tabs
+          items={[{ id: 1, name: 'jack' }, { id: 2, name: 'jack2' }]}
+          active={2}
+          handleSelected={this.handleSelectedTab}
+        />
         <div
           className="card nohover"
           ref={this.card}
@@ -86,8 +96,8 @@ class Index extends Component {
 
 function actions(dispatch) {
   return {
-    handleCloseDeleteModal: () => dispatch({ type: TC_HIDE_DELETE_MODAL }),
-    handleTcDelProgram: () => dispatch(deleteTcProgram()),
+    // handleCloseDeleteModal: () => dispatch({ type: TC_HIDE_DELETE_MODAL }),
+    // handleTcDelProgram: () => dispatch(deleteTcProgram()),
   };
 }
 export default connect(

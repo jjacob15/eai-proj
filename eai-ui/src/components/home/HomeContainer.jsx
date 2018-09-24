@@ -2,7 +2,7 @@ import React from 'react';
 import AboutEai from './aboutEai';
 import Login from './login';
 import Extract from './IExtractLink';
-import Apply from './IApplyLink';
+import ReviewLink from './ReviewLink';
 import Model from './IModelLink';
 import Plan from './IPlanLink';
 import { connect } from 'react-redux';
@@ -33,7 +33,7 @@ class HomeContainer extends React.Component {
             <Model />
           </div>
           <div className="col-md-3 col-lg-3">
-            <Apply />
+            <ReviewLink />
           </div>
           <div className="col-md-3 col-lg-3">
             <Plan />
