@@ -12,6 +12,9 @@ const customStyles = {
   },
 };
 
+Modal.defaultStyles.overlay.backgroundColor = 'rgba(111, 111, 111, 0.75)';
+Modal.defaultStyles.overlay.zIndex = '1000';
+
 Modal.setAppElement(document.getElementById('root'));
 
 export default class DeleteModal extends React.Component {
@@ -55,16 +58,16 @@ export default class DeleteModal extends React.Component {
           <i className="fa fa-times close-card" onClick={this.closeModal} onKeyPress={this.closeModal} />
         </div>
         <div className="modal-title">Delete program</div>
-        <div>
+        <div style={{ marginTop: '20px' }}>
           <p>
             Are you sure you would like to delete <b>{title}</b>? It will no longer be available to any user.
           </p>
         </div>
-        <div className="btn-group" style={{ float: 'right' }}>
-          <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.handleYes}>
+        <div style={{ float: 'right' }}>
+          <button type="button" className="btn btn-primary btn-sm" onClick={this.handleYes}>
             Yes
           </button>
-          <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.handleClose}>
+          <button type="button" className="btn btn-link btn-sm" onClick={this.handleClose}>
             Cancel
           </button>
         </div>

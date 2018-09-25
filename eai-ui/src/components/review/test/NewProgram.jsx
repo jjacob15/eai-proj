@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
-// import { setTestControlView, saveTcProgram } from '../../../../actions';
+import { setTestControlView, addTestControlProgram } from '../../../actions';
 
 class NewProgram extends React.Component {
   constructor() {
@@ -83,7 +83,7 @@ class NewProgram extends React.Component {
                 disabled={title === ''}>
                 Save
               </button>
-              <button type="button" className="btn btn-default btn-sm" onClick={this.onCancel}>
+              <button type="button" className="btn btn-link btn-sm" onClick={this.onCancel}>
                 Cancel
               </button>
             </div>
@@ -96,10 +96,10 @@ class NewProgram extends React.Component {
 
 function actions(dispatch) {
   return {
-    // onCancel: () => dispatch(setTestControlView(null)),
-    // onSave(name, desc) {
-    //   dispatch(saveTcProgram(name, desc));
-    // },
+    onCancel: () => dispatch(setTestControlView(null)),
+    onSave(name, desc) {
+      dispatch(addTestControlProgram(name, desc));
+    },
   };
 }
 export default connect(

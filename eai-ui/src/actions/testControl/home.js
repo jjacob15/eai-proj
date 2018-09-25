@@ -58,39 +58,29 @@ function initializeTc(app) {
   };
 }
 
-function saveTcProgram(name, desc) {
-  return function(dispatch, getState) {
+function addTestControlProgram(name, desc) {
+  return function(dispatch) {
     const id = getId();
-    // call add program
-    const state = getState();
     dispatch({ type: TC_ADD_PROGRAM, content: { id, title: name, desc, view: 'test' } });
-
-    // call landing menu and set title.
-    // if its the first dummy
-    if (state.nav.landingMenu.selected.id === -1) {
-      dispatch({ type: SET_LANDING_MENU, content: { content: [{ id, label: name, source: TC }], context: TC } });
-    } else {
-      dispatch({ type: ADD_LANDING_MENU, content: { id, label: name, source: TC } });
-    }
   };
 }
 
 function deleteTcProgram() {
   return function(dispatch, getState) {
     const state = getState();
-    const { programs, activeProgram } = state.iapply.testControl.program;
+    const { programs, activeProgram } = state.review.test.program;
 
     const pIdx = programs.map(x => x.id).indexOf(activeProgram);
-    const lIdx = state.nav.landingMenu.content.map(x => x.id).indexOf(activeProgram);
+    // const lIdx = state.nav.landingMenu.content.map(x => x.id).indexOf(activeProgram);
 
     dispatch({ type: TC_REMOVE_PROGRAM, idx: pIdx });
-    // remove item from  landing menu as well
-    dispatch({ type: REMOVE_LANDING_MENU, idx: lIdx });
+    // // remove item from  landing menu as well
+    // dispatch({ type: REMOVE_LANDING_MENU, idx: lIdx });
 
-    // reset landing menu to default and set to initial disabled state
-    if (state.nav.landingMenu.content.length === 1) {
-      dispatch({ type: SET_LANDING_MENU, content: { content: [initialTestControlMenu], context: TC } });
-    }
+    // // reset landing menu to default and set to initial disabled state
+    // if (state.nav.landingMenu.content.length === 1) {
+    //   dispatch({ type: SET_LANDING_MENU, content: { content: [initialTestControlMenu], context: TC } });
+    // }
 
     dispatch({ type: TC_HIDE_DELETE_MODAL });
   };
@@ -112,7 +102,7 @@ function setProgramView(view) {
 
 module.exports = {
   setTestControlView,
-  saveTcProgram,
+  addTestControlProgram,
   deleteTcProgram,
   initializeTc,
   setProgramView,

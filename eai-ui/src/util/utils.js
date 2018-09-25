@@ -16,6 +16,8 @@ function getObjIdxFromArr(arr, id, idProp = 'id') {
 function checkIfObjExists(arr, id, idProp) {
   if (id === -1 || id === null) return false;
 
+  if (!arr) return false;
+
   if (arr.length === 0) return false;
 
   //check if id prop exists.

@@ -89,6 +89,14 @@ h6 {
   background: linear-gradient(45deg, $danger-color, lighten($danger-color, 10%));
 }
 
+.title-content-font {
+  font-family: $theme-font-family-light;
+  a {
+    color: $primary-color !important;
+    font-size: inherit;
+    font-family: inherit;
+  }
+}
 .main-container {
   margin: 0 auto;
   margin-top: 56px;
@@ -376,7 +384,7 @@ h6 {
   }
 
   .nav-item a {
-    padding: 20px 0 !important;
+    padding: 0 0 20px 0 !important;
     color: $inverse-color;
   }
 }
@@ -524,6 +532,9 @@ a.bg-danger:hover {
 .modal-title {
   font-weight: 600;
   margin-bottom: 20px;
+  position: absolute;
+  top: 5px;
+  left: 8px;
 }
 /**  =====================
       Test Control program css start

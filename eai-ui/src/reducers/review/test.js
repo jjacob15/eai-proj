@@ -76,6 +76,7 @@ export default (state = initialState, action) => {
     case TC_SET_VIEW:
       return {
         ...state,
+        initialInactive: false,
         view: action.content,
       };
     case TC_SET_PROGRAM_VIEW:

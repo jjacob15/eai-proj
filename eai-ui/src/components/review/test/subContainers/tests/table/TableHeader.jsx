@@ -19,11 +19,6 @@ export default class Header extends React.Component {
             Search: <input type="search" className="form-control input-sm" placeholder="" aria-controls="simpletable" />
           </label>
         </div>
-        <div className="col-md-4 col-xl-4 padded-buttons" style={{ textAlign: 'right' }}>
-          <button className="btn btn-grd-primary btn-sm">Create</button>
-          <button className="btn btn-grd-success btn-sm">Copy</button>
-          <button className="btn btn-grd-info btn-sm">Combine</button>
-        </div>
       </div>
     );
   }
