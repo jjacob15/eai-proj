@@ -36,7 +36,7 @@ export default class Tabs extends React.Component {
   renderViews() {
     switch (this.state.active) {
       case 0:
-        return <Table />;
+        return <Table {...this.props} />;
       default:
         return null;
     }

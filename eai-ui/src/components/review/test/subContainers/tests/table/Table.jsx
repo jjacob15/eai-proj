@@ -8,7 +8,7 @@ export default class Table extends React.Component {
     return (
       <div className="dataTables_length">
         <Header />
-        <Body />
+        <Body {...this.props} />
         <Footer />
       </div>
     );

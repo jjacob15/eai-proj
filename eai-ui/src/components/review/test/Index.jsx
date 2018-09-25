@@ -5,7 +5,12 @@ import DeleteProgramModal from './DeleteProgramModal';
 import Program from './Program';
 import { getObjFromArr } from '../../../util';
 import Tabs from '../../ui/tabs';
-import { TC_SET_VIEW, TC_SET_ACTIVE_PROGRAM, TC_HIDE_DELETE_MODAL } from '../../../constants/types';
+import {
+  TC_SET_VIEW,
+  TC_SET_ACTIVE_PROGRAM,
+  TC_HIDE_DELETE_MODAL,
+  TC_SHOW_DELETE_MODAL,
+} from '../../../constants/types';
 import { deleteTcProgram } from '../../../actions';
 
 const WelcomeMessage = props => (
@@ -26,13 +31,14 @@ class Index extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { review } = this.props;
     const { test } = review;
 
     switch (test.view) {
       case 'new':
         return <NewProgram {...review} />;
-      case 'program':
+      default:
         return (
           <Program
             {...test}
@@ -40,22 +46,20 @@ class Index extends Component {
             setActiveProgram={this.setActiveProgram}
             handleCloseDeleteModal={this.props.handleCloseDeleteModal}
             handleTestProgramDelete={this.props.handleTestProgramDelete}
+            displayDeleteModelWindow={this.props.displayDeleteModelWindow}
           />
         );
-      default:
-        return <WelcomeMessage handleClicked={this.props.changingViewToNew} />;
     }
   }
 }
 
 function actions(dispatch) {
   return {
-    changingViewToNew: () => {
-      dispatch({ type: TC_SET_VIEW, content: 'new' });
-    },
+    changingViewToNew: () => dispatch({ type: TC_SET_VIEW, content: 'new' }),
     setActiveTestProgram: id => dispatch({ type: TC_SET_ACTIVE_PROGRAM, content: id }),
     handleCloseDeleteModal: () => dispatch({ type: TC_HIDE_DELETE_MODAL }),
     handleTestProgramDelete: () => dispatch(deleteTcProgram()),
+    displayDeleteModelWindow: () => dispatch({ type: TC_SHOW_DELETE_MODAL }),
   };
 }
 export default connect(

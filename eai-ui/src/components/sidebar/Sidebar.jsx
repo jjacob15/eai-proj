@@ -6,6 +6,7 @@ import velocity from 'velocity-animate';
 import SideBarContent from './SideBarContent.jsx';
 import { Route } from 'react-router-dom';
 import menu from '../../constants/menu';
+import { reviewPath, reviewTestPath } from '../../constants/links';
 
 class SideBar extends Component {
   constructor() {
@@ -31,7 +32,8 @@ class SideBar extends Component {
     return (
       <nav className="side-bar" ref={this.el}>
         <Route exact path="/" render={() => <SideBarContent menu={menu.main} />} />
-        <Route path="/review" render={() => <SideBarContent menu={menu.mainApp} />} />
+        <Route exact path={reviewPath} render={() => <SideBarContent menu={menu.mainApp} />} />
+        <Route path={reviewTestPath} render={() => <SideBarContent menu={menu.reivewTestApp} />} />
         <Route path="/imodel" render={() => <SideBarContent menu={menu.mainApp} />} />
         <Route path="/iextract" render={() => <SideBarContent menu={menu.mainApp} />} />
         <Route path="/iplan" render={() => <SideBarContent menu={menu.mainApp} />} />

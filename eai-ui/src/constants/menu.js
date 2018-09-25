@@ -1,4 +1,4 @@
-import { iextractPath, reviewPath, iplanPath, imodelPath } from './links';
+import { iextractPath, reviewPath, iplanPath, imodelPath, reviewTestPath } from './links';
 
 const vid1 = { id: 16, label: 'Video 1', link: '/video1', parentId: 3 };
 const vid2 = { id: 17, label: 'Video 2', link: '/video2', parentId: 3 };
@@ -21,6 +21,13 @@ const sort = { id: 12, label: 'Sort', icon: 'exchange-vertical', link: reviewPat
 const print = { id: 13, label: 'Print', icon: 'printer', link: reviewPath + '/print' };
 const exportLink = { id: 14, label: 'Export', icon: 'export', link: reviewPath + '/exportlink' };
 const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: reviewPath + '/save' };
+
+const test = { id: 16, label: 'Test', icon: 'layout-grid3', link: reviewTestPath };
+const measures = { id: 17, label: 'Measures', icon: 'layout-grid3', link: reviewPath };
+const clusters = { id: 18, label: 'Clusters', icon: 'layout-grid3', link: reviewPath };
+const attributes = { id: 19, label: 'Attributes', icon: 'layout-grid3', link: reviewPath };
+const dates = { id: 20, label: 'Dates', icon: 'layout-grid3', link: reviewPath };
+const size = { id: 21, label: 'Size', icon: 'layout-grid3', link: reviewPath };
 
 const quickLinks = [iextract, imodel, review, iplan];
 
@@ -60,6 +67,22 @@ module.exports = {
       {
         label: 'Tools',
         content: [find, sort, print, exportLink, saveView],
+      },
+    ],
+  },
+
+  reivewTestApp: {
+    id: 'reivewTestApp',
+    back: review,
+    selected: find,
+    content: [
+      {
+        label: 'Review',
+        content: [test, measures, clusters, attributes, dates, size],
+      },
+      {
+        label: 'Quick Links',
+        content: quickLinks,
       },
     ],
   },

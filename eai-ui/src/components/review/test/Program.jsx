@@ -5,16 +5,22 @@ import { getObjFromArr } from '../../../util';
 import Tabs from '../../ui/tabs';
 import DeleteProgramModal from './DeleteProgramModal';
 
-const getTabsFromArr = items => items.map(x => ({ id: x.id, name: x.title }));
+const getTabsFromArr = items => {
+  if (items.length === 0) return [{ id: -1, name: 'Program' }];
+
+  return items.map(x => ({ id: x.id, name: x.title }));
+};
 
 class Program extends Component {
   constructor() {
     super();
     this.handleSelectedTab = this.handleSelectedTab.bind(this);
-    this.handleTabAdd = this.handleTabAdd.bind(this);
+    // this.handleTabAdd = this.handleTabAdd.bind(this);
   }
 
   renderSubview(selectedProgram) {
+    if (!selectedProgram) return <Test {...this.props} />;
+
     switch (selectedProgram.view.toLowerCase()) {
       case 'test':
         return <Test {...this.props} />;
@@ -28,9 +34,9 @@ class Program extends Component {
   handleSelectedTab(item) {
     this.props.setActiveProgram(item.id);
   }
-  handleTabAdd() {
-    this.props.addNewTest();
-  }
+  // handleTabAdd() {
+  //   this.props.addNewTest();
+  // }
 
   renderDeleteModal() {
     console.log(this.props);
@@ -55,17 +61,15 @@ class Program extends Component {
     const { programs, activeProgram } = this.props.program;
     let selectedProgram = getObjFromArr(programs, activeProgram);
 
-    selectedProgram = selectedProgram || programs[0];
-
     return (
       <div>
-        <Tabs
-          items={getTabsFromArr(programs)}
-          active={activeProgram}
-          handleSelected={this.handleSelectedTab}
-          handleTabAdd={this.handleTabAdd}
-        />
-        <div className="card nohover m-t-20 p-20">{this.renderSubview(selectedProgram)}</div>
+        <Tabs items={getTabsFromArr(programs)} active={activeProgram} handleSelected={this.handleSelectedTab}>
+          <div style={{ position: 'absolute', right: '0px', fontSize: '15px' }}>
+            <i className="fa fa-file m-10" onClick={this.props.addNewTest} />
+            {activeProgram !== -1 && <i className="fa fa-times m-10" onClick={this.props.displayDeleteModelWindow} />}
+          </div>
+        </Tabs>
+        <div className="card m-t-20 p-20">{this.renderSubview(selectedProgram)}</div>
 
         {this.renderDeleteModal()}
       </div>

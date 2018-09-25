@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import { reviewPath } from '../../constants/links';
+import { reviewTestPath, reviewPath } from '../../constants/links';
 import Test from './test';
+import Home from './Home';
 
-class Index extends Component {
+export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <Route path={reviewPath} render={p => <Test {...this.props} />} />
+        <Route exact path={reviewPath} render={p => <Home />} />
+        <Route path={reviewTestPath} render={p => <Test {...this.props} />} />
       </div>
     );
   }
 }
-
-module.exports = Index;
