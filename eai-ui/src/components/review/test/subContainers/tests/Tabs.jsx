@@ -16,7 +16,7 @@ const Link = ({ title, isActive, handleOnClick, idx }) => {
   );
 };
 
-const links = ['Tests', 'Analysis', 'Compare'];
+const links = ['Tests', 'Compare'];
 
 export default class Tabs extends React.Component {
   constructor() {

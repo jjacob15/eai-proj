@@ -14,6 +14,7 @@ export default class Body extends React.Component {
           <td>Tokyo</td>
           <td>33</td>
           <td>2008/11/28</td>
+          <td>2008/11/28</td>
         </tr>
         <tr role="row">
           <td className="sorting_1">Ashton Cox</td>
@@ -21,6 +22,7 @@ export default class Body extends React.Component {
           <td>San Francisco</td>
           <td>66</td>
           <td>2009/01/12</td>
+          <td>2008/11/28</td>
         </tr>
         <tr role="row">
           <td className="sorting_1">Bradley Greer</td>
@@ -28,6 +30,7 @@ export default class Body extends React.Component {
           <td>London</td>
           <td>41</td>
           <td>2012/10/13</td>
+          <td>2008/11/28</td>
         </tr>
         <tr role="row">
           <td className="sorting_1">Brielle Williamson</td>
@@ -35,6 +38,7 @@ export default class Body extends React.Component {
           <td>New York</td>
           <td>61</td>
           <td>2012/12/02</td>
+          <td>2008/11/28</td>
         </tr>
         <tr role="row">
           <td className="sorting_1">Cedric Kelly</td>
@@ -42,6 +46,7 @@ export default class Body extends React.Component {
           <td>Edinburgh</td>
           <td>22</td>
           <td>2012/03/29</td>
+          <td>2008/11/28</td>
         </tr>
         <tr role="row">
           <td className="sorting_1">Charde Marshall</td>
@@ -49,6 +54,7 @@ export default class Body extends React.Component {
           <td>San Francisco</td>
           <td>36</td>
           <td>2008/10/16</td>
+          <td>2008/11/28</td>
         </tr>
       </tbody>
     );
@@ -70,16 +76,19 @@ export default class Body extends React.Component {
                   Test
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Primary Metric
+                  Primary Measure
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Period
+                  Test Period
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Test Stores
+                  Test Cells
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
                   Average Controls
+                </th>
+                <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
+                  Last Run
                 </th>
               </tr>
             </thead>
@@ -90,16 +99,19 @@ export default class Body extends React.Component {
                   Test
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Primary Metric
+                  Primary Measure
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Period
+                  Test Period
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Test Stores
+                  Test Cells
                 </th>
                 <th rowSpan="1" colSpan="1">
                   Average Controls
+                </th>
+                <th rowSpan="1" colSpan="1">
+                  Last Run
                 </th>
               </tr>
             </tfoot>

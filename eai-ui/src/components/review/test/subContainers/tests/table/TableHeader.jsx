@@ -8,14 +8,14 @@ export default class Header extends React.Component {
           <label>
             Show{' '}
             <select name="simpletable_length" className="form-control input-sm">
-              <option value="10">10</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
+              <option value="10">5</option>
+              <option value="25">10</option>
+              <option value="50">15</option>
+              <option value="100">20</option>
             </select>{' '}
             entries
           </label>
-          <label style={{ marginLeft: '10px' }}>
+          <label style={{ marginLeft: '20px' }}>
             Search: <input type="search" className="form-control input-sm" placeholder="" aria-controls="simpletable" />
           </label>
         </div>

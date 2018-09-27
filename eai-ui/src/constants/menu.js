@@ -22,12 +22,16 @@ const print = { id: 13, label: 'Print', icon: 'printer', link: reviewPath + '/pr
 const exportLink = { id: 14, label: 'Export', icon: 'export', link: reviewPath + '/exportlink' };
 const saveView = { id: 15, label: 'Save View', icon: 'layout-grid3', link: reviewPath + '/save' };
 
-const test = { id: 16, label: 'Test', icon: 'layout-grid3', link: reviewTestPath };
-const measures = { id: 17, label: 'Measures', icon: 'layout-grid3', link: reviewPath };
-const clusters = { id: 18, label: 'Clusters', icon: 'layout-grid3', link: reviewPath };
-const attributes = { id: 19, label: 'Attributes', icon: 'layout-grid3', link: reviewPath };
-const dates = { id: 20, label: 'Dates', icon: 'layout-grid3', link: reviewPath };
-const size = { id: 21, label: 'Size', icon: 'layout-grid3', link: reviewPath };
+//Menu for Test to Know
+const testsTTK = { id: 16, label: 'Tests', icon: 'layout-grid3', link: reviewTestPath };
+const measuresTTK = { id: 17, label: 'Measures', icon: 'layout-grid3', link: reviewPath };
+const clustersTTK = { id: 18, label: 'Clusters', icon: 'layout-grid3', link: reviewPath };
+const attributesTTK = { id: 19, label: 'Attributes', icon: 'layout-grid3', link: reviewPath };
+const datesTTK = { id: 20, label: 'Dates', icon: 'layout-grid3', link: reviewPath };
+const sizeTTK = { id: 21, label: 'Size', icon: 'layout-grid3', link: reviewPath };
+const helpTTK = { id: 22, label: 'Help', icon: 'layout-grid3', link: reviewPath };
+const infoTTK = { id: 23, label: 'Info', icon: 'layout-grid3', link: reviewPath };
+const dataTTK = { id: 24, label: 'Upload', icon: 'layout-grid3', link: reviewPath };
 
 const quickLinks = [iextract, imodel, review, iplan];
 
@@ -78,7 +82,11 @@ module.exports = {
     content: [
       {
         label: 'Review',
-        content: [test, measures, clusters, attributes, dates, size],
+        content: [testsTTK, measuresTTK, clustersTTK, attributesTTK, datesTTK, sizeTTK, helpTTK, infoTTK],
+      },
+      {
+        label: 'Data Edit',
+        content: [dataTTK],
       },
       {
         label: 'Quick Links',

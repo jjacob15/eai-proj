@@ -21,19 +21,19 @@ export default class Body extends React.Component {
                   Access
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Primary Metric
+                  Primary Measure
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Period
+                  Test Period
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Test Stores
+                  Test Cells
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
                   Average Controls
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
-                  Last Run Date
+                  Last Run
                 </th>
                 <th className="sorting" tabIndex="0" aria-controls="simpletable" rowSpan="1" colSpan="1">
                   Created By
@@ -120,19 +120,19 @@ export default class Body extends React.Component {
                   Access
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Primary Metric
+                  Primary Measure
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Period
+                  Test Period
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Test Stores
+                  Test Cells
                 </th>
                 <th rowSpan="1" colSpan="1">
                   Average Controls
                 </th>
                 <th rowSpan="1" colSpan="1">
-                  Last Run Date
+                  Last Run
                 </th>
                 <th rowSpan="1" colSpan="1">
                   Created By

@@ -8,10 +8,10 @@ export default class Header extends React.Component {
           <label>
             Show{' '}
             <select name="simpletable_length" className="form-control input-sm">
-              <option value="10">10</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
+              <option value="10">5</option>
+              <option value="25">10</option>
+              <option value="50">15</option>
+              <option value="100">20</option>
             </select>{' '}
             entries
           </label>
